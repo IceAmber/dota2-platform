@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新手指引 — DOTA2 国服社区</title>
+  <meta name="description" content="DOTA2 国服注册分步教程、启动参数、常见问题排查、新手首选英雄推荐。社区公益指南，非官方。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 顶部导航 ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">刀</span>
+        <span>DOTA2 国服社区<small>COMMUNITY · NON-PROFIT</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="guide.html">新手指引</a></li>
+          <li><a href="report.html">版本周报</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 页头 -->
+    <section class="section">
+      <div class="section-title">
+        <h1>🚀 国服新手指引</h1>
+        <span class="sub">从「没有账号」到「开第一把」，照着做就行</span>
+      </div>
+      <p>
+        想入坑国服 DOTA2，最大的坑不在游戏本身，而在「注册和启动」这一步。
+        本指南按 <b>注册 → 绑定 → 启动 → 选英雄</b> 的顺序，把官方流程拆成一步步，
+        所有卡壳点都给了排查方案。
+      </p>
+      <div class="note">
+        <b>一句话结论：</b>你需要同时有「Steam/蒸汽平台账号」+「完美通行证账号」，并把两者绑定，国服才算激活。
+        这一步最容易卡住，别跳步。
+      </div>
+    </section>
+
+    <!-- ============ 一、分步注册流程 ============ -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>一、分步注册流程</h2><span class="sub">照着 1→2→3→4 做</span></div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>注册 Steam / 蒸汽平台账号</h3>
+            <ul>
+              <li>打开 Steam 或蒸汽平台客户端，用邮箱注册：填邮箱 → 设密码 → 邮箱验证。</li>
+              <li><b>建议：</b>如果长期玩国服，直接用<b>蒸汽平台</b>——钱包可用支付宝/微信充值，买游戏内物品方便。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>注册完美通行证并实名认证</h3>
+            <ul>
+              <li>打开完美世界 DOTA2 官网账号注册页（dota2.com.cn）。</li>
+              <li><b>实名认证（防沉迷）+ 注册在同一个页面完成</b>，一起搞定即可。</li>
+              <li><b>卡顿提示：</b>页面偶尔会卡住，<b>等 1–2 分钟</b>或<b>退出重新注册</b>即可，不要反复刷新。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>绑定账号（最关键的一步）</h3>
+            <ul>
+              <li>登录后，将 <b>Steam/蒸汽平台账号</b> 与 <b>完美通行证</b> 绑定。</li>
+              <li>绑定完成后，你的国服 DOTA2 才真正激活，可以开始游戏。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>启动游戏：设置启动参数</h3>
+            <p>在 Steam 库 → 右键 DOTA2 → 属性 → 启动选项，粘贴下面两行参数：</p>
+            <p>
+              <span class="codebox">-perfectworld</span> 进入<b>国服</b>（延迟更低）<br>
+              <span class="codebox">-language schinese</span> 简体中文界面<br>
+            </p>
+            <p>两者可同时写：<span class="codebox">-perfectworld -language schinese</span>
+              <button class="btn btn-sm btn-ghost js-copy" data-copy="-perfectworld -language schinese">复制</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 二、启动不了？常见问题排查 ============ -->
+    <section class="section">
+      <div class="section-title"><h2>二、启动不了？常见问题排查</h2><span class="sub">按顺序逐条试</span></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>症状</th><th>原因</th><th>处理</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>进不去国服 / 一直在转圈</td><td>网络没连上国内节点</td><td>用加速器（UU、雷神等），选「国服」节点</td></tr>
+            <tr><td>进去是英文界面</td><td>没加语言参数</td><td>补上 <span class="codebox">-language schinese</span></td></tr>
+            <tr><td>提示「未绑定 / 未实名」</td><td>第 2、3 步没完成</td><td>回完美世界官网完成实名 + 绑定</td></tr>
+            <tr><td>卡在注册页不动</td><td>页面偶发卡顿</td><td>等 1–2 分钟，或退出重新注册</td></tr>
+            <tr><td>明明有账号却登不进</td><td>国服/国际服账号不互通</td><td>确认用的是「绑定过完美通行证」的账号</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note note-warn">
+        <b>网络关键点：</b>国服（<span class="codebox">-perfectworld</span>）优先连国内服务器，延迟更低；
+        Steam 国际服模式连全球服务器，通常需要额外网络配置才稳定。国内玩家建议「国服 + 加速器」。
+      </div>
+    </section>
+
+    <!-- ============ 三、国服 vs 国际服 ============ -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>三、国服 vs 国际服，选哪个？</h2><span class="sub">新手建议优先国服</span></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>维度</th><th>国服（推荐新手）</th><th>国际服</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>延迟</td><td>低（国内节点）</td><td>需额外优化网络</td></tr>
+            <tr><td>交流</td><td>中文为主</td><td>多国语言</td></tr>
+            <tr><td>账号</td><td>需完美通行证绑定</td><td>直接 Steam</td></tr>
+            <tr><td>钱包</td><td>蒸汽平台钱包（支付宝/微信）</td><td>Steam 钱包</td></tr>
+            <tr><td>道具/等级</td><td colspan="2">同一账号下互通（饰品、历史一致）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>建议：</b>新玩家优先国服——延迟低、中文交流、充值方便。熟悉之后再考虑国际服分流。
+      </div>
+    </section>
+
+    <!-- ============ 四、充值说明 ============ -->
+    <section class="section">
+      <div class="section-title"><h2>四、充值（想买饰品 / 本子）</h2></div>
+      <ul style="color: var(--text-dim); padding-left: 18px;">
+        <li>国服接入蒸汽平台后，游戏内虚拟物品通过<b>蒸汽平台钱包</b>支付。</li>
+        <li>可用 <b>支付宝 / 微信</b> 给蒸汽平台钱包充值，再购买游戏内商品。</li>
+        <li>老玩家遗留的「刀币」按 <b>100 刀币 : 1 元</b> 转换到钱包余额（官方规则）。</li>
+      </ul>
+    </section>
+
+    <!-- ============ 五、新手首选英雄 ============ -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>五、新手首选英雄</h2><span class="sub">简单、强、容错高（数据来自版本周报）</span></div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>🦴 骷髅王</h3>
+          <p><b>定位：</b>1 号位核心 · 又肉又能打</p>
+          <p>自带复活（大招），操作简单，站撸型近战核。队友最怕新手送，骷髅王「死一次爬起来」的容错极高，团战不会白送。</p>
+        </div>
+        <div class="card">
+          <h3>💀 复仇之魂</h3>
+          <p><b>定位：</b>辅助 / 核心 · 攻防一体的万金油</p>
+          <p>技能简单直接：眩晕 + 减甲 + 换位救队友。可辅可核，劣势局靠大招救人也能翻盘，新手上手压力最小。</p>
+        </div>
+        <div class="card">
+          <h3>❄️ 巫妖</h3>
+          <p><b>定位：</b>5 号位辅助 · 廉价又实用</p>
+          <p>给队友套冰甲减攻速、大招弹弹弹。操作量低、收益直观，是学习「辅助视野与站位」的最佳入门英雄。</p>
+        </div>
+      </div>
+      <div class="note note-danger">
+        <b>入坑后第一步：</b>先打人机 / 新玩家模式，熟悉补刀、视野和装备，别直接排位。
+        每周关注本站「版本周报」，跟着胜率高的英雄走，少走弯路。
+      </div>
+    </section>
+
+    <!-- ============ 免责 ============ -->
+    <section class="section">
+      <div class="note">
+        <b>ℹ️ 免责与来源：</b>本指南为<b>社区公益内容</b>，整理自完美世界 DOTA2 官方公告/注册说明（dota2.com.cn）与社区实践，<b>非官方指南</b>。
+        流程如有变动，以官方最新公告为准。
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>DOTA2 国服社区</h4>
+          <p>社区公益项目：为国服 DOTA2 新玩家提供入坑指引与版本阵容周报。数据来自 OpenDota 免费 API，非官方平台。</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <div class="footer-links">
+            <a href="guide.html">新手指引</a>
+            <a href="report.html">版本周报</a>
+            <a href="about.html">关于 / 免责</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DOTA2 国服社区 · 社区公益，非商业用途</span>
+        <span>数据来源：OpenDota API · 本站与 Valve / 完美世界 无关</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
