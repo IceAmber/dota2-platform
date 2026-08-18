@@ -194,9 +194,7 @@ CN_ITEMS = {
 }
 
 
-# 各阶段取胜率最高的前 N 件
-BUILD_PER_PHASE = 4
-# 阶段性标签
+# 阶段性标签（每个阶段展示全部有效装备，不过滤热度、不截断）
 PHASES = [("start_game_items", "出门装"), ("early_game_items", "前期"),
           ("mid_game_items", "中期"), ("late_game_items", "后期")]
 
@@ -220,7 +218,6 @@ def augment_build_guides(payload: dict) -> None:
         if isinstance(v, dict) and "id" in v and v["id"] is not None:
             item_by_id[int(v["id"])] = v
 
-    by_id = {h["id"]: h for h in payload["heroes"]}
     gaps = [h for h in payload["heroes"] if h.get("is_gap")]
     log(f"[info] 为 {len(gaps)} 个认知差英雄拉取出装…")
 
@@ -238,7 +235,8 @@ def augment_build_guides(payload: dict) -> None:
             items = pop.get(phase_key) or {}
             ranked = []
             # itemPopularity 返回 {item_id: times}，value 为出场次数（热度），不带胜负。
-            # 我们按热度(出场次数)降序取最热出装——即「高胜率玩家实际在出的装备」。
+            # 我们按热度降序展示全部有效装备；过滤合成材料/配方（qual=component 或名字含 Recipe），
+            # 只保留成品大件 + 出门/消耗品等有实际意义的装备，避免满屏散件。
             for id_str, times in items.items():
                 try:
                     iid = int(id_str)
@@ -248,6 +246,10 @@ def augment_build_guides(payload: dict) -> None:
                     continue
                 meta = item_by_id.get(iid)
                 dname = (meta.get("dname") or "") if meta else ""
+                qual = (meta.get("qual") or "") if meta else ""
+                # 过滤合成材料与配方
+                if qual == "component" or "recipe" in dname.lower():
+                    continue
                 ranked.append({
                     "id": iid,
                     "dname": dname,
@@ -255,11 +257,11 @@ def augment_build_guides(payload: dict) -> None:
                     "img": build_img_url((meta.get("img") or "") if meta else ""),
                     "times": int(times),
                 })
-            # 按热度（出场次数）降序，取前 N 件（最热 = 高胜率玩家的主流选择）
+            # 按热度（出场次数）降序，全部保留（不截断），这样后期能看到完整装备集合
             ranked.sort(key=lambda x: x["times"], reverse=True)
             guide[phase_key] = {
                 "label": phase_label,
-                "items": ranked[:BUILD_PER_PHASE],
+                "items": ranked,
             }
         hero["build_guide"] = guide
         log(f"[ok] {hero['name']} 出装路线已生成（按热度）")
