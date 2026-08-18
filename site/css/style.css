@@ -609,5 +609,12 @@ table.data-table {
   margin: 6px 0 2px;
 }
 .dl-links .btn { text-decoration: none; }
+/* 修复：确保 .dl-links 里的按钮不被 .step-body li a 的红色 color 覆盖 */
+.dl-links a.btn-primary,
+.dl-links a.btn-ghost {
+  color: inherit;
+}
+.dl-links a.btn-primary { color: #ffffff !important; }
+.dl-links a.btn-ghost { color: var(--text); }
 .step-body li a { color: var(--accent); }
 .step-body li a:hover { text-decoration: underline; }
