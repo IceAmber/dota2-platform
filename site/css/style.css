@@ -613,3 +613,65 @@ table.data-table {
 .dl-links a.btn-primary { color: #ffffff !important; }
 .dl-links a.btn-ghost { color: var(--text); }
 .step-body li a:hover { text-decoration: underline; }
+
+/* ================= 分享工具条 ================= */
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 4px;
+  padding: 12px 14px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.share-label {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-right: 4px;
+}
+.share-bar .btn { text-decoration: none; }
+
+/* ================= 二维码弹层 ================= */
+#qr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#qr-overlay.open { display: flex; }
+.qr-modal {
+  position: relative;
+  background: #fff;
+  color: #111;
+  padding: 28px 32px 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  max-width: 90vw;
+}
+.qr-modal h3 { margin: 0 0 16px; font-size: 1.15rem; }
+.qr-modal canvas {
+  display: block;
+  margin: 0 auto;
+  width: min(240px, 60vw);
+  height: auto;
+  image-rendering: pixelated;
+}
+.qr-note { color: #555; font-size: 0.85rem; margin: 14px 0 0; }
+.qr-close {
+  position: absolute;
+  top: 8px; right: 12px;
+  font-size: 1.6rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+.qr-close:hover { color: #000; }

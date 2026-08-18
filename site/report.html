@@ -41,6 +41,15 @@
       </p>
       <div id="report-state"><div class="data-state"><span class="spinner"></span>正在加载数据…</div></div>
       <p class="meta-line" id="data-meta"></p>
+
+      <!-- 分享工具条 -->
+      <div class="share-bar">
+        <span class="share-label">分享这条周报：</span>
+        <button class="btn btn-sm btn-ghost js-share-qr">🔗 二维码</button>
+        <button class="btn btn-sm btn-ghost js-share-copy">📋 复制链接</button>
+        <button class="btn btn-sm btn-ghost js-share-dl">🖼️ 下载长图</button>
+        <button class="btn btn-sm btn-ghost js-share-native" style="display:none">📤 分享</button>
+      </div>
     </section>
 
     <!-- 认知差高亮区块 -->
@@ -130,6 +139,19 @@
   </footer>
 
   <button id="back-top" aria-label="返回顶部">↑</button>
+
+  <!-- 二维码分享弹层 -->
+  <div id="qr-overlay">
+    <div class="qr-modal">
+      <button class="qr-close" aria-label="关闭">×</button>
+      <h3>📲 扫码查看周报</h3>
+      <canvas id="qr-canvas"></canvas>
+      <p class="qr-note">用手机扫码，或截图分享给朋友</p>
+    </div>
+  </div>
+
+  <!-- 自托管开源二维码库（MIT，kazuhikoarase/qrcode-generator） -->
+  <script src="js/vendor/qrcode.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

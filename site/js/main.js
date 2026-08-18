@@ -412,7 +412,7 @@
       renderTakeaway(tkEl, data.highlights);
 
       if (stateEl) stateEl.innerHTML = '';
-      if (metaEl) metaEl.textContent = '摘要数据由 OpenDota 抓取生成，更新于 ' + data.generated_at;
+      if (metaEl) metaEl.textContent = '周报摘要 · 数据来源 OpenDota，更新于 ' + data.generated_at;
     }).catch(function (err) {
       // 数据不可用时替换为静态占位提示，速报区块也给出友好占位
       if (stateEl) stateEl.innerHTML = '<div class="data-state"><span class="state-icon">📡</span>' +
@@ -427,9 +427,88 @@
     });
   }
 
+  /* ---------------- 4.5 分享 / 二维码 ---------------- */
+  /* 纯前端分享工具条。二维码用自托管的开源库 qrcode.js（MIT，kazuhikoarase），
+     本地文件无外部 CDN 依赖。 */
+
+  function initShare() {
+    var bar = document.querySelector('.share-bar');
+    if (!bar) return;
+    var url = window.location.href;
+
+    // 下载图片：新窗口打开周报长图，用户可另存
+    var dl = bar.querySelector('.js-share-dl');
+    if (dl) dl.addEventListener('click', function () {
+      window.open('data/weekly_report.png', '_blank');
+    });
+
+    // 复制链接
+    var cp = bar.querySelector('.js-share-copy');
+    if (cp) cp.addEventListener('click', function () {
+      var done = function () {
+        cp.textContent = '\u2713 已复制';
+        setTimeout(function () { cp.textContent = '复制链接'; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, function () { fallbackCopy(url); done(); });
+      } else { fallbackCopy(url); done(); }
+    });
+
+    // 手机原生分享（navigator.share），桌面不支持则隐藏
+    var sh = bar.querySelector('.js-share-native');
+    if (sh) {
+      if (navigator.share) {
+        sh.style.display = '';
+        sh.addEventListener('click', function () {
+          navigator.share({ title: document.title, url: url }).catch(function () {});
+        });
+      } else {
+        sh.style.display = 'none';
+      }
+    }
+
+    // 二维码弹层
+    var qrBtn = bar.querySelector('.js-share-qr');
+    var overlay = document.getElementById('qr-overlay');
+    if (qrBtn && overlay) {
+      qrBtn.addEventListener('click', function () {
+        overlay.classList.add('open');
+        var host = document.getElementById('qr-canvas');
+        if (host && !host.dataset.done) {
+          host.dataset.done = '1';
+          try {
+            var qr = qrcode(0, 'L');   // 全局 qrcode 由 vendor/qrcode.js 提供
+            qr.addData(url);
+            qr.make();
+            renderQR(host, qr, 6);
+          } catch (err) {
+            host.parentNode.insertAdjacentHTML('beforeend',
+              '<p class="qr-note">二维码生成失败，请直接复制链接分享。</p>');
+          }
+        }
+      });
+      var close = overlay.querySelector('.qr-close');
+      if (close) close.addEventListener('click', function () { overlay.classList.remove('open'); });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('open'); });
+    }
+  }
+
+  // 把 qrcode 库的矩阵画到 canvas
+  function renderQR(canvas, qr, scale) {
+    var n = qr.getModuleCount();
+    canvas.width = n * scale; canvas.height = n * scale;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#000';
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+      if (qr.isDark(y, x)) ctx.fillRect(x * scale, y * scale, scale, scale);
+    }
+  }
+
   /* ---------------- 5. 启动 ---------------- */
   document.addEventListener('DOMContentLoaded', function () {
     initReport();
     initIndex();
+    initShare();
   });
 })();
