@@ -256,7 +256,7 @@
           ' · 全量 ' + data.summary.total_heroes + ' 英雄' +
           ' · 路人局样本 ' + fmtNum(data.total_pub_picks) + ' 场' +
           ' · 职业样本 ' + data.summary.pro_sample_heroes + ' 个英雄' +
-          ' · 来源 ' + data.source_url;
+          ' · 近期版本数据 · 来源 ' + data.source_url;
       }
     }
 
