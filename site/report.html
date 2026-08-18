@@ -33,10 +33,10 @@
     <section class="section">
       <div class="section-title">
         <h1>📊 版本阵容周报</h1>
-        <span class="sub">由 fetch_hero_data.py 定时抓取 OpenDota 生成</span>
+        <span class="sub">全分段胜率 · 出场率 · 职业参考</span>
       </div>
       <p style="max-width: 760px;">
-        以下榜单由 <b>site/data/herostats.json</b> 自动渲染。胜率 = 胜场 / 出场；
+        榜单数据来自 OpenDota 免费 API。胜率 = 胜场 / 出场；
         「认知差」指路人胜率排名靠前但出场人数少的英雄——<b>又强又少人玩，就是本周上分密码</b>。
       </p>
       <div id="report-state"><div class="data-state"><span class="spinner"></span>正在加载数据…</div></div>
@@ -95,7 +95,7 @@
           <li><b>路人数据：</b>全分段镜像局；胜率 = 胜场 / 出场 × 100%，保留 2 位小数；出场率 = 该英雄出场 / 全部英雄出场。</li>
           <li><b>样本门槛：</b>胜率榜只统计出场 ≥5000 场的英雄，避免小样本（打几把就 100% 胜率）的假数据。</li>
           <li><b>职业数据：</b>来自 OpenDota 记录的职业比赛；大赛淡季样本可能很少，仅作方向性参考。</li>
-          <li><b>时效：</b>数据为脚本抓取时点快照，胜率随时间波动，请以最新版本为准。</li>
+          <li><b>时效：</b>数据为抓取时点快照，胜率随时间波动，每周自动更新，请以最新版本为准。</li>
         </ul>
       </div>
       <div class="note note-warn">
