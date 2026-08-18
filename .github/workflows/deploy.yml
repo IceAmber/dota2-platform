@@ -1,7 +1,10 @@
 name: Refresh Dota2 data + Deploy to Pages
 
 # 每天 06:00 UTC (北京时间 14:00) 自动刷新英雄数据并重新部署
+# 在 push 到 main 时触发(首次部署/代码更新都靠它)
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "0 6 * * *"
   # 也支持手动触发（GitHub Actions 页面点 "Run workflow"）
