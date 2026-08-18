@@ -154,11 +154,15 @@
     "done": false
   },
   "8946690366": {
+    "file": "20260819-024420-TI15-小组赛-LGD-vs-VG-复盘.md",
+    "title": "TI15 · LGD Gaming vs Vici Gaming 复盘",
+    "date": "20260819-024420",
     "radiant": "LGD Gaming",
     "dire": "Vici Gaming",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "LGD Gaming",
+    "match_time": "2026-08-15 19:08",
+    "duration": "52分33秒",
+    "done": true
   },
   "8946650558": {
     "radiant": "Xtreme Gaming",
@@ -182,11 +186,14 @@
     "done": false
   },
   "8946572751": {
+    "file": "8946572751-TI15-Vici-Gaming-vs-LGD-Gaming-复盘.md",
+    "title": "TI15 · Vici Gaming vs LGD Gaming 复盘",
+    "date": "20260819-025130",
     "radiant": "Vici Gaming",
     "dire": "LGD Gaming",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "LGD Gaming",
+    "duration_text": "53分46秒",
+    "done": true
   },
   "8946563158": {
     "radiant": "GamerLegion",

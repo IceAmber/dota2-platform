@@ -110,11 +110,41 @@
     // 读取复盘列表并渲染
     function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-    var REVINDEX = 'data/reviews/index.json';
+    var REVINDEX = 'data/reviews/ti_index.json';
     var root = document.getElementById('reviews-root');
     var detailRoot = document.getElementById('review-detail-root');
     var metaEl = document.getElementById('reviews-meta');
-    var items = [];
+    var ALL_EXPANDED = false;   // More 是否已展开全部
+    var items = [];             // 统一数组：{key,file?,title,radiant,dire,winner,match_time,duration,is_china,done,bo}
+
+    // 中国队（华语战队）
+    var CHINA = ['Xtreme Gaming', 'Vici Gaming', 'Team Resilience', 'LGD Gaming', 'BoomBoys'];
+    function isChina(name) { return CHINA.indexOf(name) >= 0; }
+
+    // 把 ti_index dict 转成数组，标注是否中国队/已复盘
+    function buildItems(dict) {
+      var arr = Object.keys(dict).map(function (k) {
+        var v = dict[k] || {};
+        var radiant = v.radiant || '';
+        var dire = v.dire || '';
+        var title = v.title || (radiant + ' vs ' + dire + ' 复盘');
+        return {
+          key: k,
+          file: v.file || '',
+          title: title,
+          radiant: radiant, dire: dire,
+          winner: v.winner || '',
+          match_time: (v.match_time || v.date || ''),
+          duration: (v.duration || v.duration_text || ''),
+          is_china: isChina(radiant) || isChina(dire),
+          done: !!v.done && !!v.file,
+          bo: v.bo || ''
+        };
+      });
+      // 默认按赛程时间降序（有 match_time 的在前）
+      arr.sort(function (a, b) { return (b.match_time || '').localeCompare(a.match_time || ''); });
+      return arr;
+    }
 
     // 比赛时间：兼容两种格式——纯数字(20260819-193000)或带符号(2026-08-18 21:30)
     // 优先显示 match_time（真实比赛时间），回退到生成时间 date
@@ -130,19 +160,82 @@
 
     function renderList() {
       if (!items.length) { root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>'; return; }
-      root.innerHTML = '<div class="review-list">' + items.map(function (it, i) {
-        return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
-          '<h3>' + esc(i === 0 ? '🆕 ' : '') + esc(it.title) + '</h3>' +
-          '<div class="meta"><span>🕐 比赛 ' + showTime(it) + '</span>' +
-          (it.bo ? '<span>📋 ' + esc(it.bo) + '</span>' : '') + '</div>' +
-          '<div class="src">由 AI 依据比赛数据生成，仅供娱乐参考。</div>' +
-          '</div>';
-      }).join('') + '</div>';
-      // 事件委托
-      root.querySelectorAll('.review-card').forEach(function (el) {
+      var chinaDone = items.filter(function (x) { return x.is_china && x.done; });
+      var chinaPending = items.filter(function (x) { return x.is_china && !x.done; });
+      var others = items.filter(function (x) { return !x.is_china; });
+      var chinaDoneCount = chinaDone.length;
+
+      var html = '';
+      // —— 中国队（默认展示已复盘）——
+      html += '<div class="review-group"><h3 class="group-title">🇨🇳 中国队复盘</h3>';
+      if (chinaDone.length) {
+        html += '<div class="review-list">' + chinaDone.map(function (it) {
+          return cardHtml(it, true);
+        }).join('') + '</div>';
+        if (chinaPending.length) {
+          html += '<p class="pending-note">另有 ' + chinaPending.length + ' 场中国队比赛复盘生成中，稍后上线。</p>';
+        }
+      } else {
+        html += '<div class="data-state">中国队复盘生成中，稍后上线，可先用「查看全部」浏览其他场次。</div>';
+      }
+      html += '</div>';
+
+      // —— 全部 TI 比赛（More 展开）——
+      var restCount = others.length + chinaPending.length;
+      html += '<div class="review-group all-group"><h3 class="group-title">🌍 全部 TI15 比赛（' + items.length + ' 场）</h3>';
+      if (!ALL_EXPANDED) {
+        html += '<button class="btn btn-ghost" id="more-btn">更多比赛（' + restCount + ' 场未展开）▾</button>' +
+          '<div class="review-list" id="more-list" style="display:none"></div>';
+      } else {
+        // 全部展开：已复盘在前
+        var allList = items.slice().sort(function (a, b) { return (b.done ? 1 : 0) - (a.done ? 1 : 0); });
+        html += '<div class="review-list">' + allList.map(function (it) { return cardHtml(it, true); }).join('') + '</div>';
+      }
+      html += '</div>';
+
+      root.innerHTML = html;
+
+      // 全国队复盘默认展示（含中国队里未复盘的，也显示出来更直观）
+      // 事件委托：已复盘卡片点开详情
+      root.querySelectorAll('.review-card[data-file]').forEach(function (el) {
         el.addEventListener('click', function () { openDetail(el.getAttribute('data-file')); });
         el.addEventListener('keydown', function (e) { if (e.key === 'Enter') openDetail(el.getAttribute('data-file')); });
       });
+      // 未复盘卡片：点击提示
+      root.querySelectorAll('.review-card.pending[data-key]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          alert('该场复盘正在生成中，稍后再来看吧。');
+        });
+      });
+      // More 按钮：展开全部
+      var moreBtn = document.getElementById('more-btn');
+      if (moreBtn) {
+        moreBtn.addEventListener('click', function () {
+          ALL_EXPANDED = true;
+          renderList();
+        });
+      }
+    }
+
+    function cardHtml(it, clickable) {
+      var flag = (it.radiant && isChina(it.radiant)) || (it.dire && isChina(it.dire)) ? '🇨🇳 ' : '';
+      var timeStr = it.match_time || '';
+      var durationStr = it.duration ? ' · ⏱ ' + it.duration : '';
+      if (it.done) {
+        return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
+          '<h3>' + esc(flag + it.title) + '</h3>' +
+          '<div class="meta"><span>🕐 比赛 ' + showTime({ match_time: it.match_time }) + '</span>' +
+          (durationStr ? '<span>' + durationStr + '</span>' : '') +
+          (isChina(it.radiant) || isChina(it.dire) ? '<span>🇨🇳 中国队</span>' : '') + '</div>' +
+          '<div class="src">' + (it.winner ? '🏆 ' + esc(it.winner) + ' 胜' : '') + ' · 点击查看复盘 →</div>' +
+          '</div>';
+      }
+      return '<div class="review-card pending" data-key="' + esc(it.key) + '" role="button" tabindex="0" aria-label="比赛：' + esc(it.title) + '">' +
+        '<h3>' + esc(flag + it.radiant + ' vs ' + it.dire) + '</h3>' +
+        '<div class="meta"><span>🕐 比赛 ' + showTime({ match_time: it.match_time }) + '</span>' +
+        (durationStr ? '<span>' + durationStr + '</span>' : '') + '</div>' +
+        '<div class="src">⏳ 复盘生成中 · 稍后上线</div>' +
+        '</div>';
     }
 
     function openDetail(file) {
@@ -154,14 +247,16 @@
         var m = body.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
         var title = item.title || '';
         if (m) body = body.slice(m[0].length);
+        var metaExtras = '';
+        if (item.duration) metaExtras += ' · ⏱ ' + esc(item.duration);
+        if (item.winner) metaExtras += ' · 🏆 ' + esc(item.winner) + ' 胜';
         detailRoot.innerHTML =
           '<div class="review-head">' +
           '<a class="back" href="#list-section">← 返回列表</a>' +
           '<h2 class="review-title">' + esc(title) + '</h2>' +
           '</div>' +
-          '<p class="review-meta">🕐 比赛时间 ' + showTime(item) +
-          (item.bo ? ' · 📋 ' + esc(item.bo) : '') +
-          ' · AI 依据比赛数据生成，仅供娱乐参考。</p>' +
+          '<p class="review-meta">🕐 比赛时间 ' + showTime(item) + metaExtras +
+          ' · AI 依据 OpenDota 比赛数据生成，仅供娱乐参考。</p>' +
           '<div class="review-body">' + window.marked.parse(body) + '</div>' +
           // 分享工具条
           '<div class="share-bar" style="margin-top:24px">' +
@@ -234,15 +329,16 @@
       if (!r.ok) throw new Error('http ' + r.status);
       return r.json();
     }).then(function (data) {
-      items = (data || []).slice();
-      if (metaEl) metaEl.textContent = '共 ' + items.length + ' 篇复盘';
+      items = buildItems((data && typeof data === 'object') ? data : {});
+      var doneCount = items.filter(function (x) { return x.done; }).length;
+      if (metaEl) metaEl.textContent = 'TI15 共 ' + items.length + ' 场 · 已出复盘 ' + doneCount + ' 篇';
       renderList();
       // hash 定位：reviews.html#file=xxx 自动打开对应复盘
       var m = location.hash.match(/file=([^&]+)/);
       if (m) {
         var f = decodeURIComponent(m[1]);
-        var hit = items.find(function (x) { return x.file === f; }) || items[0];
-        if (hit) setTimeout(function () { openDetail(hit.file); }, 100);
+        var hit = items.find(function (x) { return x.file === f; }) || items.find(function (x) { return x.done; });
+        if (hit && hit.file) setTimeout(function () { openDetail(hit.file); }, 100);
       }
     }).catch(function () {
       root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>';
