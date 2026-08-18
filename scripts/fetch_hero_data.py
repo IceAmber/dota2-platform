@@ -235,6 +235,59 @@ def compute_stats(raw: list) -> dict:
             "gap_count": len(gap_ids),
             "pro_sample_heroes": len(pro_only),
         },
+        "highlights": build_highlights(heroes, gap_ids),
+    }
+
+
+def build_highlights(heroes: list, gap_ids: list) -> dict:
+    """从已计算好的数据里提炼首页「本期版本要点」摘要。
+
+    全部取自现有计算字段、不额外拉数据；任一子项缺失时对应字段输出 null，
+    供前端做占位降级。version_label 为写死的当前版本号，改版时更新此处即可。
+    """
+    top_wr = top_pick = top_gap = None
+    hot_ban = None
+
+    # 全分段胜率最高（与胜率榜同口径：出场样本达标 + 胜率有效）
+    qualified = [h for h in heroes
+                 if h["pub_pick"] >= MIN_PUB_PICK and h["pub_winrate"] is not None]
+    if qualified:
+        top_wr = max(qualified, key=lambda h: h["pub_winrate"])
+
+    # 出场率最高
+    if heroes:
+        top_pick = max(heroes, key=lambda h: h["pub_pick"])
+
+    # 认知差最强：gap_ids 已按 winrate_rank 升序，第一个即胜率排名最高
+    if gap_ids:
+        by_id = {h["id"]: h for h in heroes}
+        top_gap = by_id.get(gap_ids[0])
+
+    # 路人禁选最高且进入出场前十的英雄；OpenDota 现多返回 0/None，
+    # 仅在存在 >0 禁选样本时才输出，避免「禁选 0」误导
+    top10_ids = {h["id"] for h in sorted(heroes, key=lambda h: h["pick_rank"])[:TOP_N]}
+    ban_cands = [h for h in heroes if h["id"] in top10_ids and (h["pub_ban"] or 0) > 0]
+    if ban_cands:
+        hot_ban = max(ban_cands, key=lambda h: h["pub_ban"])["name"]
+
+    return {
+        "version_label": "7.41e",          # 当前版本号（改版时更新）
+        "top_winrate_hero": ({
+            "name": top_wr["name"],
+            "winrate": top_wr["pub_winrate"],
+            "pick_rank": top_wr["pick_rank"],
+        } if top_wr else None),
+        "top_pick_hero": ({
+            "name": top_pick["name"],
+            "pick": top_pick["pub_pick"],
+            "winrate": top_pick["pub_winrate"],
+        } if top_pick else None),
+        "top_gap_hero": ({
+            "name": top_gap["name"],
+            "winrate": top_gap["pub_winrate"],
+            "pick_rank": top_gap["pick_rank"],
+        } if top_gap else None),
+        "hot_ban_hero": hot_ban,
     }
 
 
