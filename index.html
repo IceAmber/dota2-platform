@@ -53,7 +53,18 @@
       </div>
       <!-- JS 加载 herostats.json 后动态渲染；失败时保留静态占位 -->
       <div id="index-summary">
-        <div class="data-state"><span class="spinner"></span>正在加载周报摘要…</div>
+        <!-- 加载状态 / 失败占位（JS 控制） -->
+        <div id="index-state"><div class="data-state"><span class="spinner"></span>正在加载周报摘要…</div></div>
+        <!-- 统计卡片（JS 渲染） -->
+        <div id="index-stats"></div>
+        <!-- 本期版本速报：JS 用 herostats.json 的 highlights 填充；缺失/加载失败时显示友好占位 -->
+        <div id="index-takeaway" class="card" style="margin-top:18px" hidden>
+          <h3>📌 本期版本速报 <span id="tk-version"></span></h3>
+          <p id="tk-gap"></p>
+          <p id="tk-winrate"></p>
+          <p id="tk-pick"></p>
+          <p id="tk-ban" hidden></p>
+        </div>
       </div>
       <p class="meta-line" id="index-meta"></p>
     </section>

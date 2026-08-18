@@ -265,10 +265,14 @@
         container.innerHTML = '<div class="data-state">本期暂无满足条件的认知差英雄。</div>';
         return;
       }
-      var cards = list.map(function (h) {
+      // 列表已按胜率排名升序，首个即本期最强的「认知差」英雄（highlights.top_gap_hero）
+      var cards = list.map(function (h, i) {
+        var reco = i === 0
+          ? '<span class="badge-gap">本期最推荐</span>'
+          : '';
         return '<div class="gap-card">' + heroImg(h, 52) +
           '<div>' +
-          '<div class="gc-title">' + esc(h.name) + ' <span class="hc-en">' + esc(h.name_en) + '</span></div>' +
+          '<div class="gc-title">' + esc(h.name) + ' <span class="hc-en">' + esc(h.name_en) + '</span>' + reco + '</div>' +
           '<div class="gc-stats">' +
           '<span>路人胜率 <b>' + h.pub_winrate.toFixed(2) + '%</b></span>' +
           '<span>胜率排名 <b>#' + h.winrate_rank + '</b></span>' +
@@ -306,10 +310,67 @@
 
   /* ---------------- 4. index.html 周报摘要 ---------------- */
 
+  // 首页「本期版本要点」：用 herostats.json 的 highlights 填充；缺失时友好降级，不抛错
+  function renderTakeaway(el, highlights) {
+    if (!el) return;
+    var verEl = document.getElementById('tk-version');
+    var gapEl = document.getElementById('tk-gap');
+    var wrEl = document.getElementById('tk-winrate');
+    var pickEl = document.getElementById('tk-pick');
+    var banEl = document.getElementById('tk-ban');
+
+    if (!highlights) {
+      el.hidden = false;
+      if (verEl) verEl.textContent = '';
+      if (gapEl) gapEl.textContent = '本期版本要点数据暂缺，可查看完整周报。';
+      if (wrEl) wrEl.textContent = '';
+      if (pickEl) pickEl.textContent = '';
+      if (banEl) banEl.hidden = true;
+      return;
+    }
+
+    if (verEl) verEl.textContent = highlights.version_label ? '（' + highlights.version_label + '）' : '';
+
+    // 版本心得：有「认知差」英雄则给推荐文案，否则跟胜率榜更稳
+    var gap = highlights.top_gap_hero;
+    if (gapEl) gapEl.textContent = gap
+      ? '本期“认知差”推荐：' + gap.name + '——胜率 ' + Number(gap.winrate).toFixed(2) +
+        '% 却很少有人玩，想上分可以试试。'
+      : '本期无突出“认知差”英雄，跟胜率榜走更稳。';
+
+    // 胜率之王
+    var wr = highlights.top_winrate_hero;
+    if (wrEl) wrEl.textContent = wr
+      ? '全分段胜率最高：' + wr.name + '（' + Number(wr.winrate).toFixed(2) + '%）'
+      : '全分段胜率数据暂缺。';
+
+    // 最热英雄
+    var pk = highlights.top_pick_hero;
+    if (pickEl) pickEl.textContent = pk
+      ? '大家都在玩：' + pk.name + '（出场 ' + fmtNum(pk.pick) + ' 场）'
+      : '出场数据暂缺。';
+
+    // 热门禁选（可选字段，无则隐藏）
+    if (banEl) {
+      if (highlights.hot_ban_hero) {
+        banEl.textContent = '热门禁选：' + highlights.hot_ban_hero;
+        banEl.hidden = false;
+      } else {
+        banEl.hidden = true;
+      }
+    }
+
+    el.hidden = false;
+  }
+
   function initIndex() {
     var root = document.getElementById('index-summary');
     var metaEl = document.getElementById('index-meta');
     if (!root) return; // 非首页
+
+    var stateEl = document.getElementById('index-state');
+    var statsEl = document.getElementById('index-stats');
+    var tkEl = document.getElementById('index-takeaway');
 
     loadData().then(function (data) {
       var heroes = data.heroes;
@@ -322,7 +383,7 @@
       var gap = (data.gap_ids || []).length;
 
       // 统计卡片
-      root.innerHTML = '<div class="stat-row">' +
+      if (statsEl) statsEl.innerHTML = '<div class="stat-row">' +
         '<div class="stat-card"><div class="stat-num">' + data.summary.total_heroes +
         '</div><div class="stat-label">英雄总数</div></div>' +
         '<div class="stat-card"><div class="stat-num">' + fmtNum(data.total_pub_picks) +
@@ -347,11 +408,21 @@
         '</div>' +
         '<p style="margin-top:14px"><a class="btn btn-sm btn-primary" href="report.html">查看完整周报 →</a></p>';
 
+      // 本期版本要点
+      renderTakeaway(tkEl, data.highlights);
+
+      if (stateEl) stateEl.innerHTML = '';
       if (metaEl) metaEl.textContent = '摘要数据由 OpenDota 抓取生成，更新于 ' + data.generated_at;
     }).catch(function (err) {
-      // 数据不可用时替换为静态占位提示
-      root.innerHTML = '<div class="data-state"><span class="state-icon">📡</span>' +
+      // 数据不可用时替换为静态占位提示，速报区块也给出友好占位
+      if (stateEl) stateEl.innerHTML = '<div class="data-state"><span class="state-icon">📡</span>' +
         '周报数据暂不可用（' + esc(err.message) + '）。<br>首页为静态占位，点击「版本周报」查看历史数据。</div>';
+      if (statsEl) statsEl.innerHTML = '';
+      if (tkEl) {
+        tkEl.hidden = false;
+        tkEl.innerHTML = '<h3>📌 本期版本速报</h3>' +
+          '<p>周报数据暂不可用，本期版本要点暂无。</p>';
+      }
       if (metaEl) metaEl.textContent = '';
     });
   }
