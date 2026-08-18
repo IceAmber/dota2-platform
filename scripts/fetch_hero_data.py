@@ -128,6 +128,145 @@ def build_img_url(rel_path) -> str:
     return IMG_BASE + rel
 
 
+# --------------------------------------------------------------------------- #
+# 认知差英雄：高胜率出装路线（build_guide）
+# --------------------------------------------------------------------------- #
+# 数据来源：OpenDota /heroes/{id}/itemPopularity，返回 {item_id: times}（出场次数）。
+# 该接口不返回胜负，无法直接算胜率；我们用「热度」＝高胜率玩家主流选择来排序，
+# 每个阶段取最热的前几件，拼成一条攻略式出装路线。
+#
+# 物品 id 由 /api/constants/items 提供（值含 id 字段）；中文名用 CN_ITEMS 映射，
+# 映射不到的取 OpenDota 英文 dname（前端优先显示图标，图标国际通用）。
+
+# 常用核心装备：英文 dname -> 国服中文名（仅覆盖认知差英雄常出的关键件，够用即可）
+CN_ITEMS = {
+    "Blink Dagger": "跳刀", "Black King Bar": "黑皇杖", "Aghanim's Scepter": "神杖",
+    "Aghanim's Shard": "魔晶", "Boots of Travel": "飞鞋", "Power Treads": "假腿",
+    "Phase Boots": "相位", "Arcane Boots": "秘法鞋", "Tranquil Boots": "草鞋",
+    "Guardian Greaves": "卫士大鞋", "Sange and Yasha": "双刀", "Yasha and Kaya": "双刀K",
+    "Sange and Kaya": "双刀S", "Silver Edge": "大隐刀", "Shadow Blade": "隐刀",
+    "Orchid Malevolence": "紫怨", "Bloodthorn": "大紫怨", "Nullifier": "否决",
+    "Monkey King Bar": "金箍棒", "Daedalus": "大炮", "Crystalys": "水晶剑",
+    "Maelstrom": "雷锤", "Mjollnir": "大雷锤", "Gleipnir": "电锤网",
+    "Hurricane Pike": "大推推", "Force Staff": "推推", "Dragon Lance": "魔龙枪",
+    "Eul's Scepter of Divinity": "风杖", "Rod of Atos": "阿托斯", "Scythe of Vyse": "羊刀",
+    "Sheepstick": "羊刀", "Veil of Discord": "纷争面纱", "Spirit Vessel": "魂灵之瓮",
+    "Urn of Shadows": "骨灰盒", "Bottle": "瓶子", "Magic Wand": "魔棒",
+    "Wraith Pact": "祭品", "Vladmir's Offering": "祭品", "Pipe of Insight": "笛子",
+    "Mekansm": "梅肯", "Assault Cuirass": "强袭", "Shiva's Guard": "冰甲",
+    "Heart of Tarrasque": "龙心", "Satanic": "撒旦", "Skull Basher": "晕锤",
+    "Abyssal Blade": "大晕锤", "Echo Sabre": "回音刀", "Armlet of Mordiggian": "臂章",
+    "Desolator": "暗灭", "Assault Cuirass": "强袭", "Diffusal Blade": "散失",
+    "Radiance": "辉耀", "Hand of Midas": "点金", "Linken's Sphere": "林肯",
+    "Aeon Disk": "盘子", "Lotus Orb": "莲花", "Crimson Guard": "赤红甲",
+    "Ethereal Blade": "虚灵刀", "Dagon": "达贡", "Octarine Core": "玲珑心",
+    "Refresher Orb": "刷新球", "Butterfly": "蝴蝶", "Manta Style": "分身斧",
+    "Sange": "散华", "Yasha": "夜叉", "Kaya": "慧光", "Helm of the Dominator": "支配头盔",
+    "Mask of Madness": "疯脸", "Moon Shard": "银月", "Gem of True Sight": "真视宝石",
+    "Boots of Bearing": "大飞鞋", "Soul Ring": "魂戒", "Magic Stick": "魔棒",
+    "Bracer": "护腕", "Null Talisman": "空灵挂件", "Wraith Band": "系带",
+    "Iron Branch": "树枝", "Tango": "吃树", "Clarity": "小蓝", "Enchanted Mango": "芒果",
+    "Faerie Fire": "仙灵之火", "Flask": "大药", "Circlet": "圆环", "Quelling Blade": "补刀斧",
+    "Boots of Speed": "鞋", "Glimmer Cape": "微光", "Force Staff": "推推",
+    "Ghost Scepter": "绿杖", "Solar Crest": "凝霜", "Medallion of Courage": "勇气勋章",
+    "Heaven's Halberd": "天堂", "Wind Waker": "大飞鞋", "Aghanim's Blessing": "神杖祝福",
+    "Revenant's Brooch": "游魂胸针", "Parasma": "帕拉斯玛", "Khanda": "坎达",
+    "Harpoon": "鱼叉", "Phylactery": "护符", "Kaya and Sange": "双刀K",
+    "Swift Blink": "迅捷跳刀", "Overwhelming Blink": "奥数跳刀", "Arcane Blink": "秘法跳刀",
+    "Disperser": "驱散", "Bloodstone": "血精石", "Eternal Shroud": "永恒面罩",
+    "Gauntlets of Strength": "力量护腕", "Slippers of Agility": "敏捷便鞋",
+    "Mantle of Intelligence": "智力斗篷", "Chainmail": "锁子甲", "Blades of Attack": "攻击之爪",
+    "Ogre Axe": "食人魔之斧", "Staff of Wizardry": "法师长袍", "Blade of Alacrity": "欢欣之刃",
+    "Belt of Strength": "力量腰带", "Robe of the Magi": "法师长袍",
+    "Band of Elvenskin": "精灵布带", "Mithril Hammer": "秘银锤", "Broadsword": "阔剑",
+    "Claymore": "大剑", "Ring of Health": "治疗指环", "Void Stone": "虚无宝石",
+    "Soul Booster": "灵魂之靴", "Point Booster": "精气之球", "Vitality Booster": "活力之球",
+    "Energy Booster": "能量之球", "Hyperstone": "振魂石", "Plate Mail": "锁子甲",
+    "Blade Mail": "刃甲", "Sacred Relic": "圣者遗物", "Reaver": "掠夺者之斧",
+    "Eaglesong": "鹰歌弓", "Mystic Staff": "神秘法杖", "Ultimate Orb": "极限法球",
+    "Gloves of Haste": "加速手套", "Cloak": "斗篷", "Ring of Protection": "守护指环",
+    "Ring of Regen": "回复戒指", "Sage's Mask": "贤者面罩", "Headdress": "回复头巾",
+    "Buckler": "圆盾", "Perseverance": "坚韧球", "Battle Fury": "狂战斧",
+    "Reaver": "掠夺者", "Demon Edge": "恶魔刀锋", "Quarterstaff": "铁艺长矛",
+    "Javelin": "标枪", "Talisman of Evasion": "闪避护符", "Crown": "王冠",
+    "Orb of Venom": "毒球", "Ring of Basilius": "王者之戒", "Oblivion Staff": "钝刀",
+    "Kaya and Sange": "双刀K", "Yasha and Kaya": "双刀Y", "Boots of Bearing": "大飞鞋",
+}
+
+
+# 各阶段取胜率最高的前 N 件
+BUILD_PER_PHASE = 4
+# 阶段性标签
+PHASES = [("start_game_items", "出门装"), ("early_game_items", "前期"),
+          ("mid_game_items", "中期"), ("late_game_items", "后期")]
+
+
+def augment_build_guides(payload: dict) -> None:
+    """为认知差英雄附加高胜率出装路线（build_guide）。就地修改 payload['heroes']。
+
+    失败采用降级策略：单个英雄出装拉不到则跳过该英雄（保持原有数据），
+    整体 items 常量拉不到则全部跳过，绝不阻断主流程。
+    """
+    ITEMS_API = "https://api.opendota.com/api/constants/items"
+    try:
+        items_raw = fetch_json(ITEMS_API)
+    except Exception as exc:
+        log(f"[warn] 拉取物品常量失败，跳过出装路线：{type(exc).__name__}: {exc}")
+        return
+
+    # 建 id -> 物品信息 索引；同时保存 dname 备用
+    item_by_id = {}
+    for _, v in items_raw.items():
+        if isinstance(v, dict) and "id" in v and v["id"] is not None:
+            item_by_id[int(v["id"])] = v
+
+    by_id = {h["id"]: h for h in payload["heroes"]}
+    gaps = [h for h in payload["heroes"] if h.get("is_gap")]
+    log(f"[info] 为 {len(gaps)} 个认知差英雄拉取出装…")
+
+    for hero in gaps:
+        hid = hero["id"]
+        try:
+            pop = fetch_json(f"https://api.opendota.com/api/heroes/{hid}/itemPopularity")
+        except Exception as exc:
+            log(f"[warn] {hero['name']} 出装拉取失败，跳过：{type(exc).__name__}: {exc}")
+            hero["build_guide"] = None
+            continue
+
+        guide = {}
+        for phase_key, phase_label in PHASES:
+            items = pop.get(phase_key) or {}
+            ranked = []
+            # itemPopularity 返回 {item_id: times}，value 为出场次数（热度），不带胜负。
+            # 我们按热度(出场次数)降序取最热出装——即「高胜率玩家实际在出的装备」。
+            for id_str, times in items.items():
+                try:
+                    iid = int(id_str)
+                except (ValueError, TypeError):
+                    continue
+                if not isinstance(times, (int, float)) or times <= 0:
+                    continue
+                meta = item_by_id.get(iid)
+                dname = (meta.get("dname") or "") if meta else ""
+                ranked.append({
+                    "id": iid,
+                    "dname": dname,
+                    "cn": CN_ITEMS.get(dname, dname),   # 有中文映射用中文，否则英文
+                    "img": build_img_url((meta.get("img") or "") if meta else ""),
+                    "times": int(times),
+                })
+            # 按热度（出场次数）降序，取前 N 件（最热 = 高胜率玩家的主流选择）
+            ranked.sort(key=lambda x: x["times"], reverse=True)
+            guide[phase_key] = {
+                "label": phase_label,
+                "items": ranked[:BUILD_PER_PHASE],
+            }
+        hero["build_guide"] = guide
+        log(f"[ok] {hero['name']} 出装路线已生成（按热度）")
+
+    # 可选：生成一张出装路线长图覆盖到同目录（后续扩展）
+
+
 def fetch_json(url: str) -> list:
     """请求 JSON 接口，带超时与退避重试。全部失败则抛出最后一次异常。"""
     last_err = None
@@ -660,6 +799,8 @@ def main() -> int:
         return 1
 
     payload = compute_stats(raw)
+    # 为认知差英雄附加高胜率出装路线（会额外调 OpenDota itemPopularity，失败自动降级）
+    augment_build_guides(payload)
     text = json.dumps(payload, ensure_ascii=False, indent=2)
 
     atomic_write(OUTPUT_JSON, text)
