@@ -780,3 +780,9 @@ table.data-table {
 .review-card .meta { font-size: .78rem; color: var(--text-dim); display: flex; gap: 10px; flex-wrap: wrap; }
 .review-card .src { font-size: .78rem; color: var(--text-dim); margin-top: 8px; }
 .review-card a { color: inherit; }
+.review-group { margin-bottom: 26px; }
+.group-title { font-size: 1.15rem; color: var(--gold); margin: 0 0 12px; }
+.pending-note { font-size: .82rem; color: var(--text-dim); margin-top: 14px; }
+.review-card.pending { opacity: .6; cursor: default; }
+.review-card.pending:hover { transform: none; border-color: var(--border); }
+#more-btn { margin-bottom: 14px; }
