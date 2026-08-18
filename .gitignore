@@ -13,3 +13,4 @@ cron.log
 # （避免 Actions 自动提交数据与手动 push 冲突）
 site/data/herostats.json
 site/data/weekly_report.md
+site/data/weekly_report.png

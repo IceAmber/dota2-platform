@@ -42,6 +42,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent          # 仓库根目录
 OUTPUT_JSON = BASE_DIR / "site" / "data" / "herostats.json"
 OUTPUT_MD = BASE_DIR / "site" / "data" / "weekly_report.md"
+OUTPUT_PNG = BASE_DIR / "site" / "data" / "weekly_report.png"
 
 API_URL = "https://api.opendota.com/api/heroStats"          # OpenDota 数据源
 HTTP_TIMEOUT = 25           # 单次请求超时（秒）
@@ -365,6 +366,269 @@ def render_markdown(payload: dict) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# 可选：把「版本周报」渲染成一张竖向长图（便于发贴吧 / NGA / B站）
+# --------------------------------------------------------------------------- #
+# 依赖 Pillow：pip install pillow。未安装时 render_image 返回 None，不影响其它功能。
+
+def _find_cjk_font() -> str:
+    """探测可用的中文字体路径，供 Pillow 使用。找不到则返回空串（图片会缺中文）。"""
+    import glob
+    candidates = [
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",      # Debian/Ubuntu 文泉驿
+        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/System/Library/Fonts/PingFang.ttc",                # macOS
+        "C:/Windows/Fonts/msyh.ttc",                          # Windows 微软雅黑
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    # 兜底：任意 glob 到的 .ttc/.ttf/.otf
+    for pat in ("/usr/share/fonts/**/*.tt[cf]", "/usr/share/fonts/**/*.otf"):
+        hits = sorted(glob.glob(pat, recursive=True))
+        if hits:
+            return hits[0]
+    return ""
+
+
+def render_image(payload: dict) -> str:
+    """把周报数据渲染成一张深色电竞风竖向长图，返回写入路径；失败返回空串。"""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        log("[warn] 未安装 Pillow，跳过周报长图生成（pip install pillow 可启用）")
+        return ""
+
+    W = 900                       # 画布宽
+    MARGIN = 48                   # 边距
+    C_BG = (10, 13, 20)           # 背景深蓝黑
+    C_CARD = (22, 27, 40)         # 卡片
+    C_LINE = (42, 49, 64)         # 分隔线
+    C_TITLE = (255, 255, 255)     # 标题白
+    C_ACCENT = (255, 90, 78)      # 主色（DOTA 红）
+    C_GOLD = (255, 177, 0)        # 强调金色
+    C_TEXT = (232, 234, 240)      # 正文
+    C_DIM = (154, 163, 178)       # 次要文字
+    LINE_H = 40                   # 行高
+    TBL_H = 34                    # 表格行高
+
+    font_path = _find_cjk_font()
+    if not font_path:
+        log("[warn] 未找到中文字体，跳过周报长图生成")
+        return ""
+
+    def F(size, bold=False):
+        return ImageFont.truetype(font_path, size)
+
+    f_title = F(40, bold=True)
+    f_sec = F(28, bold=True)
+    f_head = F(22, bold=True)
+    f_body = F(22)
+    f_small = F(18)
+
+    # 收集所有绘制行，先计算总高度
+    ROWS = []   # (type, text)  type: title/geo/blank/section/sub/card/gap/tblitem/summary/meta/h1/h2/table
+
+    heroes = payload["heroes"]
+
+    def add(*rows):
+        ROWS.extend(rows)
+
+    def top_wr():
+        return sorted([h for h in heroes if h["winrate_rank"]], key=lambda h: h["winrate_rank"])[:TOP_N]
+    def top_pick():
+        return sorted(heroes, key=lambda h: h["pick_rank"])[:TOP_N]
+    def top_pro():
+        return sorted([h for h in heroes if h["pro_rank"]], key=lambda h: h["pro_rank"])[:TOP_N]
+    def gaps():
+        return sorted([h for h in heroes if h["is_gap"]], key=lambda h: h["winrate_rank"])
+
+    def fmt(v):
+        return f"{v:,}" if isinstance(v, int) else v
+
+    add(("title", f"DOTA2 版本阵容周报 · {payload['data_date']}"))
+    add(("geo", "数据来源 OpenDota · 非官方社区项目 · 国服入坑与版本指南"))
+    add(("blank", ""))
+
+    add(("section", "🏆 一、全分段路人胜率 TOP10"))
+    add(("sub", "胜率 = 胜场/出场，样本 ≥5000 场"))
+    add(("thead", ("排名", "英雄", "胜率", "出场(万)", "备注")))
+    for h in top_wr():
+        flag = "🔶认知差" if h["is_gap"] else ""
+        add(("trow", (h["winrate_rank"], h["name"], f"{h['pub_winrate']:.2f}%",
+                      f"{fmt(round(h['pub_pick']/10000,1))}", flag)))
+    add(("blank", ""))
+
+    add(("section", "🔥 二、路人局出场率 TOP10"))
+    add(("theadt2", ("排名", "英雄", "出场(万)", "胜率")))
+    for h in top_pick():
+        wr = f"{h['pub_winrate']:.2f}%" if h["pub_winrate"] is not None else "—"
+        add(("trow2", (h["pick_rank"], h["name"], f"{fmt(round(h['pub_pick']/10000,1))}", wr)))
+    add(("blank", ""))
+
+    add(("section", "💎 三、认知差英雄（又强又少人玩 → 上分密码）"))
+    if gaps():
+        for h in gaps():
+            add(("gap", f"{h['name']}（{h['name_en']}）｜胜率 {h['pub_winrate']:.2f}% · 出场 #{h['pick_rank']} · 胜率 #{h['winrate_rank']}"))
+    else:
+        add(("gap", "本期暂无满足条件的认知差英雄。"))
+    add(("blank", ""))
+
+    add(("section", "📊 四、职业参考（样本稀疏，谨慎参考）"))
+    add(("theadp", ("排名", "英雄", "职业出场", "职业胜率", "禁用")))
+    for h in top_pro():
+        wr = f"{h['pro_winrate']:.2f}%" if h["pro_winrate"] is not None else "—"
+        add(("trowp", (h["pro_rank"], h["name"], fmt(h["pro_pick"]), wr, fmt(h["pro_ban"]))))
+    add(("blank", ""))
+
+    add(("section", "✅ 本期小结"))
+    add(("card", "1. 新手入坑首选：骷髅王、复仇之魂、巫妖（简单强容错高）"))
+    add(("card", "2. 想上分跟 meta 走：胜率 TOP10 里挑你会的那个。"))
+    add(("card", "3. 想剑走偏锋上分：认准「认知差」英雄（吃版本红利）。"))
+    add(("card", "4. 数据为抓取时点快照，仅供参考；职业样本在赛事淡季偏少。"))
+    add(("blank", ""))
+
+    add(("section", "ℹ️ 数据与声明"))
+    add(("card2", f"数据来源：OpenDota API（heroStats，{payload['generated_at']}），全量 {payload['summary']['total_heroes']} 英雄"))
+    add(("card2", "本站为非官方社区项目，数据仅供参考，与 Valve / 完美世界无关。"))
+    add(("blank", ""))
+    add(("card5", "🏠 每周更新 · iceamber.github.io/dota2-platform ｜ 关注不迷路"))
+
+    # ---- 计算总高度 ----
+    def row_h(r):
+        t = r[0]
+        if t == "title": return 58
+        if t == "geo": return 30
+        if t == "section": return 46
+        if t == "sub": return 26
+        if t == "blank": return 14
+        if t in ("thead", "theadt2", "theadp", "trow", "trow2", "trowp"): return TBL_H
+        if t == "gap": return 44
+        if t in ("card", "card2", "card5"): return 52
+        return 40
+    H = MARGIN * 2 + sum(row_h(r) for r in ROWS)
+
+    img = Image.new("RGB", (W, H), C_BG)
+    d = ImageDraw.Draw(img)
+
+    inner_left = MARGIN
+    table_right = W - MARGIN
+    text_w = table_right - inner_left
+
+    def wrap(txt, font, max_w):
+        """按像素宽度换行（Pillow 不支持自动换行，手动测量）。"""
+        lines = []
+        for para in txt.split("\n"):
+            cur = ""
+            for ch in para:
+                if d.textlength(cur + ch, font=font) <= max_w:
+                    cur += ch
+                else:
+                    lines.append(cur); cur = ch
+            if cur:
+                lines.append(cur)
+        return lines
+
+    y = MARGIN
+
+    def draw_text(txt, font, fill, x, y, max_w=None):
+        for ln in wrap(txt, font, max_w or (text_w - (x - inner_left))):
+            d.text((x, y), ln, font=font, fill=fill)
+            y += font.size + 8
+        return y
+
+    # 表格列宽（按列数分配）
+    col_counts = {"theadt2": 4, "thead": 5, "theadp": 5}
+
+    def draw_table(rows, ncols, widths, row_y, header_font, body_font):
+        row_hh = TBL_H
+        # 表头背景
+        d.rectangle([inner_left, row_y, table_right, row_y + row_hh], fill=(40, 48, 66))
+        y2 = row_y + (row_hh - header_font.size) / 2
+        x = inner_left
+        for idx, col_head in enumerate(rows[0]):
+            cv = str(col_head)
+            d.text((x, y2 + 4), cv, font=header_font, fill=C_GOLD)
+            x += widths[idx]
+        y2 = row_y + row_hh
+        for data_row in rows[1:]:
+            d.rectangle([inner_left, y2, table_right, y2 + row_hh], fill=C_CARD)
+            yy = y2 + (row_hh - body_font.size) / 2
+            xx = inner_left
+            for idx, cell in enumerate(data_row):
+                cv = str(cell)
+                fill = C_ACCENT if idx == 0 else (C_TEXT if idx <= 2 else C_DIM)
+                d.text((xx, yy + 4), cv, font=body_font, fill=fill)
+                xx += widths[idx]
+            y2 += row_hh
+        return y2
+
+    # 绘制主体
+    # 先做两遍：把表格分组成区块，逐行画。
+    tbl = []      # (ncols, rows) 连续的表格行集合
+    i = 0
+    # 简单起见：遇到 thead 开头，收集后续 trow 直到非表格行
+    proc = []
+    j = 0
+    while j < len(ROWS):
+        t = ROWS[j][0]
+        if t in ("thead", "theadt2", "theadp"):
+            ncols = col_counts[t]
+            rows = [ROWS[j][1]]
+            k = j + 1
+            while k < len(ROWS) and ROWS[k][0] in ("trow", "trow2", "trowp"):
+                rows.append(ROWS[k][1])
+                k += 1
+            proc.append(("table", ncols, rows))
+            j = k
+        else:
+            proc.append(("row", ROWS[j]))
+            j += 1
+
+    for item in proc:
+        if item[0] == "row":
+            r = item[1]
+            t = r[0]
+            if t == "title":
+                y = draw_text(r[1], f_title, C_TITLE, inner_left, y)
+            elif t == "geo":
+                d.line([inner_left, y + 6, table_right, y + 6], fill=C_GOLD, width=3)
+                y = draw_text(r[1], f_small, C_DIM, inner_left, y + 14)
+            elif t == "section":
+                d.rectangle([inner_left, y, inner_left + 8, y + 30], fill=C_ACCENT)
+                y = draw_text(r[1], f_sec, C_TITLE, inner_left + 20, y)
+            elif t == "sub":
+                y = draw_text(r[1], f_small, C_DIM, inner_left + 4, y)
+            elif t == "gap":
+                txt_h = f_body.size + 8 + 14
+                d.rounded_rectangle([inner_left, y, table_right, y + txt_h + 10], radius=8, fill=(46, 34, 18), outline=(120, 84, 20))
+                y = draw_text(r[1], f_body, C_GOLD, inner_left + 14, y + 8, max_w=text_w - 28)
+            elif t in ("card", "card2"):
+                txt_h = f_body.size + 8 + 14
+                d.rounded_rectangle([inner_left, y, table_right, y + txt_h + 10], radius=8, fill=C_CARD)
+                y = draw_text(r[1], f_body, C_TEXT, inner_left + 14, y + 8, max_w=text_w - 28)
+            elif t == "card5":
+                txt_h = f_body.size + 8 + 14
+                d.rounded_rectangle([inner_left, y, table_right, y + txt_h + 10], radius=8, fill=(34, 20, 12), outline=C_ACCENT)
+                y = draw_text(r[1], f_body, C_GOLD, inner_left + 14, y + 8, max_w=text_w - 28)
+            # blank 不做绘制，仅占位(y 自动推进)
+        else:
+            ncols, rows = item[1], item[2]
+            # 根据列数给列宽
+            if ncols == 4:
+                widths = [90, 240, 160, 140]
+            else:
+                widths = [90, 240, 150, 150, 140]
+            y = draw_table(rows, ncols, widths, y, f_head, f_body)
+            y += 6
+
+    OUTPUT_PNG.parent.mkdir(parents=True, exist_ok=True)
+    img.save(OUTPUT_PNG, "PNG")
+    return str(OUTPUT_PNG)
+
+
+# --------------------------------------------------------------------------- #
 # 主流程
 # --------------------------------------------------------------------------- #
 
@@ -375,6 +639,8 @@ def main() -> int:
     )
     parser.add_argument("--markdown", action="store_true",
                         help="同时生成 site/data/weekly_report.md 周报文本")
+    parser.add_argument("--image", action="store_true",
+                        help="同时生成 site/data/weekly_report.png 周报长图（需 Pillow）")
     parser.add_argument("--api-url", default=API_URL,
                         help=f"覆盖数据源地址（默认 {API_URL}）")
     args = parser.parse_args()
@@ -403,6 +669,11 @@ def main() -> int:
     if args.markdown:
         atomic_write(OUTPUT_MD, render_markdown(payload))
         log(f"[ok] 已写入 {OUTPUT_MD.relative_to(BASE_DIR)}")
+
+    if args.image or args.markdown:
+        png = render_image(payload)
+        if png:
+            log(f"[ok] 已写入周报长图 {OUTPUT_PNG.relative_to(BASE_DIR)}")
 
     # stdout 输出机器可读摘要
     print(json.dumps({
