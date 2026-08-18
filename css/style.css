@@ -689,3 +689,66 @@ table.data-table {
   cursor: pointer;
 }
 .qr-close:hover { color: #000; }
+
+/* ================= 认知差英雄：可点击卡片 ================= */
+.gap-card.js-gap-card { cursor: pointer; transition: transform 0.12s, border-color 0.12s; }
+.gap-card.js-gap-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.gap-card.js-gap-card.has-guide .gc-hint::after { content: ' 👆'; }
+
+/* ================= 认知差英雄：详情弹窗 ================= */
+#gap-modal {
+  position: fixed; inset: 0; z-index: 998;
+  background: rgba(0, 0, 0, 0.7);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+#gap-modal.open { display: flex; }
+.gap-modal-box {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 560px; width: 100%;
+  max-height: 84vh; overflow-y: auto;
+  padding: 26px 26px 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.gm-close {
+  position: absolute; top: 10px; right: 14px;
+  font-size: 1.6rem; line-height: 1; background: none; border: none;
+  color: var(--text-dim); cursor: pointer;
+}
+.gm-close:hover { color: var(--text); }
+.gm-body h4 {
+  margin: 18px 0 8px; font-size: 1.05rem; color: var(--gold);
+  border-bottom: 1px solid var(--border); padding-bottom: 6px;
+}
+.gm-body p { color: var(--text-dim); line-height: 1.6; margin: 8px 0; }
+.gm-body b { color: var(--text); }
+.gm-head { display: flex; gap: 12px; align-items: center; margin-bottom: 4px; }
+.gm-name { font-size: 1.3rem; font-weight: 800; }
+.gm-meta { color: var(--accent); font-size: 0.9rem; margin-top: 4px; }
+
+/* 出装区块 */
+.gm-guide { margin-top: 4px; }
+.gm-phase {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 0; border-bottom: 1px dashed var(--border);
+}
+.gm-phase:last-child { border-bottom: none; }
+.gm-phase-label {
+  flex: 0 0 52px; font-size: 0.85rem; font-weight: 700;
+  color: var(--text-dim);
+}
+.gm-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.gm-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px 10px; min-width: 68px; text-align: center;
+}
+.gm-item-img {
+  width: 36px; height: 36px; object-fit: contain;
+  border-radius: 6px; background: #fff1; margin-bottom: 4px;
+}
+.gm-item span { font-size: 0.75rem; color: var(--text); max-width: 72px; }
+.gm-noguide { font-size: 0.9rem; }

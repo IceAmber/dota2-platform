@@ -270,7 +270,9 @@
         var reco = i === 0
           ? '<span class="badge-gap">本期最推荐</span>'
           : '';
-        return '<div class="gap-card">' + heroImg(h, 52) +
+        var hasGuide = h.build_guide ? ' has-guide' : '';
+        return '<div class="gap-card js-gap-card' + hasGuide + '" data-id="' + h.id + '" role="button" tabindex="0" aria-label="查看 ' + esc(h.name) + ' 详情">' +
+          heroImg(h, 52) +
           '<div>' +
           '<div class="gc-title">' + esc(h.name) + ' <span class="hc-en">' + esc(h.name_en) + '</span>' + reco + '</div>' +
           '<div class="gc-stats">' +
@@ -278,10 +280,74 @@
           '<span>胜率排名 <b>#' + h.winrate_rank + '</b></span>' +
           '<span>出场排名 <b>#' + h.pick_rank + '</b></span>' +
           '</div>' +
-          '<div class="gc-hint">胜率强但出场少 → 冷门强势，本周上分可试</div>' +
+          '<div class="gc-hint">胜率强但出场少 → 冷门强势，本周上分可试' +
+          (hasGuide ? ' · 点击给出装' : '') + '</div>' +
           '</div></div>';
       }).join('');
       container.innerHTML = '<div class="gap-grid">' + cards + '</div>';
+      // 事件委托：点击/键盘打开详情弹窗
+      container.addEventListener('click', function (e) {
+        var card = e.target.closest('.js-gap-card');
+        if (card && card.dataset.id) openGapModal(card.dataset.id);
+      });
+    }
+
+    // 打开「认知差英雄」详情弹窗
+    function openGapModal(id) {
+      var modal = document.getElementById('gap-modal');
+      if (!modal) return;
+      var hero = byId[Number(id)];
+      if (!hero) return;
+
+      var body = modal.querySelector('.gm-body');
+      // 为什么是认知差：用现成的胜率/出场排名动态生成解释
+      var whyHtml =
+        '<h4>为什么是「认知差」？</h4>' +
+        '<p>路人胜率 <b>' + hero.pub_winrate.toFixed(2) + '%' + '</b> 排进前 25（#' +
+        hero.winrate_rank + '），但出场率只排到 <b>#' + hero.pick_rank +
+        '</b>——胜率这么高却没什么人选，通常是被低估的版本强势英雄（冷门强势）。</p>';
+
+      // 出装路线
+      var guideHtml = '';
+      var g = hero.build_guide;
+      if (g) {
+        guideHtml = '<h4>高胜率出装路线（分阶段）</h4><div class="gm-guide">';
+        ["start_game_items", "early_game_items", "mid_game_items", "late_game_items"].forEach(function (pk) {
+          var ph = g[pk];
+          if (!ph) return;
+          var items = (ph.items || []).map(function (it) {
+            var img = it.img ? '<img class="gm-item-img" src="' + it.img + '" alt="' + esc(it.cn) + '">' : '';
+            return '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span></div>';
+          }).join('');
+          if (items) guideHtml += '<div class="gm-phase"><span class="gm-phase-label">' + esc(ph.label) + '</span><div class="gm-items">' + items + '</div></div>';
+        });
+        guideHtml += '</div>';
+      } else {
+        guideHtml = '<p class="gm-noguide">本期暂无该英雄的出装数据。</p>';
+      }
+
+      body.innerHTML = '<div class="gm-head">' + heroImg(hero, 56) +
+        '<div><div class="gm-name">' + esc(hero.name) + ' <span class="hc-en">' + esc(hero.name_en) + '</span></div>' +
+        '<div class="gm-meta">路人胜率 ' + hero.pub_winrate.toFixed(2) + '% · 出场率排名 #' + hero.pick_rank + '</div></div></div>' +
+        whyHtml + guideHtml;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGapModal() {
+      var modal = document.getElementById('gap-modal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // 弹窗关闭绑定（report 页）
+    var gapModal = document.getElementById('gap-modal');
+    if (gapModal) {
+      var gClose = gapModal.querySelector('.gm-close');
+      if (gClose) gClose.addEventListener('click', closeGapModal);
+      gapModal.addEventListener('click', function (e) { if (e.target === gapModal) closeGapModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGapModal(); });
     }
 
     // 顶部"显示条数"切换
@@ -436,10 +502,34 @@
     if (!bar) return;
     var url = window.location.href;
 
-    // 下载图片：新窗口打开周报长图，用户可另存
+    // 下载长图：用 html2canvas 把当前周报页面内容渲染成 PNG（所见即所得），再触发下载
     var dl = bar.querySelector('.js-share-dl');
     if (dl) dl.addEventListener('click', function () {
-      window.open('data/weekly_report.png', '_blank');
+      if (typeof html2canvas !== 'function') {
+        // 兜底：库未加载时退回打开生成的 PNG 长图
+        window.open('data/weekly_report.png', '_blank');
+        return;
+      }
+      var target = document.querySelector('main') || document.body;
+      var btn = dl;
+      btn.textContent = '⏳ 生成中…';
+      btn.disabled = true;
+      html2canvas(target, {
+        backgroundColor: '#0a0d14',
+        scale: 2,
+        useCORS: true,
+        logging: false
+      }).then(function (canvas) {
+        var a = document.createElement('a');
+        a.download = 'dota2-weekly-report.png';
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      }).catch(function () {
+        window.open('data/weekly_report.png', '_blank');
+      }).finally(function () {
+        btn.textContent = '🖼️ 下载长图';
+        btn.disabled = false;
+      });
     });
 
     // 复制链接
