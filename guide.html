@@ -44,47 +44,73 @@
         <b>一句话结论：</b>你需要同时有「Steam/蒸汽平台账号」+「完美通行证账号」，并把两者绑定，国服才算激活。
         这一步最容易卡住，别跳步。
       </div>
+
+      <!-- 步骤目录：点一步直达对应步骤 -->
+      <nav class="guide-toc" aria-label="目录">
+        <b>跳转到对应步骤：</b>
+        <a href="#step1">1. 注册 Steam/蒸汽平台</a>
+        <a href="#step2">2. 注册完美通行证+实名</a>
+        <a href="#step3">3. 绑定账号</a>
+        <a href="#step4">4. 启动游戏·设置参数</a>
+      </nav>
     </section>
 
     <!-- ============ 一、分步注册流程 ============ -->
     <section class="section section-alt">
       <div class="section-title"><h2>一、分步注册流程</h2><span class="sub">照着 1→2→3→4 做</span></div>
       <div class="steps">
-        <div class="step">
+        <div class="step" id="step1">
           <div class="step-num"></div>
           <div class="step-body">
-            <h3>注册 Steam / 蒸汽平台账号</h3>
+            <h3>① 注册 Steam / 蒸汽平台账号</h3>
             <ul>
-              <li>打开 Steam 或蒸汽平台客户端，用邮箱注册：填邮箱 → 设密码 → 邮箱验证。</li>
+              <li>打开官方下载页，下载并安装客户端，用邮箱注册：填邮箱 → 设密码 → 邮箱验证。</li>
+              <li>
+                <span class="dl-links">
+                  <a class="btn btn-sm btn-primary" href="https://store.steampowered.com/about/" target="_blank" rel="noopener">⬇ Steam 官方下载</a>
+                  <a class="btn btn-sm btn-ghost" href="https://store.steamchina.com/" target="_blank" rel="noopener">⬇ 蒸汽平台下载（国服推荐）</a>
+                </span>
+              </li>
               <li><b>建议：</b>如果长期玩国服，直接用<b>蒸汽平台</b>——钱包可用支付宝/微信充值，买游戏内物品方便。</li>
             </ul>
           </div>
         </div>
-        <div class="step">
+        <div class="step" id="step2">
           <div class="step-num"></div>
           <div class="step-body">
-            <h3>注册完美通行证并实名认证</h3>
+            <h3>② 注册完美通行证并实名认证</h3>
             <ul>
-              <li>打开完美世界 DOTA2 官网账号注册页（dota2.com.cn）。</li>
+              <li>打开 DOTA2 国服官网的<b>官方注册指南页</b>，按页面步骤注册完美通行证。</li>
+              <li>
+                <span class="dl-links">
+                  <a class="btn btn-sm btn-primary" href="https://www.dota2.com.cn/regprocess" target="_blank" rel="noopener">→ DOTA2 官方注册指南</a>
+                  <a class="btn btn-sm btn-ghost" href="https://www.dota2.com.cn/main_newer.htm" target="_blank" rel="noopener">→ 新手页（完美通行证入口）</a>
+                </span>
+              </li>
               <li><b>实名认证（防沉迷）+ 注册在同一个页面完成</b>，一起搞定即可。</li>
               <li><b>卡顿提示：</b>页面偶尔会卡住，<b>等 1–2 分钟</b>或<b>退出重新注册</b>即可，不要反复刷新。</li>
             </ul>
           </div>
         </div>
-        <div class="step">
+        <div class="step" id="step3">
           <div class="step-num"></div>
           <div class="step-body">
-            <h3>绑定账号（最关键的一步）</h3>
+            <h3>③ 绑定账号（最关键的一步）</h3>
             <ul>
               <li>登录后，将 <b>Steam/蒸汽平台账号</b> 与 <b>完美通行证</b> 绑定。</li>
+              <li>
+                <span class="dl-links">
+                  <a class="btn btn-sm btn-primary" href="https://www.dota2.com.cn/regprocess" target="_blank" rel="noopener">→ 官方绑定指南（含步骤）</a>
+                </span>
+              </li>
               <li>绑定完成后，你的国服 DOTA2 才真正激活，可以开始游戏。</li>
             </ul>
           </div>
         </div>
-        <div class="step">
+        <div class="step" id="step4">
           <div class="step-num"></div>
           <div class="step-body">
-            <h3>启动游戏：设置启动参数</h3>
+            <h3>④ 启动游戏：设置启动参数</h3>
             <p>在 Steam 库 → 右键 DOTA2 → 属性 → 启动选项，粘贴下面两行参数：</p>
             <p>
               <span class="codebox">-perfectworld</span> 进入<b>国服</b>（延迟更低）<br>
@@ -109,9 +135,9 @@
           <tbody>
             <tr><td>进不去国服 / 一直在转圈</td><td>网络没连上国内节点</td><td>用加速器（UU、雷神等），选「国服」节点</td></tr>
             <tr><td>进去是英文界面</td><td>没加语言参数</td><td>补上 <span class="codebox">-language schinese</span></td></tr>
-            <tr><td>提示「未绑定 / 未实名」</td><td>第 2、3 步没完成</td><td>回完美世界官网完成实名 + 绑定</td></tr>
+            <tr><td>提示「未绑定 / 未实名」</td><td>第 2、3 步没完成</td><td><a href="https://www.dota2.com.cn/regprocess" target="_blank" rel="noopener">回 DOTA2 官网完成实名 + 绑定 →</a></td></tr>
             <tr><td>卡在注册页不动</td><td>页面偶发卡顿</td><td>等 1–2 分钟，或退出重新注册</td></tr>
-            <tr><td>明明有账号却登不进</td><td>国服/国际服账号不互通</td><td>确认用的是「绑定过完美通行证」的账号</td></tr>
+            <tr><td>明明有账号却登不进</td><td>国服/国际服账号不互通</td><td><a href="https://store.steamchina.com/" target="_blank" rel="noopener">用蒸汽平台登录</a>，确认绑定了完美通行证</td></tr>
           </tbody>
         </table>
       </div>
