@@ -9,8 +9,5 @@ cron.log
 # 系统文件
 .DS_Store
 
-# 生成物：由 GitHub Actions 在部署时现场生成，不纳入手动版本管理
-# （避免 Actions 自动提交数据与手动 push 冲突）
-site/data/herostats.json
-site/data/weekly_report.md
-site/data/weekly_report.png
+# 生成物：由 GitHub Actions 自动刷新并提交回仓库（纳入版本管理，随站点部署）
+# （数据文件不大，跟站走便于任何部署流程都带上最新数据）

@@ -30,6 +30,21 @@ jobs:
       - name: 拉取 OpenDota 数据，生成 herostats.json + 周报(md/png)
         run: python3 scripts/fetch_hero_data.py --markdown --image
 
+      # 关键：把现场生成的数据文件提交回仓库，
+      # 这样任何部署流程都带着最新数据，数据不会因部署被覆盖丢失
+      - name: 提交数据回仓库
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f site/data/herostats.json site/data/weekly_report.md site/data/weekly_report.png
+          # 若无变化则跳过提交（避免空提交触发无限循环）
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 自动刷新 Dota2 英雄数据 [skip ci]"
+            git push origin main
+          fi
+
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
