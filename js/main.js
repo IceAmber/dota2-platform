@@ -621,6 +621,37 @@
     }
   }
 
+  // 加载首页最新复盘列表（最新 3 篇，点击跳转 reviews.html）
+  function loadIndexReviews() {
+    var root = document.getElementById('index-reviews');
+    if (!root) return;
+    var container = document.querySelector('#' + root.id + ' .review-list');
+    // 用内联容器
+    var box = document.createElement('div');
+    box.className = 'review-list';
+    root.appendChild(box);
+    fetch('data/reviews/index.json').then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(function (items) {
+      var list = (items || []).slice(0, 3);
+      if (!list.length) { box.innerHTML = '<p class="data-state">暂无复盘。</p>'; return; }
+      box.innerHTML = list.map(function (it) {
+        var t = it.match_time || it.date;
+        var time = '';
+        if (t && /^\d{8}-\d{6}$/.test(t)) time = t.slice(0,4)+'-'+t.slice(4,6)+'-'+t.slice(6,8)+' '+t.slice(9,11)+':'+t.slice(11,13);
+        else if (t) time = t;
+        return '<a class="review-card" href="reviews.html#file=' + encodeURIComponent(it.file) + '" style="text-decoration:none">' +
+          '<h3>' + esc(it.title) + '</h3>' +
+          '<div class="meta"><span>🕐 比赛 ' + esc(time) + '</span>' +
+          (it.bo ? '<span>📋 ' + esc(it.bo) + '</span>' : '') + '</div>' +
+          '<div class="src">AI 依据比赛数据生成 · 查看全文 →</div></a>';
+      }).join('');
+    }).catch(function () {
+      box.innerHTML = '<p class="data-state">暂无复盘。</p>';
+    });
+  }
+
   // 把 qrcode 库的矩阵画到 canvas
   function renderQR(canvas, qr, scale) {
     var n = qr.getModuleCount();
@@ -638,5 +669,6 @@
     initReport();
     initIndex();
     initShare();
+    loadIndexReviews();  // 首页「最新赛事复盘」区块（独立于 .share-bar）
   });
 })();
