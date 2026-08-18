@@ -328,8 +328,10 @@
           var rest = all.slice(GAP_ITEM_PREVIEW);
           var itemHtml = show.map(function (it) {
             var img = it.img ? '<img class="gm-item-img" src="' + it.img + '" alt="' + esc(it.cn) + '">' : '';
-            var heat = it.times != null ? '<span class="gm-heat">' + it.times + '</span>' : '';
-            return '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span>' + heat + '</div>';
+            var heat = it.times != null
+              ? '<span class="gm-heat-badge"><span class="gm-heat-fire">🔥</span>' + it.times + '</span>'
+              : '';
+            return '<div class="gm-item" title="' + esc(it.dname) + ' · 该阶段出场 ' + it.times + ' 次">' + heat + img + '<span>' + esc(it.cn) + '</span></div>';
           }).join('');
           var extra = rest.length
             ? '<div class="gm-more"><button class="btn btn-sm btn-ghost js-gm-more" data-rest="' +
@@ -375,9 +377,11 @@
         try { rest = JSON.parse(btn.getAttribute('data-rest')); } catch (err) { rest = []; }
         rest.forEach(function (it) {
           var img = it.img ? '<img class="gm-item-img" src="' + it.img + '" alt="' + esc(it.cn) + '">' : '';
-          var heat = it.times != null ? '<span class="gm-heat">' + it.times + '</span>' : '';
+          var heat = it.times != null
+            ? '<span class="gm-heat-badge"><span class="gm-heat-fire">🔥</span>' + it.times + '</span>'
+            : '';
           itemsWrap.insertAdjacentHTML('beforeend',
-            '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span>' + heat + '</div>');
+            '<div class="gm-item" title="' + esc(it.dname) + ' · 该阶段出场 ' + it.times + ' 次">' + heat + img + '<span>' + esc(it.cn) + '</span></div>');
         });
         btn.closest('.gm-more').remove();
       });
