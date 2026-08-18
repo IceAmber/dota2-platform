@@ -277,6 +277,7 @@
           '<div class="gc-title">' + esc(h.name) + ' <span class="hc-en">' + esc(h.name_en) + '</span>' + reco + '</div>' +
           '<div class="gc-stats">' +
           '<span>路人胜率 <b>' + h.pub_winrate.toFixed(2) + '%</b></span>' +
+          '<span>出场次数 <b>' + fmtNum(h.pub_pick) + '</b></span>' +
           '<span>胜率排名 <b>#' + h.winrate_rank + '</b></span>' +
           '<span>出场排名 <b>#' + h.pick_rank + '</b></span>' +
           '</div>' +
