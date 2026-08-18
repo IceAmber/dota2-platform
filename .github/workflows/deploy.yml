@@ -1,0 +1,48 @@
+name: Refresh Dota2 data + Deploy to Pages
+
+# 每天 06:00 UTC (北京时间 14:00) 自动刷新英雄数据并重新部署
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  # 也支持手动触发（GitHub Actions 页面点 "Run workflow"）
+  workflow_dispatch:
+
+# 需要写 Pages 的权限
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 拉取 OpenDota 数据并生成 herostats.json
+        run: python3 scripts/fetch_hero_data.py --markdown
+
+      - name: 若有数据更新则提交
+        run: |
+          # 检查 herostats.json 是否有变化（内容和上次不同才算更新）
+          if git diff --quiet -- site/data/herostats.json; then
+            echo "数据无变化，跳过提交"
+          else
+            git config user.name "GitHub Actions Bot"
+            git config user.email "actions@github.com"
+            git add site/data/herostats.json
+            git commit -m "chore: 自动刷新英雄数据 $(date +%F)"
+            git push
+            echo "数据已更新并推送"
+          fi
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
