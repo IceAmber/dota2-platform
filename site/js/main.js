@@ -296,7 +296,14 @@
     function openGapModal(id) {
       var modal = document.getElementById('gap-modal');
       if (!modal) return;
-      var hero = byId[Number(id)];
+      var hero = null;
+      var data = window.__reportData;
+      if (data && data.heroes) {
+        var numId = Number(id);
+        for (var i = 0; i < data.heroes.length; i++) {
+          if (data.heroes[i].id === numId) { hero = data.heroes[i]; break; }
+        }
+      }
       if (!hero) return;
 
       var body = modal.querySelector('.gm-body');
