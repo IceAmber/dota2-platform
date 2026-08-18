@@ -191,6 +191,16 @@ CN_ITEMS = {
     "Javelin": "标枪", "Talisman of Evasion": "闪避护符", "Crown": "王冠",
     "Orb of Venom": "毒球", "Ring of Basilius": "王者之戒", "Oblivion Staff": "钝刀",
     "Kaya and Sange": "双刀K", "Yasha and Kaya": "双刀Y", "Boots of Bearing": "大飞鞋",
+    "Aether Lens": "虚灵法杖", "Blood Grenade": "血雾手雷", "Boots of Travel 2": "飞鞋II",
+    "Consecrated Wraps": "圣裹布", "Cornucopia": "丰饶角", "Crella's Crozier": "克蕾拉的权杖",
+    "Divine Rapier": "圣剑", "Drum of Endurance": "战鼓", "Dust of Appearance": "显影之尘",
+    "Essence Distiller": "精华蒸馏器", "Eye of Skadi": "斯嘉蒂之眼", "Falcon Blade": "猎鹰之刀",
+    "Healing Salve": "治疗药膏", "Hydra's Breath": "巨蛇之息", "Mage Slayer": "法师克星",
+    "Meteor Hammer": "彗星之锤", "Observer Ward": "守卫(眼)", "Observer and Sentry Wards": "真眼组合",
+    "Orb of Corrosion": "腐蚀之球", "Orb of Frost": "冰霜宝珠", "Pavise": "大盾",
+    "Platemail": "板甲", "Sentry Ward": "岗哨守卫", "Smoke of Deceit": "诡计之雾",
+    "Specialist's Array": "专家阵列", "Vanguard": "先锋盾", "Witch Blade": "巫师之刃",
+    "Wizard Hat": "法师帽",
 }
 
 
