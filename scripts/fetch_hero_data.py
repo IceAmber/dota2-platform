@@ -56,7 +56,7 @@ TOP_N = 10                  # 各类榜单展示条数（前端也以此为上�
 # 英雄头像 CDN（OpenDota 返回相对路径，需拼上完整域名；
 # cloudflare.steamstatic.com 为 Valve 官方静态资源 CDN，已验证可访问）
 IMG_BASE = "https://cdn.cloudflare.steamstatic.com"
-USER_AGENT = "dota2-community-site/1.0 (community non-profit; github.com/dota2-platform)"
+USER_AGENT = "dota2-community-site/1.0 (github.com/dota2-platform)"
 
 # --------------------------------------------------------------------------- #
 # 英雄英文名 -> 国服中文名映射（键名与 OpenDota 返回的 localized_name 完全一致）
@@ -358,7 +358,7 @@ def render_markdown(payload: dict) -> str:
               "## ℹ️ 数据与声明",
               "",
               f"- **数据来源**：OpenDota API（heroStats，抓取时间 {payload['generated_at']}），全量 {payload['summary']['total_heroes']} 英雄",
-              "- **免责**：本平台为**社区公益项目**，意在帮助国服玩家入坑与提升，非商业用途。",
+              "- **免责**：本平台为**非官方社区项目**，意在帮助国服玩家入坑与提升，数据仅供参考。",
               "",
     ]
     return "\n".join(lines)
