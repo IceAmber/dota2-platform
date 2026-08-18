@@ -648,7 +648,7 @@ table.data-table {
 .share-bar .btn { text-decoration: none; }
 
 /* ================= 二维码弹层 ================= */
-#qr-overlay {
+#qr-overlay, #rev-qr-overlay {
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -658,7 +658,7 @@ table.data-table {
   justify-content: center;
   padding: 20px;
 }
-#qr-overlay.open { display: flex; }
+#qr-overlay.open, #rev-qr-overlay.open { display: flex; }
 .qr-modal {
   position: relative;
   background: #fff;
@@ -767,3 +767,16 @@ table.data-table {
 }
 .gm-heat-badge .gm-heat-fire { font-size: 0.62rem; }
 .gm-phase-label { flex: 0 0 56px; }
+
+/* ================= 赛事复盘卡片（首页 + reviews 页共用） ================= */
+.review-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.review-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px; cursor: pointer;
+  transition: transform .12s, border-color .12s;
+}
+.review-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.review-card h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--gold); }
+.review-card .meta { font-size: .78rem; color: var(--text-dim); display: flex; gap: 10px; flex-wrap: wrap; }
+.review-card .src { font-size: .78rem; color: var(--text-dim); margin-top: 8px; }
+.review-card a { color: inherit; }

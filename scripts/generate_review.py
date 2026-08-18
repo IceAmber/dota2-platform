@@ -89,15 +89,94 @@ def load_match_data(arg):
         print("[error] --data 不是合法 JSON 或文件路径")
         sys.exit(1)
 
+
+def get_hero_cn_map():
+    """从 fetch_hero_data.py 复用中文英雄名映射（id -> 中文名）。失败返回空 dict。"""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("fhd", str(BASE_DIR / "scripts" / "fetch_hero_data.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        # CN_NAMES 是 英文名->中文名；用 heroStats 反查 id->中文
+        import urllib.request, json as _json
+        # 直接调 OpenDota heroStats 建 id->中文名
+        url = "https://api.opendota.com/api/heroStats"
+        req = urllib.request.Request(url, headers={"User-Agent": "dota2-community/1.0"})
+        import ssl; ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
+        raw = _json.loads(urllib.request.urlopen(req, timeout=60, context=ctx).read())
+        m = {}
+        for h in raw:
+            lid = h.get("localized_name")
+            m[h.get("id")] = mod.CN_NAMES.get(lid, lid)
+        return m
+    except Exception as e:
+        print(f"[warn] 英雄名映射不可用: {e}")
+        return {}
+
+
+def fetch_match_data(match_id):
+    """从 OpenDota 拉取单场完整数据，整理成复盘可用的精简 matchData。"""
+    import ssl
+    url = f"https://api.opendota.com/api/matches/{match_id}"
+    print(f"[info] 拉取 OpenDota 比赛数据 {match_id} ...")
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE  # 允许自签名/异常证书
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "dota2-community/1.0"})
+        with urllib.request.urlopen(req, timeout=90, context=ctx) as resp:
+            raw = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"[error] 拉取比赛 {match_id} 失败: {e}")
+        sys.exit(1)
+
+    hero_cn = get_hero_cn_map()
+    radiant_win = bool(raw.get("radiant_win"))
+    league = raw.get("league", {}) or {}
+    league_name = league.get("name") or ""
+    # 队伍：proMatches 无队伍名，单场 api 可能含 radiant/ dire 的 name
+    radiant_team = raw.get("radiant_name") or raw.get("radiant_team") or "天辉"
+    dire_team = raw.get("dire_name") or raw.get("dire_team") or "夜魇"
+    players = []
+    for p in raw.get("players", []):
+        hid = p.get("hero_id")
+        # 分路/位置
+        players.append({
+            "hero": hero_cn.get(hid, str(hid)),
+            "hero_id": hid,
+            "player_slot": p.get("player_slot"),
+            "kills": p.get("kills"), "deaths": p.get("deaths"), "assists": p.get("assists"),
+            "gold_per_min": p.get("gold_per_min"), "xp_per_min": p.get("xp_per_min"),
+            "hero_damage": p.get("hero_damage"), "hero_healing": p.get("hero_healing"),
+            "last_hits": p.get("last_hits"), "level": p.get("level"),
+            "lane": p.get("lane"), "lane_role": p.get("lane_role"),
+        })
+    return {
+        "match_id": match_id,
+        "league": league_name,
+        "radiant_win": radiant_win,
+        "duration": raw.get("duration"),
+        "radiant_team": radiant_team,
+        "dire_team": dire_team,
+        "players": players,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser(description="赛后复盘生成器（方案B）")
     ap.add_argument("--data", help="比赛数据：JSON 字符串或文件路径（可省略走分析模式）")
+    ap.add_argument("--match-id", help="OpenDota 比赛 ID：自动拉取该场单场数据（替代 --data）")
     ap.add_argument("--title", default="", help="复盘标题（用于文件名/页面）")
+    ap.add_argument("--match-time", default="", help="真正比赛时间，如 2026-08-19 20:00（缺省用生成时间）")
+    ap.add_argument("--bo", default="", help="赛制信息，如 BO5 第3局 / BO3 决赛")
     ap.add_argument("--prompt", default="", help="附加提示词（如：重点分析中单）")
     ap.add_argument("--publish", action="store_true", help="生成后自动 git commit+push")
     args = ap.parse_args()
 
-    match_data = load_match_data(args.data)
+    match_data = None
+    if args.match_id:
+        match_data = fetch_match_data(args.match_id)
+    else:
+        match_data = load_match_data(args.data)
     title = args.title.strip() or (f"复盘 {time.strftime('%m-%d')}")
     slug = slugify(title)
 
@@ -111,14 +190,16 @@ def main():
 
     # 组装 markdown（加前置 YAML 元信息 + 分享需要的字段）
     ts = time.strftime("%Y%m%d-%H%M%S")
+    match_time = args.match_time.strip() or ts
+    bo_label = args.bo.strip()
     fname = f"{ts}-{slug}.md"
     md = (
         f"---\n"
         f"title: {title}\n"
         f"date: {ts}\n"
-        f"provider: {result.get('provider','')}\n"
-        f"model: {result.get('model','')}\n"
-        f"source: 赛后复盘(LLM生成，数据来自提供的比赛数据)\n"
+        f"match_time: {match_time}\n"
+        f"bo: {bo_label}\n"
+        f"source: 赛后复盘·AI 依据比赛数据生成\n"
         f"---\n\n"
         f"{review_md}\n"
     )
@@ -141,10 +222,10 @@ def main():
         "file": fname,
         "title": title,
         "date": ts,
-        "provider": result.get("provider", ""),
-        "model": result.get("model", ""),
+        "match_time": match_time,
+        "bo": bo_label,
     })
-    items.sort(key=lambda x: x.get("date", ""), reverse=True)
+    items.sort(key=lambda x: x.get("match_time") or x.get("date", ""), reverse=True)
     index_path.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[ok] 更新列表 {index_path.relative_to(BASE_DIR)} → {len(items)} 条")
 

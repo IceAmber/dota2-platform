@@ -7,16 +7,7 @@
   <meta name="description" content="DOTA2 赛事赛后复盘：AI 生成的专业赛事分析，亮点数据、MVP 提名与版本观察。">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .review-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .review-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px; cursor: pointer;
-      transition: transform .12s, border-color .12s;
-    }
-    .review-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .review-card h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--gold); }
-    .review-card .meta { font-size: .78rem; color: var(--text-dim); display: flex; gap: 10px; flex-wrap: wrap; }
-    .review-card .src { font-size: .78rem; color: var(--text-dim); margin-top: 8px; }
+    /* 复盘卡片/列表样式已在 css/style.css 全局定义；此处只保留详情页特有样式 */
     /* 详情 */
     .review-detail { display: none; }
     .review-detail:target, .review-detail.open { display: block; }
@@ -109,8 +100,10 @@
 
   <button id="back-top" aria-label="返回顶部">↑</button>
 
-  <!-- 自托管开源库（MIT）：marked.js 渲染 markdown -->
+  <!-- 自托管开源库（MIT）：marked.js 渲染 markdown + qrcode + html2canvas 分享 -->
   <script src="js/vendor/marked.min.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/vendor/html2canvas.js"></script>
   <script src="js/main.js"></script>
   <script>
   (function () {
@@ -123,9 +116,16 @@
     var metaEl = document.getElementById('reviews-meta');
     var items = [];
 
-    function fmtDate(s) {
-      if (!s || s.length < 12) return s || '';
-      return s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) + ' ' + s.slice(9, 11) + ':' + s.slice(11, 13);
+    // 比赛时间：兼容两种格式——纯数字(20260819-193000)或带符号(2026-08-18 21:30)
+    // 优先显示 match_time（真实比赛时间），回退到生成时间 date
+    function showTime(it) {
+      var v = it.match_time || it.date;
+      if (!v) return '';
+      // 纯数字格式：格式化为可读
+      if (/^\d{8}-\d{6}$/.test(v)) {
+        return v.slice(0, 4) + '-' + v.slice(4, 6) + '-' + v.slice(6, 8) + ' ' + v.slice(9, 11) + ':' + v.slice(11, 13);
+      }
+      return v; // 已是可读格式，原样显示
     }
 
     function renderList() {
@@ -133,9 +133,8 @@
       root.innerHTML = '<div class="review-list">' + items.map(function (it, i) {
         return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
           '<h3>' + esc(i === 0 ? '🆕 ' : '') + esc(it.title) + '</h3>' +
-          '<div class="meta"><span>' + fmtDate(it.date) + '</span>' +
-          (it.provider ? '<span>来源：' + esc(it.provider) + '</span>' : '') +
-          (it.model ? '<span>模型：' + esc(it.model) + '</span>' : '') + '</div>' +
+          '<div class="meta"><span>🕐 比赛 ' + showTime(it) + '</span>' +
+          (it.bo ? '<span>📋 ' + esc(it.bo) + '</span>' : '') + '</div>' +
           '<div class="src">由 AI 依据比赛数据生成，仅供娱乐参考。</div>' +
           '</div>';
       }).join('') + '</div>';
@@ -160,15 +159,75 @@
           '<a class="back" href="#list-section">← 返回列表</a>' +
           '<h2 class="review-title">' + esc(title) + '</h2>' +
           '</div>' +
-          '<p class="review-meta">' + fmtDate(item.date) + ' · 由 ' + esc(item.provider || 'AI') +
-          '（' + esc(item.model || '') + '）依据比赛数据生成，仅供娱乐参考。</p>' +
-          '<div class="review-body">' + window.marked.parse(body) + '</div>';
+          '<p class="review-meta">🕐 比赛时间 ' + showTime(item) +
+          (item.bo ? ' · 📋 ' + esc(item.bo) : '') +
+          ' · AI 依据比赛数据生成，仅供娱乐参考。</p>' +
+          '<div class="review-body">' + window.marked.parse(body) + '</div>' +
+          // 分享工具条
+          '<div class="share-bar" style="margin-top:24px">' +
+          '<span class="share-label">分享这条复盘：</span>' +
+          '<button class="btn btn-sm btn-ghost js-rev-share-qr">🔗 二维码</button>' +
+          '<button class="btn btn-sm btn-ghost js-rev-share-copy">📋 复制链接</button>' +
+          '<button class="btn btn-sm btn-ghost js-rev-share-dl">🖼️ 下载长图</button>' +
+          '<button class="btn btn-sm btn-ghost js-rev-share-native" style="display:none">📤 分享</button>' +
+          '</div>' +
+          '<div id="rev-qr-overlay" class="qr-overlay"><div class="qr-modal">' +
+          '<button class="qr-close" aria-label="关闭">×</button>' +
+          '<h3>📲 扫码查看复盘</h3><canvas id="rev-qr-canvas"></canvas>' +
+          '<p class="qr-note">用手机扫码分享给朋友</p></div></div>';
         // 滚动到详情
         var dsec = document.getElementById('detail-section');
         if (dsec) dsec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        bindShare(file, title);
       }).catch(function () {
         detailRoot.innerHTML = '<div class="data-state">加载该复盘失败。</div>';
       });
+    }
+
+    // 分享工具条绑定（二维码/复制链接/下载长图/原生分享）
+    function bindShare(file, title) {
+      var shareUrl = location.origin + location.pathname.replace('reviews.html', 'reviews.html') + '#file=' + encodeURIComponent(file);
+      var overlay = document.getElementById('rev-qr-overlay');
+      // 二维码
+      var qrBtn = document.querySelector('.js-rev-share-qr');
+      if (qrBtn && typeof qrcode === 'function') {
+        qrBtn.addEventListener('click', function () {
+          var qr = qrcode(0, 'L'); qr.addData(shareUrl); qr.make();
+          var cv = document.getElementById('rev-qr-canvas');
+          var mod = qr.getModuleCount();
+          var size = 3, pad = 4;
+          cv.width = cv.height = (mod + pad * 2) * size;
+          var x = cv.getContext('2d');
+          x.fillStyle = '#fff'; x.fillRect(0, 0, cv.width, cv.height);
+          x.fillStyle = '#111';
+          for (var r = 0; r < mod; r++) for (var c = 0; c < mod; c++)
+            if (qr.isDark(r, c)) x.fillRect((c + pad) * size, (r + pad) * size, size, size);
+          overlay.classList.add('open');
+        });
+        overlay.addEventListener('click', function (e) { if (e.target === overlay || e.target.classList.contains('qr-close')) overlay.classList.remove('open'); });
+      }
+      // 复制链接
+      var cpBtn = document.querySelector('.js-rev-share-copy');
+      if (cpBtn) cpBtn.addEventListener('click', function () {
+        function ok() { var t = cpBtn.textContent; cpBtn.textContent = '✅ 已复制'; setTimeout(function () { cpBtn.textContent = t; }, 1600); }
+        function fallback() { var ta = document.createElement('textarea'); ta.value = shareUrl; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); ok(); } catch (e) {} document.body.removeChild(ta); }
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareUrl).then(ok).catch(fallback); else fallback();
+      });
+      // 下载长图（html2canvas 转当前详情）
+      var dlBtn = document.querySelector('.js-rev-share-dl');
+      if (dlBtn && typeof html2canvas === 'function') dlBtn.addEventListener('click', function () {
+        var target = document.querySelector('#review-detail-root .review-body');
+        var cont = target ? target.closest('.section') : document.body;
+        var old = dlBtn.textContent; dlBtn.textContent = '⏳ 生成中…'; dlBtn.disabled = true;
+        html2canvas(cont, { backgroundColor: '#0a0d14', scale: 2, useCORS: true }).then(function (canvas) {
+          var a = document.createElement('a'); a.download = (title || 'review') + '.png'; a.href = canvas.toDataURL('image/png'); a.click();
+        }).catch(function () { alert('长图生成失败'); }).finally(function () { dlBtn.textContent = old; dlBtn.disabled = false; });
+      });
+      // 原生分享
+      var nat = document.querySelector('.js-rev-share-native');
+      if (nat && navigator.share) { nat.style.display = ''; nat.addEventListener('click', function () {
+        navigator.share({ title: title || 'DOTA2 赛事复盘', url: shareUrl }).catch(function () {});
+      }); }
     }
 
     fetch(REVINDEX).then(function (r) {
@@ -178,6 +237,13 @@
       items = (data || []).slice();
       if (metaEl) metaEl.textContent = '共 ' + items.length + ' 篇复盘';
       renderList();
+      // hash 定位：reviews.html#file=xxx 自动打开对应复盘
+      var m = location.hash.match(/file=([^&]+)/);
+      if (m) {
+        var f = decodeURIComponent(m[1]);
+        var hit = items.find(function (x) { return x.file === f; }) || items[0];
+        if (hit) setTimeout(function () { openDetail(hit.file); }, 100);
+      }
     }).catch(function () {
       root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>';
       if (metaEl) metaEl.textContent = '暂无复盘';
