@@ -133,6 +133,10 @@
           file: v.file || '',
           title: title,
           radiant: radiant, dire: dire,
+          radiant_tag: v.radiant_tag || radiant,
+          radiant_logo: v.radiant_logo || '',
+          dire_tag: v.dire_tag || dire,
+          dire_logo: v.dire_logo || '',
           winner: v.winner || '',
           match_time: (v.match_time || v.date || ''),
           duration: (v.duration || v.duration_text || ''),
@@ -167,7 +171,7 @@
 
       var html = '';
       // —— 中国队（默认展示已复盘）——
-      html += '<div class="review-group"><h3 class="group-title">🇨🇳 中国队复盘</h3>';
+      html += '<div class="review-group"><h3 class="group-title">中国队复盘</h3>';
       if (chinaDone.length) {
         html += '<div class="review-list">' + chinaDone.map(function (it) {
           return cardHtml(it, true);
@@ -217,21 +221,35 @@
       }
     }
 
+    // 队标缩略图：有 logo 显示 <img>，无 logo / 加载失败（onerror 移除 img）时回退显示 tag 文本
+    function teamLogoHtml(tag, logo) {
+      var t = esc(String(tag || ''));
+      var img = logo ? '<img class="team-logo" src="' + esc(logo) + '" alt="' + t + '" loading="lazy" onerror="this.remove()">' : '';
+      return '<span class="team-logo-wrap">' + img + '<span class="team-tag">' + t + '</span></span>';
+    }
+    // 对阵行：双方队标缩略图 + tag，中间 vs
+    function matchupHtml(it) {
+      var rTag = it.radiant_tag || it.radiant || 'Radiant';
+      var dTag = it.dire_tag || it.dire || 'Dire';
+      return teamLogoHtml(rTag, it.radiant_logo) +
+        '<span class="vs">vs</span>' +
+        teamLogoHtml(dTag, it.dire_logo);
+    }
+
     function cardHtml(it, clickable) {
-      var flag = (it.radiant && isChina(it.radiant)) || (it.dire && isChina(it.dire)) ? '🇨🇳 ' : '';
-      var timeStr = it.match_time || '';
       var durationStr = it.duration ? ' · ⏱ ' + it.duration : '';
+      var isCN = isChina(it.radiant) || isChina(it.dire);
       if (it.done) {
         return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
-          '<h3>' + esc(flag + it.title) + '</h3>' +
+          '<h3 class="review-card-title">' + matchupHtml(it) + '<span class="title-suffix"> 复盘</span></h3>' +
           '<div class="meta"><span>🕐 比赛 ' + showTime({ match_time: it.match_time }) + '</span>' +
           (durationStr ? '<span>' + durationStr + '</span>' : '') +
-          (isChina(it.radiant) || isChina(it.dire) ? '<span>🇨🇳 中国队</span>' : '') + '</div>' +
+          (isCN ? '<span class="matchup-meta">' + matchupHtml(it) + '</span>' : '') + '</div>' +
           '<div class="src">' + (it.winner ? '🏆 ' + esc(it.winner) + ' 胜' : '') + ' · 点击查看复盘 →</div>' +
           '</div>';
       }
       return '<div class="review-card pending" data-key="' + esc(it.key) + '" role="button" tabindex="0" aria-label="比赛：' + esc(it.title) + '">' +
-        '<h3>' + esc(flag + it.radiant + ' vs ' + it.dire) + '</h3>' +
+        '<h3 class="review-card-title">' + matchupHtml(it) + '<span class="title-suffix"> 复盘生成中</span></h3>' +
         '<div class="meta"><span>🕐 比赛 ' + showTime({ match_time: it.match_time }) + '</span>' +
         (durationStr ? '<span>' + durationStr + '</span>' : '') + '</div>' +
         '<div class="src">⏳ 复盘生成中 · 稍后上线</div>' +

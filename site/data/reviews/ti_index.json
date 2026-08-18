@@ -1,24 +1,36 @@
 {
   "8948533452": {
+    "file": "8948533452-TI15-LGD-Gaming-vs-Team-Yandex-复盘.md",
+    "title": "TI15 · LGD Gaming vs Team Yandex 复盘",
+    "date": "20260819-030000",
     "radiant": "LGD Gaming",
     "dire": "Team Yandex",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Yandex",
+    "match_time": "2026-08-16 18:24",
+    "duration": "68分12秒",
+    "done": true
   },
   "8948420293": {
+    "file": "8948420293-TI15-Team-Yandex-vs-LGD-Gaming-复盘.md",
+    "title": "TI15 · Team Yandex vs LGD Gaming 复盘",
+    "date": "20260819-030022",
     "radiant": "Team Yandex",
     "dire": "LGD Gaming",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Yandex",
+    "match_time": "2026-08-16 17:13",
+    "duration": "38分45秒",
+    "done": true
   },
   "8948311007": {
+    "file": "8948311007-TI15-LGD-Gaming-vs-Team-Yandex-复盘.md",
+    "title": "TI15 · LGD Gaming vs Team Yandex 复盘",
+    "date": "20260819-030044",
     "radiant": "LGD Gaming",
     "dire": "Team Yandex",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "LGD Gaming",
+    "match_time": "2026-08-16 16:08",
+    "duration": "31分26秒",
+    "done": true
   },
   "8948244379": {
     "radiant": "GamerLegion",
@@ -28,11 +40,15 @@
     "done": false
   },
   "8948235815": {
+    "file": "8948235815-TI15-Team-Resilience-vs-Team-Spirit-复盘.md",
+    "title": "TI15 · Team Resilience vs Team Spirit 复盘",
+    "date": "20260819-030107",
     "radiant": "Team Resilience",
     "dire": "Team Spirit",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Spirit",
+    "match_time": "2026-08-16 14:50",
+    "duration": "39分44秒",
+    "done": true
   },
   "8948155771": {
     "radiant": "GamerLegion",
@@ -42,46 +58,70 @@
     "done": false
   },
   "8948151326": {
+    "file": "8948151326-TI15-Team-Resilience-vs-Team-Spirit-复盘.md",
+    "title": "TI15 · Team Resilience vs Team Spirit 复盘",
+    "date": "20260819-030203",
     "radiant": "Team Resilience",
     "dire": "Team Spirit",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Resilience",
+    "match_time": "2026-08-16 13:31",
+    "duration": "49分7秒",
+    "done": true
   },
   "8948094765": {
+    "file": "8948094765-TI15-Aurora-Gaming-vs-BoomBoys-复盘.md",
+    "title": "TI15 · Aurora Gaming vs BoomBoys 复盘",
+    "date": "20260819-030258",
     "radiant": "Aurora Gaming",
     "dire": "BoomBoys",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "BoomBoys",
+    "match_time": "2026-08-16 12:30",
+    "duration": "37分24秒",
+    "done": true
   },
   "8948094346": {
+    "file": "8948094346-TI15-Team-Spirit-vs-Team-Resilience-复盘.md",
+    "title": "TI15 · Team Spirit vs Team Resilience 复盘",
+    "date": "20260819-030323",
     "radiant": "Team Spirit",
     "dire": "Team Resilience",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Spirit",
+    "match_time": "2026-08-16 12:32",
+    "duration": "29分34秒",
+    "done": true
   },
   "8948040486": {
+    "file": "8948040486-TI15-Team-Falcons-vs-Vici-Gaming-复盘.md",
+    "title": "TI15 · Team Falcons vs Vici Gaming 复盘",
+    "date": "20260819-030415",
     "radiant": "Team Falcons",
     "dire": "Vici Gaming",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Falcons",
+    "match_time": "2026-08-16 11:18",
+    "duration": "42分50秒",
+    "done": true
   },
   "8948026518": {
+    "file": "8948026518-TI15-BoomBoys-vs-Aurora-Gaming-复盘.md",
+    "title": "TI15 · BoomBoys vs Aurora Gaming 复盘",
+    "date": "20260819-030438",
     "radiant": "BoomBoys",
     "dire": "Aurora Gaming",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "BoomBoys",
+    "match_time": "2026-08-16 11:00",
+    "duration": "58分32秒",
+    "done": true
   },
   "8947983249": {
+    "file": "8947983249-TI15-Vici-Gaming-vs-Team-Falcons-复盘.md",
+    "title": "TI15 · Vici Gaming vs Team Falcons 复盘",
+    "date": "20260819-030600",
     "radiant": "Vici Gaming",
     "dire": "Team Falcons",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Falcons",
+    "match_time": "2026-08-16 10:00",
+    "duration": "40分46秒",
+    "done": true
   },
   "8947050343": {
     "radiant": "Team Spirit",
@@ -105,11 +145,15 @@
     "done": false
   },
   "8946889239": {
+    "file": "8946889239-TI15-Team-Falcons-vs-BoomBoys-复盘.md",
+    "title": "TI15 · Team Falcons vs BoomBoys 复盘",
+    "date": "20260819-030653",
     "radiant": "Team Falcons",
     "dire": "BoomBoys",
-    "winner": "",
-    "duration_text": "",
-    "done": false
+    "winner": "Team Falcons",
+    "match_time": "2026-08-15 21:08",
+    "duration": "44分57秒",
+    "done": true
   },
   "8946872708": {
     "radiant": "Team Yandex",
@@ -188,11 +232,12 @@
   "8946572751": {
     "file": "8946572751-TI15-Vici-Gaming-vs-LGD-Gaming-复盘.md",
     "title": "TI15 · Vici Gaming vs LGD Gaming 复盘",
-    "date": "20260819-025130",
+    "date": "20260819-025905",
     "radiant": "Vici Gaming",
     "dire": "LGD Gaming",
     "winner": "LGD Gaming",
-    "duration_text": "53分46秒",
+    "match_time": "2026-08-15 17:41",
+    "duration": "53分46秒",
     "done": true
   },
   "8946563158": {

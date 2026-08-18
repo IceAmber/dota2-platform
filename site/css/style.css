@@ -786,3 +786,20 @@ table.data-table {
 .review-card.pending { opacity: .6; cursor: default; }
 .review-card.pending:hover { transform: none; border-color: var(--border); }
 #more-btn { margin-bottom: 14px; }
+
+/* —— 队标（team logo）：小方块队标图 + tag 文本回退 —— */
+.review-card-title { display: flex; align-items: center; flex-wrap: wrap; column-gap: 8px; }
+.team-logo-wrap { display: inline-flex; align-items: center; vertical-align: middle; }
+.team-logo {
+  width: 22px; height: 22px; border-radius: 5px; object-fit: cover;
+  display: inline-block; margin-right: 6px; flex: none;
+  background: rgba(255, 255, 255, .08); /* 加载中/透明 logo 的占位底 */
+}
+/* 队标正常加载时隐藏 tag 文本；img 被 onerror 移除或没有 logo_url 时回退显示 tag */
+.team-logo + .team-tag { display: none; }
+.team-tag { font-size: .95rem; font-weight: 600; color: var(--gold); white-space: nowrap; }
+.vs { margin: 0 2px; font-size: .78rem; color: var(--text-dim); font-weight: 400; }
+.title-suffix { font-size: .9rem; color: var(--text-dim); font-weight: 400; }
+.matchup-meta { display: inline-flex; align-items: center; }
+.review-card .meta .matchup-meta .team-logo,
+.review-card .meta .matchup-meta .team-tag { vertical-align: middle; }
