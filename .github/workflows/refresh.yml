@@ -1,0 +1,38 @@
+name: Refresh Dota2 data
+
+# 每天 06:00 UTC (北京时间 14:00) 自动刷新英雄数据并部署
+# 也支持手动触发（Actions 页面点 "Run workflow"）
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装 Pillow 与中文字体（用于生成周报长图）
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-wqy-zenhei
+          python3 -m pip install pillow
+
+      - name: 拉取 OpenDota 数据，生成 herostats.json + 周报(md/png)
+        run: python3 scripts/fetch_hero_data.py --markdown --image
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
