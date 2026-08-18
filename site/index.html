@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOTA2 国服社区 — 入坑与版本指南</title>
+  <meta name="description" content="国服 DOTA2 入坑与版本指南，社区免费公益项目。新手指引、版本阵容周报，数据来自 OpenDota 免费 API。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 顶部导航 ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">刀</span>
+        <span>DOTA2 国服社区<small>COMMUNITY · NON-PROFIT</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="guide.html">新手指引</a></li>
+          <li><a href="report.html">版本周报</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- ======================= Hero 区 ======================= -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">社区免费公益 · 数据来自 OpenDota</span>
+      <h1>国服 DOTA2 入坑与版本指南</h1>
+      <p class="lead">
+        帮你在国服顺利注册、启动、选对英雄；每周用真实胜率数据告诉你「这个版本该玩谁」。
+        从 0 到能上分，一站搞定。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="guide.html">🚀 新手指引</a>
+        <a class="btn btn-ghost" href="report.html">📊 版本周报</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 最新周报摘要 ======================= -->
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <h2>📡 最新周报摘要</h2>
+        <span class="sub">由 fetch_hero_data.py 自动抓取生成</span>
+      </div>
+      <!-- JS 加载 herostats.json 后动态渲染；失败时保留静态占位 -->
+      <div id="index-summary">
+        <div class="data-state"><span class="spinner"></span>正在加载周报摘要…</div>
+      </div>
+      <p class="meta-line" id="index-meta"></p>
+    </section>
+
+    <!-- ======================= 快速导航卡片 ======================= -->
+    <section class="section section-alt" style="margin-bottom:-40px">
+      <div class="section-title"><h2>从这里开始</h2></div>
+      <div class="card-grid">
+        <a class="card card-link" href="guide.html">
+          <div class="card-icon">🚀</div>
+          <h3>新手指引</h3>
+          <p>国服注册分步教程、启动参数、常见问题排查表、新手首选英雄。照着做，半小时开第一把。</p>
+          <span class="card-link-more">开始入坑 →</span>
+        </a>
+        <a class="card card-link" href="report.html">
+          <div class="card-icon">📊</div>
+          <h3>版本周报</h3>
+          <p>全分段胜率榜、出场率榜、职业参考，外加「认知差」英雄推荐——又强又少人玩的上分密码。</p>
+          <span class="card-link-more">查看数据 →</span>
+        </a>
+        <a class="card card-link" href="about.html">
+          <div class="card-icon">💬</div>
+          <h3>关于本项目</h3>
+          <p>社区公益项目，非官方、非商业。数据来源与免责声明，以及如何一起参与维护。</p>
+          <span class="card-link-more">了解更多 →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>DOTA2 国服社区</h4>
+          <p>社区公益项目：为国服 DOTA2 新玩家提供入坑指引与版本阵容周报。数据来自 OpenDota 免费 API，非官方平台。</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <div class="footer-links">
+            <a href="guide.html">新手指引</a>
+            <a href="report.html">版本周报</a>
+            <a href="about.html">关于 / 免责</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DOTA2 国服社区 · 社区公益，非商业用途</span>
+        <span>数据来源：OpenDota API · 本站与 Valve / 完美世界 无关</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

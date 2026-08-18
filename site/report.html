@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>版本周报 — DOTA2 国服社区</title>
+  <meta name="description" content="DOTA2 版本阵容周报：全分段胜率榜、出场率榜、职业参考与认知差英雄推荐。数据来自 OpenDota API。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 顶部导航 ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">刀</span>
+        <span>DOTA2 国服社区<small>COMMUNITY · NON-PROFIT</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="guide.html">新手指引</a></li>
+          <li><a href="report.html">版本周报</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 页头 + 数据状态 -->
+    <section class="section">
+      <div class="section-title">
+        <h1>📊 版本阵容周报</h1>
+        <span class="sub">由 fetch_hero_data.py 定时抓取 OpenDota 生成</span>
+      </div>
+      <p style="max-width: 760px;">
+        以下榜单由 <b>site/data/herostats.json</b> 自动渲染。胜率 = 胜场 / 出场；
+        「认知差」指路人胜率排名靠前但出场人数少的英雄——<b>又强又少人玩，就是本周上分密码</b>。
+      </p>
+      <div id="report-state"><div class="data-state"><span class="spinner"></span>正在加载数据…</div></div>
+      <p class="meta-line" id="data-meta"></p>
+    </section>
+
+    <!-- 认知差高亮区块 -->
+    <section class="section section-alt" id="gap-section">
+      <div class="section-title">
+        <h2>💎 认知差英雄</h2>
+        <span class="sub">胜率强但出场少 · 本周重点</span>
+      </div>
+      <div id="gap-root"><div class="data-state"><span class="spinner"></span>加载中…</div></div>
+    </section>
+
+    <!-- 全分段胜率榜 -->
+    <section class="section" id="winrate-section">
+      <div class="section-title">
+        <h2>🏆 全分段路人胜率榜</h2>
+        <span class="sub">胜率排名 · 出场 ≥5000 场</span>
+        <label class="topn">显示
+          <select id="top-n">
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+          条
+        </label>
+      </div>
+      <div id="winrate-root"><div class="data-state"><span class="spinner"></span>加载中…</div></div>
+    </section>
+
+    <!-- 出场率榜 -->
+    <section class="section section-alt" id="pick-section">
+      <div class="section-title">
+        <h2>🔥 路人出场率榜</h2>
+        <span class="sub">大家都在玩什么</span>
+      </div>
+      <div id="pick-root"><div class="data-state"><span class="spinner"></span>加载中…</div></div>
+    </section>
+
+    <!-- 职业参考 -->
+    <section class="section" id="pro-section">
+      <div class="section-title">
+        <h2>🛡️ 职业参考</h2>
+        <span class="sub">职业比赛出场（样本稀疏，仅作参考）</span>
+      </div>
+      <div id="pro-root"><div class="data-state"><span class="spinner"></span>加载中…</div></div>
+    </section>
+
+    <!-- 口径与免责 -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>📐 统计口径与免责</h2></div>
+      <div class="note">
+        <ul style="margin:0;padding-left:18px;color:var(--text-dim)">
+          <li><b>路人数据：</b>全分段镜像局；胜率 = 胜场 / 出场 × 100%，保留 2 位小数；出场率 = 该英雄出场 / 全部英雄出场。</li>
+          <li><b>样本门槛：</b>胜率榜只统计出场 ≥5000 场的英雄，避免小样本（打几把就 100% 胜率）的假数据。</li>
+          <li><b>职业数据：</b>来自 OpenDota 记录的职业比赛；大赛淡季样本可能很少，仅作方向性参考。</li>
+          <li><b>时效：</b>数据为脚本抓取时点快照，胜率随时间波动，请以最新版本为准。</li>
+        </ul>
+      </div>
+      <div class="note note-warn">
+        <b>⚠️ 免责：</b>本站为社区公益项目，数据来自 OpenDota 免费 API，与 Valve / 完美世界无关；
+        榜单不构成任何游戏建议，仅供娱乐与学习参考。
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>DOTA2 国服社区</h4>
+          <p>社区公益项目：为国服 DOTA2 新玩家提供入坑指引与版本阵容周报。数据来自 OpenDota 免费 API，非官方平台。</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <div class="footer-links">
+            <a href="guide.html">新手指引</a>
+            <a href="report.html">版本周报</a>
+            <a href="about.html">关于 / 免责</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DOTA2 国服社区 · 社区公益，非商业用途</span>
+        <span>数据来源：OpenDota API · 本站与 Valve / 完美世界 无关</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

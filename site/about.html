@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 / 免责声明 — DOTA2 国服社区</title>
+  <meta name="description" content="关于 DOTA2 国服社区公益项目：项目定位、数据来源、免责声明。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 顶部导航 ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">刀</span>
+        <span>DOTA2 国服社区<small>COMMUNITY · NON-PROFIT</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="guide.html">新手指引</a></li>
+          <li><a href="report.html">版本周报</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <h1>💬 关于本项目</h1>
+        <span class="sub">社区公益 · 非商业 · 零成本运营</span>
+      </div>
+
+      <!-- 定位 -->
+      <div class="card-grid">
+        <div class="card">
+          <h3>🎯 我们想做什么</h3>
+          <p>
+            一个服务于<b>国服 DOTA2 新玩家</b>的社区平台：从「国服怎么注册/启动」到
+            「怎么选英雄 / 怎么变强」，用轻量的网页工具 + 社区内容 + OpenDota 免费数据实现。
+            目标排序：<b>① 帮新玩家入坑 → ② 提升国服整体水平 → ③ 可持续（仅覆盖成本）</b>。
+          </p>
+        </div>
+        <div class="card">
+          <h3>🌱 为什么是「公益」</h3>
+          <p>
+            官方新手教程长期被社区公认过时/断链；全球也没有一款产品主攻「国服新手全流程」。
+            我们相信帮助新玩家顺利入坑本身就是价值，因此内容<b>永久免费</b>、无广告、无商业采集。
+          </p>
+        </div>
+        <div class="card">
+          <h3>🔧 技术栈</h3>
+          <p>
+            纯静态 HTML/CSS/JS（零构建工具、零后端），托管在 GitHub Pages 免费层。
+            数据由 <span class="codebox">scripts/fetch_hero_data.py</span> 定时抓取
+            OpenDota API 生成 JSON，全程近乎零成本。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据来源 -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>📡 数据来源与准确性</h2></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>数据类型</th><th>来源</th><th>更新方式</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>英雄胜率 / 出场 / 职业数据</td>
+              <td><a href="https://www.opendota.com" target="_blank" rel="noopener">OpenDota API</a>（heroStats 接口）</td>
+              <td>脚本定时抓取（约每天 1 次）</td>
+              <td>免费层约 60 次/分、3000 次/天，足够本平台使用</td>
+            </tr>
+            <tr>
+              <td>版本补丁信息</td>
+              <td>官方补丁日志 + 社区解析</td>
+              <td>人工更新</td>
+              <td>见新手指引 / 周报正文</td>
+            </tr>
+            <tr>
+              <td>新手指引内容</td>
+              <td>完美世界官方公告 + 社区实践</td>
+              <td>人工维护</td>
+              <td>非官方，仅供参考</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 免责声明 -->
+    <section class="section">
+      <div class="section-title"><h2>📄 免责声明</h2></div>
+      <div class="note note-danger">
+        <ol style="margin:0;padding-left:18px;color:var(--text-dim)">
+          <li><b>非官方平台：</b>本站为社区公益项目，与 Valve、完美世界及其关联公司无任何隶属或赞助关系。</li>
+          <li><b>数据时效：</b>所有胜率/出场数据为抓取时点快照，随时间波动，不构成稳定的游戏建议。</li>
+          <li><b>内容参考：</b>新手指引整理自公开资料与社区实践，官方流程如有变动请以官方最新公告为准。</li>
+          <li><b>游戏风险：</b>任何游戏都有竞技压力，请理性游戏、健康生活，远离代练与账号交易。</li>
+          <li><b>非商业用途：</b>本站不售卖任何商品/服务，不接受商业广告。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 一起参与 -->
+    <section class="section section-alt">
+      <div class="section-title"><h2>🤝 一起参与</h2></div>
+      <p style="color:var(--text-dim)">
+        本项目完全开源。如果你也认同「帮国服新玩家入坑」这件事，欢迎参与内容校对、
+        数据可视化改进或社区推广。遇到问题可提 issue，或加入社区一起完善指南。
+      </p>
+      <p style="margin-bottom:0">
+        <a class="btn btn-primary" href="index.html">返回首页</a>
+        <a class="btn btn-ghost" href="guide.html">开始新手指引</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>DOTA2 国服社区</h4>
+          <p>社区公益项目：为国服 DOTA2 新玩家提供入坑指引与版本阵容周报。数据来自 OpenDota 免费 API，非官方平台。</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <div class="footer-links">
+            <a href="guide.html">新手指引</a>
+            <a href="report.html">版本周报</a>
+            <a href="about.html">关于 / 免责</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DOTA2 国服社区 · 社区公益，非商业用途</span>
+        <span>数据来源：OpenDota API · 本站与 Valve / 完美世界 无关</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="返回顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

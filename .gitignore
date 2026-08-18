@@ -1,0 +1,10 @@
+# Python 构建产物
+__pycache__/
+*.pyc
+
+# 本地日志
+cron.log
+*.log
+
+# 系统文件
+.DS_Store
