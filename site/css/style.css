@@ -576,3 +576,37 @@ table.data-table {
   .data-table th, .data-table td { padding: 8px 10px; }
   .brand small { display: none; }
 }
+
+/* ============ 新手指引：跳转目录 + 下载/直达按钮 ============ */
+.guide-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.guide-toc b { margin-right: 4px; color: var(--text); }
+.guide-toc a {
+  color: var(--accent);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.guide-toc a:hover { background: var(--surface-2); text-decoration: underline; }
+
+.dl-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 2px;
+}
+.dl-links .btn { text-decoration: none; }
+.step-body li a { color: var(--accent); }
+.step-body li a:hover { text-decoration: underline; }
