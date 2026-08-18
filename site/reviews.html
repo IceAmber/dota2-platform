@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赛事复盘 — DOTA2 国服社区</title>
+  <meta name="description" content="DOTA2 赛事赛后复盘：AI 生成的专业赛事分析，亮点数据、MVP 提名与版本观察。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .review-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .review-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px; cursor: pointer;
+      transition: transform .12s, border-color .12s;
+    }
+    .review-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .review-card h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--gold); }
+    .review-card .meta { font-size: .78rem; color: var(--text-dim); display: flex; gap: 10px; flex-wrap: wrap; }
+    .review-card .src { font-size: .78rem; color: var(--text-dim); margin-top: 8px; }
+    /* 详情 */
+    .review-detail { display: none; }
+    .review-detail:target, .review-detail.open { display: block; }
+    .review-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .review-head .back { color: var(--accent); text-decoration: none; font-size: .9rem; }
+    .review-head .back:hover { text-decoration: underline; }
+    .review-title { font-size: 1.4rem; color: var(--gold); margin: 0; }
+    .review-meta { font-size: .8rem; color: var(--text-dim); }
+    .review-body { line-height: 1.7; color: var(--text); }
+    .review-body h2 { font-size: 1.15rem; color: var(--gold); margin: 22px 0 8px;
+      border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+    .review-body table { border-collapse: collapse; margin: 10px 0; width: 100%; max-width: 100%; }
+    .review-body th, .review-body td { border: 1px solid var(--border); padding: 6px 10px; font-size: .88rem; }
+    .review-body th { background: var(--bg-alt); color: var(--gold); }
+    .review-body b { color: var(--text); }
+    .review-body ul { padding-left: 20px; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= 顶部导航 ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">刀</span>
+        <span>DOTA2 国服社区<small>COMMUNITY SITE</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="guide.html">新手指引</a></li>
+          <li><a href="report.html">版本周报</a></li>
+          <li><a href="reviews.html" class="active">赛事复盘</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <h1>🎬 赛事复盘</h1>
+        <span class="sub">AI 生成的赛后分析 · 数据驱动</span>
+      </div>
+      <p style="max-width: 760px;">
+        每场重点比赛结束后，基于比赛数据由 AI 生成的复盘：战报概览、MVP 提名、
+        转折点、数据亮点与版本观察。内容为 AI 生成 + 数据驱动，仅供娱乐参考。
+      </p>
+      <p class="meta-line" id="reviews-meta"></p>
+    </section>
+
+    <!-- 列表区 -->
+    <section class="section section-alt" id="list-section">
+      <div class="section-title"><h2>📚 全部复盘</h2></div>
+      <div id="reviews-root"><div class="data-state"><span class="spinner"></span>加载中…</div></div>
+    </section>
+
+    <!-- 详情区 -->
+    <section class="section" id="detail-section">
+      <div id="review-detail-root"></div>
+    </section>
+  </main>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>DOTA2 国服社区</h4>
+          <p>为国服 DOTA2 新玩家提供入坑指引、版本阵容周报与赛事复盘。数据来自 OpenDota 免费 API，非官方平台。</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <div class="footer-links">
+            <a href="guide.html">新手指引</a>
+            <a href="report.html">版本周报</a>
+            <a href="reviews.html">赛事复盘</a>
+            <a href="about.html">关于 / 免责</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DOTA2 国服社区</span>
+        <span>数据来源：OpenDota API · 本站与 Valve / 完美世界 无关</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="返回顶部">↑</button>
+
+  <!-- 自托管开源库（MIT）：marked.js 渲染 markdown -->
+  <script src="js/vendor/marked.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    // 读取复盘列表并渲染
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+    var REVINDEX = 'data/reviews/index.json';
+    var root = document.getElementById('reviews-root');
+    var detailRoot = document.getElementById('review-detail-root');
+    var metaEl = document.getElementById('reviews-meta');
+    var items = [];
+
+    function fmtDate(s) {
+      if (!s || s.length < 12) return s || '';
+      return s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) + ' ' + s.slice(9, 11) + ':' + s.slice(11, 13);
+    }
+
+    function renderList() {
+      if (!items.length) { root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>'; return; }
+      root.innerHTML = '<div class="review-list">' + items.map(function (it, i) {
+        return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
+          '<h3>' + esc(i === 0 ? '🆕 ' : '') + esc(it.title) + '</h3>' +
+          '<div class="meta"><span>' + fmtDate(it.date) + '</span>' +
+          (it.provider ? '<span>来源：' + esc(it.provider) + '</span>' : '') +
+          (it.model ? '<span>模型：' + esc(it.model) + '</span>' : '') + '</div>' +
+          '<div class="src">由 AI 依据比赛数据生成，仅供娱乐参考。</div>' +
+          '</div>';
+      }).join('') + '</div>';
+      // 事件委托
+      root.querySelectorAll('.review-card').forEach(function (el) {
+        el.addEventListener('click', function () { openDetail(el.getAttribute('data-file')); });
+        el.addEventListener('keydown', function (e) { if (e.key === 'Enter') openDetail(el.getAttribute('data-file')); });
+      });
+    }
+
+    function openDetail(file) {
+      var fname = encodeURIComponent(file);
+      fetch('data/reviews/' + fname).then(function (r) { return r.text(); }).then(function (text) {
+        var item = items.find(function (x) { return x.file === file; }) || {};
+        // 剥离 YAML 头
+        var body = text;
+        var m = body.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
+        var title = item.title || '';
+        if (m) body = body.slice(m[0].length);
+        detailRoot.innerHTML =
+          '<div class="review-head">' +
+          '<a class="back" href="#list-section">← 返回列表</a>' +
+          '<h2 class="review-title">' + esc(title) + '</h2>' +
+          '</div>' +
+          '<p class="review-meta">' + fmtDate(item.date) + ' · 由 ' + esc(item.provider || 'AI') +
+          '（' + esc(item.model || '') + '）依据比赛数据生成，仅供娱乐参考。</p>' +
+          '<div class="review-body">' + window.marked.parse(body) + '</div>';
+        // 滚动到详情
+        var dsec = document.getElementById('detail-section');
+        if (dsec) dsec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }).catch(function () {
+        detailRoot.innerHTML = '<div class="data-state">加载该复盘失败。</div>';
+      });
+    }
+
+    fetch(REVINDEX).then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(function (data) {
+      items = (data || []).slice();
+      if (metaEl) metaEl.textContent = '共 ' + items.length + ' 篇复盘';
+      renderList();
+    }).catch(function () {
+      root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>';
+      if (metaEl) metaEl.textContent = '暂无复盘';
+    });
+  })();
+  </script>
+</body>
+</html>
