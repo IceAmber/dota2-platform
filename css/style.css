@@ -546,6 +546,20 @@ table.data-table {
 }
 .stat-card .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--gold); }
 .stat-card .stat-label { color: var(--text-dim); font-size: 0.82rem; }
+/* 可点击的统计卡片：继承卡片外观，但带链接反馈 */
+.stat-card.stat-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s, border-color 0.12s, background 0.12s;
+}
+.stat-card.stat-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+.stat-card.stat-link:hover .stat-num { color: var(--accent); }
+.stat-card.stat-link:hover .stat-label { color: var(--text); }
 
 /* ---------- 13. 响应式 ---------- */
 @media (max-width: 860px) {

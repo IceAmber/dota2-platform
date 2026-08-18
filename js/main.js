@@ -382,14 +382,14 @@
         .slice(0, 5);
       var gap = (data.gap_ids || []).length;
 
-      // 统计卡片
+      // 统计卡片（英雄总数 / 认知差英雄 可点击跳转到对应榜单区块）
       if (statsEl) statsEl.innerHTML = '<div class="stat-row">' +
-        '<div class="stat-card"><div class="stat-num">' + data.summary.total_heroes +
-        '</div><div class="stat-label">英雄总数</div></div>' +
+        '<a class="stat-card stat-link" href="report.html#winrate-section"><div class="stat-num">' + data.summary.total_heroes +
+        '</div><div class="stat-label">英雄总数 ›</div></a>' +
         '<div class="stat-card"><div class="stat-num">' + fmtNum(data.total_pub_picks) +
         '</div><div class="stat-label">路人局出场</div></div>' +
-        '<div class="stat-card"><div class="stat-num">' + gap +
-        '</div><div class="stat-label">认知差英雄</div></div>' +
+        '<a class="stat-card stat-link" href="report.html#gap-section"><div class="stat-num">' + gap +
+        '</div><div class="stat-label">认知差英雄 ›</div></a>' +
         '<div class="stat-card"><div class="stat-num">' + data.data_date +
         '</div><div class="stat-label">数据日期</div></div>' +
         '</div>' +
