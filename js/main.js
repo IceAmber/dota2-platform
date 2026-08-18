@@ -314,19 +314,28 @@
         hero.winrate_rank + '），但出场率只排到 <b>#' + hero.pick_rank +
         '</b>——胜率这么高却没什么人选，通常是被低估的版本强势英雄（冷门强势）。</p>';
 
-      // 出装路线
+      // 出装路线（每阶段展示前 GAP_ITEM_PREVIEW 件，可展开全部）
       var guideHtml = '';
       var g = hero.build_guide;
       if (g) {
-        guideHtml = '<h4>高胜率出装路线（分阶段）</h4><div class="gm-guide">';
+        var GAP_ITEM_PREVIEW = 8;
+        guideHtml = '<h4>高胜率出装路线（分阶段 · 数值为热度/出场次数）</h4><div class="gm-guide">';
         ["start_game_items", "early_game_items", "mid_game_items", "late_game_items"].forEach(function (pk) {
           var ph = g[pk];
           if (!ph) return;
-          var items = (ph.items || []).map(function (it) {
+          var all = ph.items || [];
+          var show = all.slice(0, GAP_ITEM_PREVIEW);
+          var rest = all.slice(GAP_ITEM_PREVIEW);
+          var itemHtml = show.map(function (it) {
             var img = it.img ? '<img class="gm-item-img" src="' + it.img + '" alt="' + esc(it.cn) + '">' : '';
-            return '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span></div>';
+            var heat = it.times != null ? '<span class="gm-heat">' + it.times + '</span>' : '';
+            return '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span>' + heat + '</div>';
           }).join('');
-          if (items) guideHtml += '<div class="gm-phase"><span class="gm-phase-label">' + esc(ph.label) + '</span><div class="gm-items">' + items + '</div></div>';
+          var extra = rest.length
+            ? '<div class="gm-more"><button class="btn btn-sm btn-ghost js-gm-more" data-rest="' +
+              esc(JSON.stringify(rest)) + '">展开全部 ' + all.length + ' 件 ▾</button></div>'
+            : '';
+          if (all.length) guideHtml += '<div class="gm-phase"><span class="gm-phase-label">' + esc(ph.label) + '</span><div class="gm-items">' + itemHtml + '</div>' + extra + '</div>';
         });
         guideHtml += '</div>';
       } else {
@@ -355,6 +364,23 @@
       if (gClose) gClose.addEventListener('click', closeGapModal);
       gapModal.addEventListener('click', function (e) { if (e.target === gapModal) closeGapModal(); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGapModal(); });
+      // 「展开全部」委托：把该阶段剩余装备追加进容器
+      gapModal.addEventListener('click', function (e) {
+        var btn = e.target.closest('.js-gm-more');
+        if (!btn) return;
+        var phase = btn.closest('.gm-phase');
+        var itemsWrap = phase ? phase.querySelector('.gm-items') : null;
+        if (!itemsWrap) return;
+        var rest = [];
+        try { rest = JSON.parse(btn.getAttribute('data-rest')); } catch (err) { rest = []; }
+        rest.forEach(function (it) {
+          var img = it.img ? '<img class="gm-item-img" src="' + it.img + '" alt="' + esc(it.cn) + '">' : '';
+          var heat = it.times != null ? '<span class="gm-heat">' + it.times + '</span>' : '';
+          itemsWrap.insertAdjacentHTML('beforeend',
+            '<div class="gm-item" title="' + esc(it.dname) + '">' + img + '<span>' + esc(it.cn) + '</span>' + heat + '</div>');
+        });
+        btn.closest('.gm-more').remove();
+      });
     }
 
     // 顶部"显示条数"切换

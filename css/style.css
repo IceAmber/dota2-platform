@@ -752,3 +752,14 @@ table.data-table {
 }
 .gm-item span { font-size: 0.75rem; color: var(--text); max-width: 72px; }
 .gm-noguide { font-size: 0.9rem; }
+
+/* 出装详情：展开全部 + 热度角标 */
+.gm-more { margin: 8px 0 2px; }
+.gm-heat {
+  display: inline-block;
+  min-width: 18px; padding: 0 4px;
+  font-size: 0.68rem; color: var(--text-dim);
+  background: var(--bg-alt); border-radius: 4px;
+  margin-top: 2px;
+}
+.gm-phase-label { flex: 0 0 56px; }
