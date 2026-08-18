@@ -91,24 +91,24 @@ def load_match_data(arg):
 
 
 def get_hero_cn_map():
-    """从 fetch_hero_data.py 复用中文英雄名映射（id -> 中文名）。失败返回空 dict。"""
+    """构建 hero_id -> 中文英雄名 映射。优先读本地 herostats.json（快且稳），
+    失败再回退 OpenDota heroStats。全失败返回空 dict。"""
+    # 1) 本地 herostats.json
+    hp = BASE_DIR / "site" / "data" / "herostats.json"
     try:
-        import importlib.util
-        spec = importlib.util.spec_from_file_location("fhd", str(BASE_DIR / "scripts" / "fetch_hero_data.py"))
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        # CN_NAMES 是 英文名->中文名；用 heroStats 反查 id->中文
-        import urllib.request, json as _json
-        # 直接调 OpenDota heroStats 建 id->中文名
+        if hp.exists():
+            local = json.loads(hp.read_text(encoding="utf-8"))
+            return {h.get("id"): h.get("name") for h in (local.get("heroes") or []) if h.get("id")}
+    except Exception as e:
+        print(f"[warn] 本地英雄名映射读取失败: {e}")
+    # 2) 回退 OpenDota heroStats（需联网，可能超时）
+    try:
+        import ssl
+        ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
         url = "https://api.opendota.com/api/heroStats"
         req = urllib.request.Request(url, headers={"User-Agent": "dota2-community/1.0"})
-        import ssl; ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
-        raw = _json.loads(urllib.request.urlopen(req, timeout=60, context=ctx).read())
-        m = {}
-        for h in raw:
-            lid = h.get("localized_name")
-            m[h.get("id")] = mod.CN_NAMES.get(lid, lid)
-        return m
+        raw = json.loads(urllib.request.urlopen(req, timeout=20, context=ctx).read())
+        return {h.get("id"): h.get("localized_name") for h in raw if h.get("id")}
     except Exception as e:
         print(f"[warn] 英雄名映射不可用: {e}")
         return {}
@@ -182,10 +182,17 @@ def main():
 
     print(f"[info] 标题: {title}")
     print(f"[info] 调用后端生成复盘（数据: {'有' if match_data else '无(分析模式)'}）...")
-    result = call_review(match_data, args.prompt)
-    review_md = result.get("review", "")
-    if not review_md:
-        print("[error] 后端返回空复盘")
+    # LLM 偶发返回空 content，自动重试
+    review_md = ""
+    for attempt in range(1, 6):
+        result = call_review(match_data, args.prompt)
+        review_md = result.get("review", "") or ""
+        if review_md.strip():
+            break
+        print(f"[warn] 后端返回空复盘（第 {attempt} 次），{3*attempt}s 后重试...")
+        time.sleep(3 * attempt)
+    if not review_md.strip():
+        print("[error] 多次重试后仍为空复盘")
         sys.exit(1)
 
     # 组装 markdown（加前置 YAML 元信息 + 分享需要的字段）
