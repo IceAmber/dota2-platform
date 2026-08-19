@@ -648,7 +648,7 @@ table.data-table {
 .share-bar .btn { text-decoration: none; }
 
 /* ================= 二维码弹层 ================= */
-#qr-overlay, #rev-qr-overlay {
+#qr-overlay {
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -658,7 +658,7 @@ table.data-table {
   justify-content: center;
   padding: 20px;
 }
-#qr-overlay.open, #rev-qr-overlay.open { display: flex; }
+#qr-overlay.open { display: flex; }
 .qr-modal {
   position: relative;
   background: #fff;
@@ -767,39 +767,3 @@ table.data-table {
 }
 .gm-heat-badge .gm-heat-fire { font-size: 0.62rem; }
 .gm-phase-label { flex: 0 0 56px; }
-
-/* ================= 赛事复盘卡片（首页 + reviews 页共用） ================= */
-.review-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-.review-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 16px; cursor: pointer;
-  transition: transform .12s, border-color .12s;
-}
-.review-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-.review-card h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--gold); }
-.review-card .meta { font-size: .78rem; color: var(--text-dim); display: flex; gap: 10px; flex-wrap: wrap; }
-.review-card .src { font-size: .78rem; color: var(--text-dim); margin-top: 8px; }
-.review-card a { color: inherit; }
-.review-group { margin-bottom: 26px; }
-.group-title { font-size: 1.15rem; color: var(--gold); margin: 0 0 12px; }
-.pending-note { font-size: .82rem; color: var(--text-dim); margin-top: 14px; }
-.review-card.pending { opacity: .6; cursor: default; }
-.review-card.pending:hover { transform: none; border-color: var(--border); }
-#more-btn { margin-bottom: 14px; }
-
-/* —— 队标（team logo）：小方块队标图 + tag 文本回退 —— */
-.review-card-title { display: flex; align-items: center; flex-wrap: wrap; column-gap: 8px; }
-.team-logo-wrap { display: inline-flex; align-items: center; vertical-align: middle; }
-.team-logo {
-  width: 22px; height: 22px; border-radius: 5px; object-fit: cover;
-  display: inline-block; margin-right: 6px; flex: none;
-  background: rgba(255, 255, 255, .08); /* 加载中/透明 logo 的占位底 */
-}
-/* 队标正常加载时隐藏 tag 文本；img 被 onerror 移除或没有 logo_url 时回退显示 tag */
-.team-logo + .team-tag { display: none; }
-.team-tag { font-size: .95rem; font-weight: 600; color: var(--gold); white-space: nowrap; }
-.vs { margin: 0 2px; font-size: .78rem; color: var(--text-dim); font-weight: 400; }
-.title-suffix { font-size: .9rem; color: var(--text-dim); font-weight: 400; }
-.matchup-meta { display: inline-flex; align-items: center; }
-.review-card .meta .matchup-meta .team-logo,
-.review-card .meta .matchup-meta .team-tag { vertical-align: middle; }
