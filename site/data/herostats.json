@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-20T06:52:41+00:00",
-  "data_date": "2026-08-20",
+  "generated_at": "2026-08-21T06:53:40+00:00",
+  "data_date": "2026-08-21",
   "source_url": "https://api.opendota.com/api/heroStats",
   "version": 1,
   "min_pub_pick": 5000,
-  "total_pub_picks": 39923748,
+  "total_pub_picks": 40157829,
   "heroes": [
     {
       "id": 14,
@@ -17,18 +17,18 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 1094059,
-      "pub_win": 565368,
-      "pub_winrate": 51.68,
+      "pub_pick": 1100292,
+      "pub_win": 568363,
+      "pub_winrate": 51.66,
       "pub_ban": 0,
       "pick_share_pct": 2.74,
-      "pro_pick": 0,
+      "pro_pick": 1,
       "pro_win": 0,
-      "pro_winrate": null,
+      "pro_winrate": 0.0,
       "pro_ban": 0,
       "winrate_rank": 28,
       "pick_rank": 1,
-      "pro_rank": null,
+      "pro_rank": 73,
       "is_gap": false
     },
     {
@@ -42,18 +42,18 @@
         "Nuker",
         "Initiator"
       ],
-      "pub_pick": 996964,
-      "pub_win": 487888,
-      "pub_winrate": 48.94,
+      "pub_pick": 998603,
+      "pub_win": 488900,
+      "pub_winrate": 48.96,
       "pub_ban": 0,
-      "pick_share_pct": 2.497,
-      "pro_pick": 7,
+      "pick_share_pct": 2.487,
+      "pro_pick": 9,
       "pro_win": 5,
-      "pro_winrate": 71.43,
+      "pro_winrate": 55.56,
       "pro_ban": 0,
-      "winrate_rank": 80,
+      "winrate_rank": 81,
       "pick_rank": 2,
-      "pro_rank": 39,
+      "pro_rank": 23,
       "is_gap": false
     },
     {
@@ -67,16 +67,16 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 850671,
-      "pub_win": 422111,
-      "pub_winrate": 49.62,
+      "pub_pick": 863479,
+      "pub_win": 428950,
+      "pub_winrate": 49.68,
       "pub_ban": 0,
-      "pick_share_pct": 2.131,
-      "pro_pick": 26,
-      "pro_win": 13,
-      "pro_winrate": 50.0,
-      "pro_ban": 47,
-      "winrate_rank": 70,
+      "pick_share_pct": 2.15,
+      "pro_pick": 21,
+      "pro_win": 10,
+      "pro_winrate": 47.62,
+      "pro_ban": 33,
+      "winrate_rank": 69,
       "pick_rank": 3,
       "pro_rank": 6,
       "is_gap": false
@@ -90,18 +90,18 @@
         "Carry",
         "Nuker"
       ],
-      "pub_pick": 778434,
-      "pub_win": 392456,
-      "pub_winrate": 50.42,
+      "pub_pick": 783438,
+      "pub_win": 395051,
+      "pub_winrate": 50.43,
       "pub_ban": 0,
-      "pick_share_pct": 1.95,
+      "pick_share_pct": 1.951,
       "pro_pick": 1,
-      "pro_win": 0,
-      "pro_winrate": 0.0,
+      "pro_win": 1,
+      "pro_winrate": 100.0,
       "pro_ban": 0,
-      "winrate_rank": 50,
+      "winrate_rank": 49,
       "pick_rank": 4,
-      "pro_rank": 80,
+      "pro_rank": 74,
       "is_gap": false
     },
     {
@@ -113,18 +113,18 @@
         "Carry",
         "Nuker"
       ],
-      "pub_pick": 769786,
-      "pub_win": 371870,
-      "pub_winrate": 48.31,
+      "pub_pick": 772725,
+      "pub_win": 373652,
+      "pub_winrate": 48.36,
       "pub_ban": 0,
-      "pick_share_pct": 1.928,
-      "pro_pick": 18,
-      "pro_win": 9,
-      "pro_winrate": 50.0,
-      "pro_ban": 46,
-      "winrate_rank": 90,
+      "pick_share_pct": 1.924,
+      "pro_pick": 9,
+      "pro_win": 3,
+      "pro_winrate": 33.33,
+      "pro_ban": 38,
+      "winrate_rank": 89,
       "pick_rank": 5,
-      "pro_rank": 13,
+      "pro_rank": 22,
       "is_gap": false
     },
     {
@@ -137,18 +137,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 757542,
-      "pub_win": 374822,
+      "pub_pick": 758972,
+      "pub_win": 375535,
       "pub_winrate": 49.48,
       "pub_ban": 0,
-      "pick_share_pct": 1.897,
-      "pro_pick": 14,
-      "pro_win": 7,
+      "pick_share_pct": 1.89,
+      "pro_pick": 10,
+      "pro_win": 5,
       "pro_winrate": 50.0,
-      "pro_ban": 7,
+      "pro_ban": 4,
       "winrate_rank": 72,
       "pick_rank": 6,
-      "pro_rank": 22,
+      "pro_rank": 20,
       "is_gap": false
     },
     {
@@ -163,16 +163,16 @@
         "Escape",
         "Pusher"
       ],
-      "pub_pick": 714357,
-      "pub_win": 360562,
-      "pub_winrate": 50.47,
+      "pub_pick": 719737,
+      "pub_win": 362786,
+      "pub_winrate": 50.41,
       "pub_ban": 0,
-      "pick_share_pct": 1.789,
-      "pro_pick": 16,
-      "pro_win": 8,
-      "pro_winrate": 50.0,
-      "pro_ban": 39,
-      "winrate_rank": 49,
+      "pick_share_pct": 1.792,
+      "pro_pick": 11,
+      "pro_win": 5,
+      "pro_winrate": 45.45,
+      "pro_ban": 28,
+      "winrate_rank": 51,
       "pick_rank": 7,
       "pro_rank": 18,
       "is_gap": false
@@ -188,18 +188,18 @@
         "Disabler",
         "Carry"
       ],
-      "pub_pick": 677430,
-      "pub_win": 340994,
-      "pub_winrate": 50.34,
+      "pub_pick": 678286,
+      "pub_win": 341905,
+      "pub_winrate": 50.41,
       "pub_ban": 0,
-      "pick_share_pct": 1.697,
-      "pro_pick": 10,
-      "pro_win": 4,
-      "pro_winrate": 40.0,
-      "pro_ban": 15,
-      "winrate_rank": 51,
+      "pick_share_pct": 1.689,
+      "pro_pick": 5,
+      "pro_win": 3,
+      "pro_winrate": 60.0,
+      "pro_ban": 10,
+      "winrate_rank": 50,
       "pick_rank": 8,
-      "pro_rank": 29,
+      "pro_rank": 42,
       "is_gap": false
     },
     {
@@ -213,18 +213,18 @@
         "Durable",
         "Disabler"
       ],
-      "pub_pick": 672155,
-      "pub_win": 345306,
-      "pub_winrate": 51.37,
+      "pub_pick": 676566,
+      "pub_win": 347902,
+      "pub_winrate": 51.42,
       "pub_ban": 0,
-      "pick_share_pct": 1.684,
-      "pro_pick": 18,
-      "pro_win": 12,
-      "pro_winrate": 66.67,
-      "pro_ban": 19,
-      "winrate_rank": 31,
+      "pick_share_pct": 1.685,
+      "pro_pick": 14,
+      "pro_win": 11,
+      "pro_winrate": 78.57,
+      "pro_ban": 20,
+      "winrate_rank": 32,
       "pick_rank": 9,
-      "pro_rank": 14,
+      "pro_rank": 13,
       "is_gap": false
     },
     {
@@ -239,18 +239,18 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 661987,
-      "pub_win": 321964,
+      "pub_pick": 674281,
+      "pub_win": 327981,
       "pub_winrate": 48.64,
       "pub_ban": 0,
-      "pick_share_pct": 1.658,
+      "pick_share_pct": 1.679,
       "pro_pick": 19,
-      "pro_win": 11,
-      "pro_winrate": 57.89,
-      "pro_ban": 11,
+      "pro_win": 10,
+      "pro_winrate": 52.63,
+      "pro_ban": 9,
       "winrate_rank": 85,
       "pick_rank": 10,
-      "pro_rank": 10,
+      "pro_rank": 7,
       "is_gap": false
     },
     {
@@ -265,16 +265,16 @@
         "Durable",
         "Initiator"
       ],
-      "pub_pick": 648211,
-      "pub_win": 330885,
-      "pub_winrate": 51.05,
+      "pub_pick": 648398,
+      "pub_win": 330766,
+      "pub_winrate": 51.01,
       "pub_ban": 0,
-      "pick_share_pct": 1.624,
+      "pick_share_pct": 1.615,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 36,
+      "winrate_rank": 37,
       "pick_rank": 11,
       "pro_rank": null,
       "is_gap": false
@@ -289,18 +289,18 @@
         "Pusher",
         "Escape"
       ],
-      "pub_pick": 645097,
-      "pub_win": 337135,
-      "pub_winrate": 52.26,
+      "pub_pick": 643079,
+      "pub_win": 336030,
+      "pub_winrate": 52.25,
       "pub_ban": 0,
-      "pick_share_pct": 1.616,
-      "pro_pick": 2,
-      "pro_win": 1,
-      "pro_winrate": 50.0,
+      "pick_share_pct": 1.601,
+      "pro_pick": 1,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
       "pro_ban": 0,
-      "winrate_rank": 10,
+      "winrate_rank": 11,
       "pick_rank": 12,
-      "pro_rank": 68,
+      "pro_rank": 71,
       "is_gap": false
     },
     {
@@ -313,18 +313,18 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 603165,
-      "pub_win": 314537,
-      "pub_winrate": 52.15,
+      "pub_pick": 604819,
+      "pub_win": 315190,
+      "pub_winrate": 52.11,
       "pub_ban": 0,
-      "pick_share_pct": 1.511,
-      "pro_pick": 7,
+      "pick_share_pct": 1.506,
+      "pro_pick": 6,
       "pro_win": 4,
-      "pro_winrate": 57.14,
+      "pro_winrate": 66.67,
       "pro_ban": 2,
-      "winrate_rank": 11,
+      "winrate_rank": 15,
       "pick_rank": 13,
-      "pro_rank": 40,
+      "pro_rank": 41,
       "is_gap": false
     },
     {
@@ -339,18 +339,18 @@
         "Durable",
         "Escape"
       ],
-      "pub_pick": 601967,
-      "pub_win": 313478,
-      "pub_winrate": 52.08,
+      "pub_pick": 603138,
+      "pub_win": 314509,
+      "pub_winrate": 52.15,
       "pub_ban": 0,
-      "pick_share_pct": 1.508,
-      "pro_pick": 2,
-      "pro_win": 1,
-      "pro_winrate": 50.0,
+      "pick_share_pct": 1.502,
+      "pro_pick": 1,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
       "pro_ban": 0,
-      "winrate_rank": 17,
+      "winrate_rank": 12,
       "pick_rank": 14,
-      "pro_rank": 74,
+      "pro_rank": 80,
       "is_gap": false
     },
     {
@@ -365,18 +365,18 @@
         "Nuker",
         "Initiator"
       ],
-      "pub_pick": 600981,
-      "pub_win": 313110,
-      "pub_winrate": 52.1,
+      "pub_pick": 602096,
+      "pub_win": 313453,
+      "pub_winrate": 52.06,
       "pub_ban": 0,
-      "pick_share_pct": 1.505,
-      "pro_pick": 3,
-      "pro_win": 2,
-      "pro_winrate": 66.67,
+      "pick_share_pct": 1.499,
+      "pro_pick": 2,
+      "pro_win": 1,
+      "pro_winrate": 50.0,
       "pro_ban": 0,
-      "winrate_rank": 14,
+      "winrate_rank": 17,
       "pick_rank": 15,
-      "pro_rank": 58,
+      "pro_rank": 61,
       "is_gap": false
     },
     {
@@ -390,18 +390,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 569067,
-      "pub_win": 287625,
-      "pub_winrate": 50.54,
+      "pub_pick": 570207,
+      "pub_win": 287999,
+      "pub_winrate": 50.51,
       "pub_ban": 0,
-      "pick_share_pct": 1.425,
-      "pro_pick": 4,
+      "pick_share_pct": 1.42,
+      "pro_pick": 3,
       "pro_win": 1,
-      "pro_winrate": 25.0,
-      "pro_ban": 3,
-      "winrate_rank": 45,
+      "pro_winrate": 33.33,
+      "pro_ban": 2,
+      "winrate_rank": 47,
       "pick_rank": 16,
-      "pro_rank": 54,
+      "pro_rank": 53,
       "is_gap": false
     },
     {
@@ -413,15 +413,15 @@
         "Nuker",
         "Carry"
       ],
-      "pub_pick": 563851,
-      "pub_win": 281334,
-      "pub_winrate": 49.9,
+      "pub_pick": 560725,
+      "pub_win": 279939,
+      "pub_winrate": 49.92,
       "pub_ban": 0,
-      "pick_share_pct": 1.412,
+      "pick_share_pct": 1.396,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
-      "pro_ban": 1,
+      "pro_ban": 0,
       "winrate_rank": 63,
       "pick_rank": 17,
       "pro_rank": null,
@@ -437,18 +437,18 @@
         "Disabler",
         "Pusher"
       ],
-      "pub_pick": 560774,
-      "pub_win": 261862,
-      "pub_winrate": 46.7,
+      "pub_pick": 556744,
+      "pub_win": 260400,
+      "pub_winrate": 46.77,
       "pub_ban": 0,
-      "pick_share_pct": 1.405,
-      "pro_pick": 9,
-      "pro_win": 3,
-      "pro_winrate": 33.33,
-      "pro_ban": 22,
+      "pick_share_pct": 1.386,
+      "pro_pick": 8,
+      "pro_win": 2,
+      "pro_winrate": 25.0,
+      "pro_ban": 11,
       "winrate_rank": 112,
       "pick_rank": 18,
-      "pro_rank": 31,
+      "pro_rank": 29,
       "is_gap": false
     },
     {
@@ -460,16 +460,16 @@
         "Carry",
         "Escape"
       ],
-      "pub_pick": 550261,
-      "pub_win": 284735,
-      "pub_winrate": 51.75,
+      "pub_pick": 551228,
+      "pub_win": 285647,
+      "pub_winrate": 51.82,
       "pub_ban": 0,
-      "pick_share_pct": 1.378,
+      "pick_share_pct": 1.373,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 26,
+      "winrate_rank": 23,
       "pick_rank": 19,
       "pro_rank": null,
       "is_gap": false
@@ -486,9 +486,9 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 545938,
-      "pub_win": 289407,
-      "pub_winrate": 53.01,
+      "pub_pick": 549116,
+      "pub_win": 291439,
+      "pub_winrate": 53.07,
       "pub_ban": 0,
       "pick_share_pct": 1.367,
       "pro_pick": 0,
@@ -511,18 +511,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 540957,
-      "pub_win": 277570,
-      "pub_winrate": 51.31,
+      "pub_pick": 544957,
+      "pub_win": 279459,
+      "pub_winrate": 51.28,
       "pub_ban": 0,
-      "pick_share_pct": 1.355,
-      "pro_pick": 27,
-      "pro_win": 12,
-      "pro_winrate": 44.44,
-      "pro_ban": 31,
+      "pick_share_pct": 1.357,
+      "pro_pick": 23,
+      "pro_win": 11,
+      "pro_winrate": 47.83,
+      "pro_ban": 18,
       "winrate_rank": 33,
       "pick_rank": 21,
-      "pro_rank": 5,
+      "pro_rank": 4,
       "is_gap": false
     },
     {
@@ -535,42 +535,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 534859,
-      "pub_win": 276980,
+      "pub_pick": 536244,
+      "pub_win": 277696,
       "pub_winrate": 51.79,
       "pub_ban": 0,
-      "pick_share_pct": 1.34,
+      "pick_share_pct": 1.335,
       "pro_pick": 2,
       "pro_win": 1,
       "pro_winrate": 50.0,
       "pro_ban": 0,
-      "winrate_rank": 23,
+      "winrate_rank": 24,
       "pick_rank": 22,
-      "pro_rank": 67,
-      "is_gap": false
-    },
-    {
-      "id": 67,
-      "name": "幽鬼",
-      "name_en": "Spectre",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spectre.png",
-      "roles": [
-        "Carry",
-        "Durable",
-        "Escape"
-      ],
-      "pub_pick": 508986,
-      "pub_win": 276326,
-      "pub_winrate": 54.29,
-      "pub_ban": 0,
-      "pick_share_pct": 1.275,
-      "pro_pick": 3,
-      "pro_win": 2,
-      "pro_winrate": 66.67,
-      "pro_ban": 2,
-      "winrate_rank": 2,
-      "pick_rank": 23,
-      "pro_rank": 63,
+      "pro_rank": 59,
       "is_gap": false
     },
     {
@@ -584,18 +560,42 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 508170,
-      "pub_win": 249720,
-      "pub_winrate": 49.14,
+      "pub_pick": 509573,
+      "pub_win": 250270,
+      "pub_winrate": 49.11,
       "pub_ban": 0,
-      "pick_share_pct": 1.273,
+      "pick_share_pct": 1.269,
       "pro_pick": 7,
-      "pro_win": 5,
-      "pro_winrate": 71.43,
-      "pro_ban": 8,
+      "pro_win": 6,
+      "pro_winrate": 85.71,
+      "pro_ban": 6,
       "winrate_rank": 78,
+      "pick_rank": 23,
+      "pro_rank": 40,
+      "is_gap": false
+    },
+    {
+      "id": 67,
+      "name": "幽鬼",
+      "name_en": "Spectre",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spectre.png",
+      "roles": [
+        "Carry",
+        "Durable",
+        "Escape"
+      ],
+      "pub_pick": 504052,
+      "pub_win": 273663,
+      "pub_winrate": 54.29,
+      "pub_ban": 0,
+      "pick_share_pct": 1.255,
+      "pro_pick": 2,
+      "pro_win": 2,
+      "pro_winrate": 100.0,
+      "pro_ban": 2,
+      "winrate_rank": 2,
       "pick_rank": 24,
-      "pro_rank": 45,
+      "pro_rank": 65,
       "is_gap": false
     },
     {
@@ -609,18 +609,18 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 490598,
-      "pub_win": 260427,
-      "pub_winrate": 53.08,
+      "pub_pick": 498623,
+      "pub_win": 264720,
+      "pub_winrate": 53.09,
       "pub_ban": 0,
-      "pick_share_pct": 1.229,
-      "pro_pick": 13,
-      "pro_win": 6,
-      "pro_winrate": 46.15,
-      "pro_ban": 13,
+      "pick_share_pct": 1.242,
+      "pro_pick": 9,
+      "pro_win": 5,
+      "pro_winrate": 55.56,
+      "pro_ban": 10,
       "winrate_rank": 4,
       "pick_rank": 25,
-      "pro_rank": 24,
+      "pro_rank": 25,
       "is_gap": false
     },
     {
@@ -635,93 +635,18 @@
         "Nuker",
         "Escape"
       ],
-      "pub_pick": 476964,
-      "pub_win": 253831,
-      "pub_winrate": 53.22,
+      "pub_pick": 477792,
+      "pub_win": 254214,
+      "pub_winrate": 53.21,
       "pub_ban": 0,
-      "pick_share_pct": 1.195,
+      "pick_share_pct": 1.19,
       "pro_pick": 2,
       "pro_win": 1,
       "pro_winrate": 50.0,
       "pro_ban": 1,
       "winrate_rank": 3,
       "pick_rank": 26,
-      "pro_rank": 69,
-      "is_gap": false
-    },
-    {
-      "id": 12,
-      "name": "幻影长矛手",
-      "name_en": "Phantom Lancer",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png",
-      "roles": [
-        "Carry",
-        "Escape",
-        "Pusher",
-        "Nuker"
-      ],
-      "pub_pick": 468890,
-      "pub_win": 248032,
-      "pub_winrate": 52.9,
-      "pub_ban": 0,
-      "pick_share_pct": 1.174,
-      "pro_pick": 4,
-      "pro_win": 1,
-      "pro_winrate": 25.0,
-      "pro_ban": 8,
-      "winrate_rank": 6,
-      "pick_rank": 27,
-      "pro_rank": 55,
-      "is_gap": false
-    },
-    {
-      "id": 101,
-      "name": "天怒法师",
-      "name_en": "Skywrath Mage",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
-      "roles": [
-        "Support",
-        "Nuker",
-        "Disabler"
-      ],
-      "pub_pick": 467499,
-      "pub_win": 233861,
-      "pub_winrate": 50.02,
-      "pub_ban": 0,
-      "pick_share_pct": 1.171,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
-      "pro_ban": 0,
-      "winrate_rank": 60,
-      "pick_rank": 28,
-      "pro_rank": null,
-      "is_gap": false
-    },
-    {
-      "id": 42,
-      "name": "骷髅王",
-      "name_en": "Wraith King",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png",
-      "roles": [
-        "Carry",
-        "Support",
-        "Durable",
-        "Disabler",
-        "Initiator"
-      ],
-      "pub_pick": 466993,
-      "pub_win": 256007,
-      "pub_winrate": 54.82,
-      "pub_ban": 0,
-      "pick_share_pct": 1.17,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
-      "pro_ban": 0,
-      "winrate_rank": 1,
-      "pick_rank": 29,
-      "pro_rank": null,
+      "pro_rank": 60,
       "is_gap": false
     },
     {
@@ -735,18 +660,67 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 459697,
-      "pub_win": 217618,
+      "pub_pick": 468629,
+      "pub_win": 221859,
       "pub_winrate": 47.34,
       "pub_ban": 0,
-      "pick_share_pct": 1.151,
-      "pro_pick": 45,
-      "pro_win": 17,
-      "pro_winrate": 37.78,
-      "pro_ban": 27,
-      "winrate_rank": 108,
-      "pick_rank": 30,
-      "pro_rank": 1,
+      "pick_share_pct": 1.167,
+      "pro_pick": 30,
+      "pro_win": 12,
+      "pro_winrate": 40.0,
+      "pro_ban": 17,
+      "winrate_rank": 105,
+      "pick_rank": 27,
+      "pro_rank": 2,
+      "is_gap": false
+    },
+    {
+      "id": 101,
+      "name": "天怒法师",
+      "name_en": "Skywrath Mage",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "roles": [
+        "Support",
+        "Nuker",
+        "Disabler"
+      ],
+      "pub_pick": 467262,
+      "pub_win": 233685,
+      "pub_winrate": 50.01,
+      "pub_ban": 0,
+      "pick_share_pct": 1.164,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 0,
+      "winrate_rank": 59,
+      "pick_rank": 28,
+      "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 12,
+      "name": "幻影长矛手",
+      "name_en": "Phantom Lancer",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png",
+      "roles": [
+        "Carry",
+        "Escape",
+        "Pusher",
+        "Nuker"
+      ],
+      "pub_pick": 466186,
+      "pub_win": 246715,
+      "pub_winrate": 52.92,
+      "pub_ban": 0,
+      "pick_share_pct": 1.161,
+      "pro_pick": 4,
+      "pro_win": 1,
+      "pro_winrate": 25.0,
+      "pro_ban": 6,
+      "winrate_rank": 6,
+      "pick_rank": 29,
+      "pro_rank": 50,
       "is_gap": false
     },
     {
@@ -761,18 +735,69 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 457917,
-      "pub_win": 236997,
-      "pub_winrate": 51.76,
+      "pub_pick": 466063,
+      "pub_win": 241340,
+      "pub_winrate": 51.78,
       "pub_ban": 0,
-      "pick_share_pct": 1.147,
-      "pro_pick": 40,
-      "pro_win": 19,
-      "pro_winrate": 47.5,
-      "pro_ban": 15,
+      "pick_share_pct": 1.161,
+      "pro_pick": 32,
+      "pro_win": 15,
+      "pro_winrate": 46.88,
+      "pro_ban": 12,
       "winrate_rank": 25,
+      "pick_rank": 30,
+      "pro_rank": 1,
+      "is_gap": false
+    },
+    {
+      "id": 42,
+      "name": "骷髅王",
+      "name_en": "Wraith King",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png",
+      "roles": [
+        "Carry",
+        "Support",
+        "Durable",
+        "Disabler",
+        "Initiator"
+      ],
+      "pub_pick": 466054,
+      "pub_win": 255688,
+      "pub_winrate": 54.86,
+      "pub_ban": 0,
+      "pick_share_pct": 1.161,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 0,
+      "winrate_rank": 1,
       "pick_rank": 31,
-      "pro_rank": 2,
+      "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 53,
+      "name": "先知",
+      "name_en": "Nature's Prophet",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+      "roles": [
+        "Carry",
+        "Pusher",
+        "Escape",
+        "Nuker"
+      ],
+      "pub_pick": 453527,
+      "pub_win": 193469,
+      "pub_winrate": 42.66,
+      "pub_ban": 0,
+      "pick_share_pct": 1.129,
+      "pro_pick": 13,
+      "pro_win": 7,
+      "pro_winrate": 53.85,
+      "pro_ban": 20,
+      "winrate_rank": 127,
+      "pick_rank": 32,
+      "pro_rank": 14,
       "is_gap": false
     },
     {
@@ -785,17 +810,17 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 447402,
-      "pub_win": 223175,
-      "pub_winrate": 49.88,
+      "pub_pick": 447873,
+      "pub_win": 223526,
+      "pub_winrate": 49.91,
       "pub_ban": 0,
-      "pick_share_pct": 1.121,
+      "pick_share_pct": 1.115,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
       "winrate_rank": 64,
-      "pick_rank": 32,
+      "pick_rank": 33,
       "pro_rank": null,
       "is_gap": false
     },
@@ -810,43 +835,18 @@
         "Nuker",
         "Escape"
       ],
-      "pub_pick": 434511,
-      "pub_win": 213735,
+      "pub_pick": 434475,
+      "pub_win": 213706,
       "pub_winrate": 49.19,
       "pub_ban": 0,
-      "pick_share_pct": 1.088,
-      "pro_pick": 3,
-      "pro_win": 1,
-      "pro_winrate": 33.33,
+      "pick_share_pct": 1.082,
+      "pro_pick": 2,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
       "pro_ban": 5,
       "winrate_rank": 77,
-      "pick_rank": 33,
-      "pro_rank": 64,
-      "is_gap": false
-    },
-    {
-      "id": 53,
-      "name": "先知",
-      "name_en": "Nature's Prophet",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
-      "roles": [
-        "Carry",
-        "Pusher",
-        "Escape",
-        "Nuker"
-      ],
-      "pub_pick": 425207,
-      "pub_win": 181628,
-      "pub_winrate": 42.72,
-      "pub_ban": 0,
-      "pick_share_pct": 1.065,
-      "pro_pick": 12,
-      "pro_win": 9,
-      "pro_winrate": 75.0,
-      "pro_ban": 30,
-      "winrate_rank": 127,
       "pick_rank": 34,
-      "pro_rank": 26,
+      "pro_rank": 68,
       "is_gap": false
     },
     {
@@ -861,18 +861,18 @@
         "Initiator",
         "Durable"
       ],
-      "pub_pick": 421692,
-      "pub_win": 201389,
+      "pub_pick": 425884,
+      "pub_win": 203411,
       "pub_winrate": 47.76,
       "pub_ban": 0,
-      "pick_share_pct": 1.056,
-      "pro_pick": 30,
-      "pro_win": 22,
-      "pro_winrate": 73.33,
-      "pro_ban": 46,
-      "winrate_rank": 96,
+      "pick_share_pct": 1.061,
+      "pro_pick": 17,
+      "pro_win": 13,
+      "pro_winrate": 76.47,
+      "pro_ban": 44,
+      "winrate_rank": 97,
       "pick_rank": 35,
-      "pro_rank": 4,
+      "pro_rank": 9,
       "is_gap": false
     },
     {
@@ -887,11 +887,11 @@
         "Initiator",
         "Nuker"
       ],
-      "pub_pick": 416014,
-      "pub_win": 210521,
-      "pub_winrate": 50.6,
+      "pub_pick": 413190,
+      "pub_win": 208983,
+      "pub_winrate": 50.58,
       "pub_ban": 0,
-      "pick_share_pct": 1.042,
+      "pick_share_pct": 1.029,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
@@ -913,15 +913,15 @@
         "Nuker",
         "Escape"
       ],
-      "pub_pick": 409733,
-      "pub_win": 206015,
-      "pub_winrate": 50.28,
+      "pub_pick": 408907,
+      "pub_win": 205687,
+      "pub_winrate": 50.3,
       "pub_ban": 0,
-      "pick_share_pct": 1.026,
-      "pro_pick": 35,
-      "pro_win": 16,
-      "pro_winrate": 45.71,
-      "pro_ban": 31,
+      "pick_share_pct": 1.018,
+      "pro_pick": 29,
+      "pro_win": 12,
+      "pro_winrate": 41.38,
+      "pro_ban": 19,
       "winrate_rank": 53,
       "pick_rank": 37,
       "pro_rank": 3,
@@ -936,16 +936,16 @@
         "Support",
         "Nuker"
       ],
-      "pub_pick": 409034,
-      "pub_win": 215398,
-      "pub_winrate": 52.66,
+      "pub_pick": 408133,
+      "pub_win": 214954,
+      "pub_winrate": 52.67,
       "pub_ban": 0,
-      "pick_share_pct": 1.025,
+      "pick_share_pct": 1.016,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 7,
+      "winrate_rank": 8,
       "pick_rank": 38,
       "pro_rank": null,
       "is_gap": false
@@ -960,18 +960,18 @@
         "Nuker",
         "Pusher"
       ],
-      "pub_pick": 400437,
-      "pub_win": 202862,
-      "pub_winrate": 50.66,
+      "pub_pick": 398070,
+      "pub_win": 201784,
+      "pub_winrate": 50.69,
       "pub_ban": 0,
-      "pick_share_pct": 1.003,
-      "pro_pick": 3,
+      "pick_share_pct": 0.991,
+      "pro_pick": 1,
       "pro_win": 1,
-      "pro_winrate": 33.33,
-      "pro_ban": 2,
-      "winrate_rank": 42,
+      "pro_winrate": 100.0,
+      "pro_ban": 1,
+      "winrate_rank": 41,
       "pick_rank": 39,
-      "pro_rank": 60,
+      "pro_rank": 76,
       "is_gap": false
     },
     {
@@ -983,67 +983,18 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 384401,
-      "pub_win": 196128,
-      "pub_winrate": 51.02,
+      "pub_pick": 387535,
+      "pub_win": 197661,
+      "pub_winrate": 51.0,
       "pub_ban": 0,
-      "pick_share_pct": 0.963,
-      "pro_pick": 1,
-      "pro_win": 0,
-      "pro_winrate": 0.0,
-      "pro_ban": 0,
-      "winrate_rank": 38,
-      "pick_rank": 40,
-      "pro_rank": 89,
-      "is_gap": false
-    },
-    {
-      "id": 39,
-      "name": "痛苦女王",
-      "name_en": "Queen of Pain",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png",
-      "roles": [
-        "Carry",
-        "Nuker",
-        "Escape"
-      ],
-      "pub_pick": 380724,
-      "pub_win": 180314,
-      "pub_winrate": 47.36,
-      "pub_ban": 0,
-      "pick_share_pct": 0.954,
+      "pick_share_pct": 0.965,
       "pro_pick": 2,
       "pro_win": 1,
       "pro_winrate": 50.0,
-      "pro_ban": 1,
-      "winrate_rank": 104,
-      "pick_rank": 41,
-      "pro_rank": 70,
-      "is_gap": false
-    },
-    {
-      "id": 93,
-      "name": "斯拉克",
-      "name_en": "Slark",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slark.png",
-      "roles": [
-        "Carry",
-        "Escape",
-        "Disabler",
-        "Nuker"
-      ],
-      "pub_pick": 375566,
-      "pub_win": 188013,
-      "pub_winrate": 50.06,
-      "pub_ban": 0,
-      "pick_share_pct": 0.941,
-      "pro_pick": 1,
-      "pro_win": 1,
-      "pro_winrate": 100.0,
-      "pro_ban": 4,
-      "winrate_rank": 57,
-      "pick_rank": 42,
-      "pro_rank": 87,
+      "pro_ban": 0,
+      "winrate_rank": 38,
+      "pick_rank": 40,
+      "pro_rank": 69,
       "is_gap": false
     },
     {
@@ -1058,18 +1009,90 @@
         "Durable",
         "Escape"
       ],
-      "pub_pick": 371666,
-      "pub_win": 186590,
-      "pub_winrate": 50.2,
+      "pub_pick": 382434,
+      "pub_win": 192315,
+      "pub_winrate": 50.29,
       "pub_ban": 0,
-      "pick_share_pct": 0.931,
-      "pro_pick": 15,
-      "pro_win": 7,
-      "pro_winrate": 46.67,
-      "pro_ban": 21,
-      "winrate_rank": 56,
+      "pick_share_pct": 0.952,
+      "pro_pick": 11,
+      "pro_win": 6,
+      "pro_winrate": 54.55,
+      "pro_ban": 18,
+      "winrate_rank": 54,
+      "pick_rank": 41,
+      "pro_rank": 19,
+      "is_gap": false
+    },
+    {
+      "id": 39,
+      "name": "痛苦女王",
+      "name_en": "Queen of Pain",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png",
+      "roles": [
+        "Carry",
+        "Nuker",
+        "Escape"
+      ],
+      "pub_pick": 377577,
+      "pub_win": 178698,
+      "pub_winrate": 47.33,
+      "pub_ban": 0,
+      "pick_share_pct": 0.94,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 1,
+      "winrate_rank": 106,
+      "pick_rank": 42,
+      "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 93,
+      "name": "斯拉克",
+      "name_en": "Slark",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slark.png",
+      "roles": [
+        "Carry",
+        "Escape",
+        "Disabler",
+        "Nuker"
+      ],
+      "pub_pick": 377199,
+      "pub_win": 189000,
+      "pub_winrate": 50.11,
+      "pub_ban": 0,
+      "pick_share_pct": 0.939,
+      "pro_pick": 2,
+      "pro_win": 2,
+      "pro_winrate": 100.0,
+      "pro_ban": 2,
+      "winrate_rank": 57,
       "pick_rank": 43,
-      "pro_rank": 20,
+      "pro_rank": 67,
+      "is_gap": false
+    },
+    {
+      "id": 135,
+      "name": "破晓辰星",
+      "name_en": "Dawnbreaker",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dawnbreaker.png",
+      "roles": [
+        "Carry",
+        "Durable"
+      ],
+      "pub_pick": 370278,
+      "pub_win": 192992,
+      "pub_winrate": 52.12,
+      "pub_ban": 0,
+      "pick_share_pct": 0.922,
+      "pro_pick": 8,
+      "pro_win": 5,
+      "pro_winrate": 62.5,
+      "pro_ban": 5,
+      "winrate_rank": 14,
+      "pick_rank": 44,
+      "pro_rank": 34,
       "is_gap": false
     },
     {
@@ -1083,41 +1106,18 @@
         "Pusher",
         "Disabler"
       ],
-      "pub_pick": 368270,
-      "pub_win": 178571,
-      "pub_winrate": 48.49,
+      "pub_pick": 367172,
+      "pub_win": 178159,
+      "pub_winrate": 48.52,
       "pub_ban": 0,
-      "pick_share_pct": 0.922,
-      "pro_pick": 12,
-      "pro_win": 6,
-      "pro_winrate": 50.0,
-      "pro_ban": 1,
-      "winrate_rank": 88,
-      "pick_rank": 44,
-      "pro_rank": 27,
-      "is_gap": false
-    },
-    {
-      "id": 135,
-      "name": "破晓辰星",
-      "name_en": "Dawnbreaker",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dawnbreaker.png",
-      "roles": [
-        "Carry",
-        "Durable"
-      ],
-      "pub_pick": 366909,
-      "pub_win": 191327,
-      "pub_winrate": 52.15,
-      "pub_ban": 0,
-      "pick_share_pct": 0.919,
+      "pick_share_pct": 0.914,
       "pro_pick": 9,
-      "pro_win": 6,
-      "pro_winrate": 66.67,
-      "pro_ban": 3,
-      "winrate_rank": 13,
+      "pro_win": 3,
+      "pro_winrate": 33.33,
+      "pro_ban": 0,
+      "winrate_rank": 88,
       "pick_rank": 45,
-      "pro_rank": 36,
+      "pro_rank": 26,
       "is_gap": false
     },
     {
@@ -1132,44 +1132,18 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 348875,
-      "pub_win": 179308,
-      "pub_winrate": 51.4,
+      "pub_pick": 350545,
+      "pub_win": 180396,
+      "pub_winrate": 51.46,
       "pub_ban": 0,
-      "pick_share_pct": 0.874,
-      "pro_pick": 9,
-      "pro_win": 2,
-      "pro_winrate": 22.22,
-      "pro_ban": 10,
+      "pick_share_pct": 0.873,
+      "pro_pick": 7,
+      "pro_win": 3,
+      "pro_winrate": 42.86,
+      "pro_ban": 8,
       "winrate_rank": 30,
       "pick_rank": 46,
-      "pro_rank": 33,
-      "is_gap": false
-    },
-    {
-      "id": 41,
-      "name": "虚空假面",
-      "name_en": "Faceless Void",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
-      "roles": [
-        "Carry",
-        "Initiator",
-        "Disabler",
-        "Escape",
-        "Durable"
-      ],
-      "pub_pick": 347442,
-      "pub_win": 170286,
-      "pub_winrate": 49.01,
-      "pub_ban": 0,
-      "pick_share_pct": 0.87,
-      "pro_pick": 1,
-      "pro_win": 0,
-      "pro_winrate": 0.0,
-      "pro_ban": 3,
-      "winrate_rank": 79,
-      "pick_rank": 47,
-      "pro_rank": 81,
+      "pro_rank": 37,
       "is_gap": false
     },
     {
@@ -1184,18 +1158,44 @@
         "Disabler",
         "Initiator"
       ],
-      "pub_pick": 334912,
-      "pub_win": 163425,
-      "pub_winrate": 48.8,
+      "pub_pick": 349762,
+      "pub_win": 170207,
+      "pub_winrate": 48.66,
       "pub_ban": 0,
-      "pick_share_pct": 0.839,
-      "pro_pick": 22,
-      "pro_win": 11,
-      "pro_winrate": 50.0,
-      "pro_ban": 36,
+      "pick_share_pct": 0.871,
+      "pro_pick": 19,
+      "pro_win": 9,
+      "pro_winrate": 47.37,
+      "pro_ban": 30,
       "winrate_rank": 84,
+      "pick_rank": 47,
+      "pro_rank": 8,
+      "is_gap": false
+    },
+    {
+      "id": 41,
+      "name": "虚空假面",
+      "name_en": "Faceless Void",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
+      "roles": [
+        "Carry",
+        "Initiator",
+        "Disabler",
+        "Escape",
+        "Durable"
+      ],
+      "pub_pick": 344687,
+      "pub_win": 169113,
+      "pub_winrate": 49.06,
+      "pub_ban": 0,
+      "pick_share_pct": 0.858,
+      "pro_pick": 1,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 3,
+      "winrate_rank": 79,
       "pick_rank": 48,
-      "pro_rank": 9,
+      "pro_rank": 75,
       "is_gap": false
     },
     {
@@ -1209,18 +1209,18 @@
         "Initiator",
         "Disabler"
       ],
-      "pub_pick": 310946,
-      "pub_win": 150960,
-      "pub_winrate": 48.55,
+      "pub_pick": 311558,
+      "pub_win": 151157,
+      "pub_winrate": 48.52,
       "pub_ban": 0,
-      "pick_share_pct": 0.779,
+      "pick_share_pct": 0.776,
       "pro_pick": 3,
-      "pro_win": 1,
-      "pro_winrate": 33.33,
-      "pro_ban": 5,
+      "pro_win": 2,
+      "pro_winrate": 66.67,
+      "pro_ban": 4,
       "winrate_rank": 87,
       "pick_rank": 49,
-      "pro_rank": 59,
+      "pro_rank": 56,
       "is_gap": false
     },
     {
@@ -1235,18 +1235,18 @@
         "Nuker",
         "Carry"
       ],
-      "pub_pick": 309064,
-      "pub_win": 156185,
+      "pub_pick": 310335,
+      "pub_win": 156827,
       "pub_winrate": 50.53,
       "pub_ban": 0,
-      "pick_share_pct": 0.774,
-      "pro_pick": 6,
-      "pro_win": 3,
-      "pro_winrate": 50.0,
-      "pro_ban": 3,
+      "pick_share_pct": 0.773,
+      "pro_pick": 5,
+      "pro_win": 2,
+      "pro_winrate": 40.0,
+      "pro_ban": 4,
       "winrate_rank": 46,
       "pick_rank": 50,
-      "pro_rank": 47,
+      "pro_rank": 44,
       "is_gap": false
     },
     {
@@ -1261,18 +1261,18 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 299561,
-      "pub_win": 151264,
-      "pub_winrate": 50.5,
+      "pub_pick": 300621,
+      "pub_win": 152020,
+      "pub_winrate": 50.57,
       "pub_ban": 0,
-      "pick_share_pct": 0.75,
-      "pro_pick": 11,
+      "pick_share_pct": 0.749,
+      "pro_pick": 9,
       "pro_win": 2,
-      "pro_winrate": 18.18,
-      "pro_ban": 17,
-      "winrate_rank": 47,
+      "pro_winrate": 22.22,
+      "pro_ban": 15,
+      "winrate_rank": 45,
       "pick_rank": 51,
-      "pro_rank": 28,
+      "pro_rank": 24,
       "is_gap": false
     },
     {
@@ -1287,16 +1287,16 @@
         "Pusher",
         "Disabler"
       ],
-      "pub_pick": 294712,
-      "pub_win": 140196,
-      "pub_winrate": 47.57,
+      "pub_pick": 295153,
+      "pub_win": 140648,
+      "pub_winrate": 47.65,
       "pub_ban": 0,
-      "pick_share_pct": 0.738,
+      "pick_share_pct": 0.735,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 100,
+      "winrate_rank": 99,
       "pick_rank": 52,
       "pro_rank": null,
       "is_gap": false
@@ -1312,16 +1312,16 @@
         "Initiator",
         "Nuker"
       ],
-      "pub_pick": 292387,
-      "pub_win": 144230,
-      "pub_winrate": 49.33,
+      "pub_pick": 291255,
+      "pub_win": 143963,
+      "pub_winrate": 49.43,
       "pub_ban": 0,
-      "pick_share_pct": 0.732,
+      "pick_share_pct": 0.725,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 76,
+      "winrate_rank": 73,
       "pick_rank": 53,
       "pro_rank": null,
       "is_gap": false
@@ -1338,18 +1338,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 290613,
-      "pub_win": 150343,
-      "pub_winrate": 51.73,
+      "pub_pick": 288632,
+      "pub_win": 149271,
+      "pub_winrate": 51.72,
       "pub_ban": 0,
-      "pick_share_pct": 0.728,
-      "pro_pick": 3,
+      "pick_share_pct": 0.719,
+      "pro_pick": 2,
       "pro_win": 0,
       "pro_winrate": 0.0,
-      "pro_ban": 5,
+      "pro_ban": 2,
       "winrate_rank": 27,
       "pick_rank": 54,
-      "pro_rank": 61,
+      "pro_rank": 64,
       "is_gap": false
     },
     {
@@ -1363,11 +1363,11 @@
         "Nuker",
         "Initiator"
       ],
-      "pub_pick": 280166,
-      "pub_win": 139850,
-      "pub_winrate": 49.92,
+      "pub_pick": 279382,
+      "pub_win": 139594,
+      "pub_winrate": 49.97,
       "pub_ban": 0,
-      "pick_share_pct": 0.702,
+      "pick_share_pct": 0.696,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
@@ -1387,11 +1387,11 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 269128,
-      "pub_win": 139746,
-      "pub_winrate": 51.93,
+      "pub_pick": 270450,
+      "pub_win": 140380,
+      "pub_winrate": 51.91,
       "pub_ban": 0,
-      "pick_share_pct": 0.674,
+      "pick_share_pct": 0.673,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
@@ -1875,18 +1875,18 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 265844,
-      "pub_win": 129086,
-      "pub_winrate": 48.56,
+      "pub_pick": 269603,
+      "pub_win": 130844,
+      "pub_winrate": 48.53,
       "pub_ban": 0,
-      "pick_share_pct": 0.666,
-      "pro_pick": 24,
-      "pro_win": 13,
-      "pro_winrate": 54.17,
-      "pro_ban": 10,
+      "pick_share_pct": 0.671,
+      "pro_pick": 17,
+      "pro_win": 8,
+      "pro_winrate": 47.06,
+      "pro_ban": 7,
       "winrate_rank": 86,
       "pick_rank": 57,
-      "pro_rank": 8,
+      "pro_rank": 10,
       "is_gap": false
     },
     {
@@ -1899,19 +1899,729 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 260681,
-      "pub_win": 123791,
-      "pub_winrate": 47.49,
+      "pub_pick": 266433,
+      "pub_win": 125808,
+      "pub_winrate": 47.22,
       "pub_ban": 0,
-      "pick_share_pct": 0.653,
-      "pro_pick": 7,
-      "pro_win": 4,
-      "pro_winrate": 57.14,
-      "pro_ban": 10,
-      "winrate_rank": 101,
+      "pick_share_pct": 0.663,
+      "pro_pick": 8,
+      "pro_win": 6,
+      "pro_winrate": 75.0,
+      "pro_ban": 14,
+      "winrate_rank": 108,
       "pick_rank": 58,
-      "pro_rank": 44,
+      "pro_rank": 33,
       "is_gap": false
+    },
+    {
+      "id": 62,
+      "name": "赏金猎人",
+      "name_en": "Bounty Hunter",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png",
+      "roles": [
+        "Escape",
+        "Nuker"
+      ],
+      "pub_pick": 260403,
+      "pub_win": 137075,
+      "pub_winrate": 52.64,
+      "pub_ban": 0,
+      "pick_share_pct": 0.648,
+      "pro_pick": 8,
+      "pro_win": 7,
+      "pro_winrate": 87.5,
+      "pro_ban": 2,
+      "winrate_rank": 9,
+      "pick_rank": 59,
+      "pro_rank": 31,
+      "is_gap": true,
+      "build_guide": {
+        "start_game_items": {
+          "label": "出门装",
+          "items": [
+            {
+              "id": 16,
+              "dname": "Iron Branch",
+              "cn": "树枝",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/branches.png",
+              "times": 80
+            },
+            {
+              "id": 218,
+              "dname": "Observer and Sentry Wards",
+              "cn": "真眼组合",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png",
+              "times": 80
+            },
+            {
+              "id": 1123,
+              "dname": "Blood Grenade",
+              "cn": "血雾手雷",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blood_grenade.png",
+              "times": 61
+            },
+            {
+              "id": 44,
+              "dname": "Tango",
+              "cn": "吃树",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png",
+              "times": 59
+            },
+            {
+              "id": 43,
+              "dname": "Sentry Ward",
+              "cn": "岗哨守卫",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png",
+              "times": 33
+            },
+            {
+              "id": 237,
+              "dname": "Faerie Fire",
+              "cn": "仙灵之火",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/faerie_fire.png",
+              "times": 28
+            },
+            {
+              "id": 42,
+              "dname": "Observer Ward",
+              "cn": "守卫(眼)",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png",
+              "times": 22
+            },
+            {
+              "id": 188,
+              "dname": "Smoke of Deceit",
+              "cn": "诡计之雾",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png",
+              "times": 5
+            },
+            {
+              "id": 36,
+              "dname": "Magic Wand",
+              "cn": "魔棒",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png",
+              "times": 2
+            },
+            {
+              "id": 38,
+              "dname": "Clarity",
+              "cn": "小蓝",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/clarity.png",
+              "times": 2
+            },
+            {
+              "id": 94,
+              "dname": "Headdress",
+              "cn": "回复头巾",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/headdress.png",
+              "times": 2
+            },
+            {
+              "id": 216,
+              "dname": "Enchanted Mango",
+              "cn": "芒果",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/enchanted_mango.png",
+              "times": 2
+            },
+            {
+              "id": 88,
+              "dname": "Ring of Basilius",
+              "cn": "王者之戒",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ring_of_basilius.png",
+              "times": 1
+            },
+            {
+              "id": 1575,
+              "dname": "Orb of Frost",
+              "cn": "冰霜宝珠",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_frost.png",
+              "times": 1
+            }
+          ]
+        },
+        "early_game_items": {
+          "label": "前期",
+          "items": [
+            {
+              "id": 214,
+              "dname": "Tranquil Boots",
+              "cn": "草鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png",
+              "times": 60
+            },
+            {
+              "id": 92,
+              "dname": "Urn of Shadows",
+              "cn": "骨灰盒",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png",
+              "times": 13
+            },
+            {
+              "id": 50,
+              "dname": "Phase Boots",
+              "cn": "相位",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
+              "times": 3
+            },
+            {
+              "id": 180,
+              "dname": "Arcane Boots",
+              "cn": "秘法鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png",
+              "times": 3
+            },
+            {
+              "id": 75,
+              "dname": "Wraith Band",
+              "cn": "系带",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png",
+              "times": 2
+            },
+            {
+              "id": 185,
+              "dname": "Drum of Endurance",
+              "cn": "战鼓",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
+              "times": 2
+            },
+            {
+              "id": 41,
+              "dname": "Bottle",
+              "cn": "瓶子",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bottle.png",
+              "times": 1
+            },
+            {
+              "id": 61,
+              "dname": "Vitality Booster",
+              "cn": "活力之球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vitality_booster.png",
+              "times": 1
+            },
+            {
+              "id": 63,
+              "dname": "Power Treads",
+              "cn": "假腿",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
+              "times": 1
+            },
+            {
+              "id": 77,
+              "dname": "Null Talisman",
+              "cn": "空灵挂件",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png",
+              "times": 1
+            },
+            {
+              "id": 569,
+              "dname": "Orb of Corrosion",
+              "cn": "腐蚀之球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_corrosion.png",
+              "times": 1
+            },
+            {
+              "id": 596,
+              "dname": "Falcon Blade",
+              "cn": "猎鹰之刀",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/falcon_blade.png",
+              "times": 1
+            },
+            {
+              "id": 931,
+              "dname": "Boots of Bearing",
+              "cn": "大飞鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
+              "times": 1
+            },
+            {
+              "id": 1852,
+              "dname": "Essence Distiller",
+              "cn": "精华蒸馏器",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png",
+              "times": 1
+            }
+          ]
+        },
+        "mid_game_items": {
+          "label": "中期",
+          "items": [
+            {
+              "id": 185,
+              "dname": "Drum of Endurance",
+              "cn": "战鼓",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
+              "times": 36
+            },
+            {
+              "id": 267,
+              "dname": "Spirit Vessel",
+              "cn": "魂灵之瓮",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png",
+              "times": 16
+            },
+            {
+              "id": 100,
+              "dname": "Eul's Scepter of Divinity",
+              "cn": "风杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
+              "times": 15
+            },
+            {
+              "id": 931,
+              "dname": "Boots of Bearing",
+              "cn": "大飞鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
+              "times": 15
+            },
+            {
+              "id": 1128,
+              "dname": "Pavise",
+              "cn": "大盾",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pavise.png",
+              "times": 12
+            },
+            {
+              "id": 102,
+              "dname": "Force Staff",
+              "cn": "推推",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png",
+              "times": 11
+            },
+            {
+              "id": 9,
+              "dname": "Platemail",
+              "cn": "板甲",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/platemail.png",
+              "times": 10
+            },
+            {
+              "id": 69,
+              "dname": "Perseverance",
+              "cn": "坚韧球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pers.png",
+              "times": 9
+            },
+            {
+              "id": 180,
+              "dname": "Arcane Boots",
+              "cn": "秘法鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png",
+              "times": 9
+            },
+            {
+              "id": 229,
+              "dname": "Solar Crest",
+              "cn": "凝霜",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/solar_crest.png",
+              "times": 9
+            },
+            {
+              "id": 1852,
+              "dname": "Essence Distiller",
+              "cn": "精华蒸馏器",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png",
+              "times": 9
+            },
+            {
+              "id": 67,
+              "dname": "Oblivion Staff",
+              "cn": "钝刀",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/oblivion_staff.png",
+              "times": 8
+            },
+            {
+              "id": 98,
+              "dname": "Orchid Malevolence",
+              "cn": "紫怨",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
+              "times": 8
+            },
+            {
+              "id": 79,
+              "dname": "Mekansm",
+              "cn": "梅肯",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mekansm.png",
+              "times": 6
+            },
+            {
+              "id": 60,
+              "dname": "Point Booster",
+              "cn": "精气之球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png",
+              "times": 5
+            },
+            {
+              "id": 61,
+              "dname": "Vitality Booster",
+              "cn": "活力之球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vitality_booster.png",
+              "times": 5
+            },
+            {
+              "id": 81,
+              "dname": "Vladmir's Offering",
+              "cn": "祭品",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vladmir.png",
+              "times": 5
+            },
+            {
+              "id": 609,
+              "dname": "Aghanim's Shard",
+              "cn": "魔晶",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aghanims_shard.png",
+              "times": 5
+            },
+            {
+              "id": 231,
+              "dname": "Guardian Greaves",
+              "cn": "卫士大鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png",
+              "times": 4
+            },
+            {
+              "id": 1854,
+              "dname": "Consecrated Wraps",
+              "cn": "圣裹布",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/consecrated_wraps.png",
+              "times": 4
+            },
+            {
+              "id": 226,
+              "dname": "Lotus Orb",
+              "cn": "莲花",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png",
+              "times": 3
+            },
+            {
+              "id": 90,
+              "dname": "Pipe of Insight",
+              "cn": "笛子",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png",
+              "times": 2
+            },
+            {
+              "id": 108,
+              "dname": "Aghanim's Scepter",
+              "cn": "神杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
+              "times": 2
+            },
+            {
+              "id": 168,
+              "dname": "Desolator",
+              "cn": "暗灭",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/desolator.png",
+              "times": 2
+            },
+            {
+              "id": 1107,
+              "dname": "Phylactery",
+              "cn": "护符",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png",
+              "times": 2
+            },
+            {
+              "id": 32,
+              "dname": "Talisman of Evasion",
+              "cn": "闪避护符",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/talisman_of_evasion.png",
+              "times": 1
+            },
+            {
+              "id": 50,
+              "dname": "Phase Boots",
+              "cn": "相位",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
+              "times": 1
+            },
+            {
+              "id": 55,
+              "dname": "Hyperstone",
+              "cn": "振魂石",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png",
+              "times": 1
+            },
+            {
+              "id": 162,
+              "dname": "Sange",
+              "cn": "散华",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
+              "times": 1
+            },
+            {
+              "id": 170,
+              "dname": "Yasha",
+              "cn": "夜叉",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
+              "times": 1
+            },
+            {
+              "id": 252,
+              "dname": "Echo Sabre",
+              "cn": "回音刀",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/echo_sabre.png",
+              "times": 1
+            },
+            {
+              "id": 254,
+              "dname": "Glimmer Cape",
+              "cn": "微光",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png",
+              "times": 1
+            },
+            {
+              "id": 259,
+              "dname": "Kaya",
+              "cn": "慧光",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png",
+              "times": 1
+            },
+            {
+              "id": 939,
+              "dname": "Harpoon",
+              "cn": "鱼叉",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/harpoon.png",
+              "times": 1
+            }
+          ]
+        },
+        "late_game_items": {
+          "label": "后期",
+          "items": [
+            {
+              "id": 58,
+              "dname": "Mystic Staff",
+              "cn": "神秘法杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mystic_staff.png",
+              "times": 21
+            },
+            {
+              "id": 102,
+              "dname": "Force Staff",
+              "cn": "推推",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png",
+              "times": 15
+            },
+            {
+              "id": 96,
+              "dname": "Scythe of Vyse",
+              "cn": "羊刀",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png",
+              "times": 14
+            },
+            {
+              "id": 90,
+              "dname": "Pipe of Insight",
+              "cn": "笛子",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png",
+              "times": 11
+            },
+            {
+              "id": 226,
+              "dname": "Lotus Orb",
+              "cn": "莲花",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png",
+              "times": 11
+            },
+            {
+              "id": 100,
+              "dname": "Eul's Scepter of Divinity",
+              "cn": "风杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
+              "times": 10
+            },
+            {
+              "id": 931,
+              "dname": "Boots of Bearing",
+              "cn": "大飞鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
+              "times": 9
+            },
+            {
+              "id": 229,
+              "dname": "Solar Crest",
+              "cn": "凝霜",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/solar_crest.png",
+              "times": 7
+            },
+            {
+              "id": 610,
+              "dname": "Wind Waker",
+              "cn": "大飞鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png",
+              "times": 7
+            },
+            {
+              "id": 232,
+              "dname": "Aether Lens",
+              "cn": "虚灵法杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aether_lens.png",
+              "times": 5
+            },
+            {
+              "id": 116,
+              "dname": "Black King Bar",
+              "cn": "黑皇杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png",
+              "times": 4
+            },
+            {
+              "id": 54,
+              "dname": "Sacred Relic",
+              "cn": "圣者遗物",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
+              "times": 3
+            },
+            {
+              "id": 108,
+              "dname": "Aghanim's Scepter",
+              "cn": "神杖",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
+              "times": 3
+            },
+            {
+              "id": 225,
+              "dname": "Nullifier",
+              "cn": "否决",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/nullifier.png",
+              "times": 3
+            },
+            {
+              "id": 231,
+              "dname": "Guardian Greaves",
+              "cn": "卫士大鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png",
+              "times": 3
+            },
+            {
+              "id": 242,
+              "dname": "Crimson Guard",
+              "cn": "赤红甲",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/crimson_guard.png",
+              "times": 3
+            },
+            {
+              "id": 256,
+              "dname": "Aeon Disk",
+              "cn": "盘子",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aeon_disk.png",
+              "times": 3
+            },
+            {
+              "id": 1107,
+              "dname": "Phylactery",
+              "cn": "护符",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png",
+              "times": 3
+            },
+            {
+              "id": 24,
+              "dname": "Ultimate Orb",
+              "cn": "极限法球",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_orb.png",
+              "times": 2
+            },
+            {
+              "id": 48,
+              "dname": "Boots of Travel",
+              "cn": "飞鞋",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png",
+              "times": 2
+            },
+            {
+              "id": 81,
+              "dname": "Vladmir's Offering",
+              "cn": "祭品",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vladmir.png",
+              "times": 2
+            },
+            {
+              "id": 98,
+              "dname": "Orchid Malevolence",
+              "cn": "紫怨",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
+              "times": 2
+            },
+            {
+              "id": 123,
+              "dname": "Linken's Sphere",
+              "cn": "林肯",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sphere.png",
+              "times": 2
+            },
+            {
+              "id": 129,
+              "dname": "Soul Booster",
+              "cn": "灵魂之靴",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/soul_booster.png",
+              "times": 2
+            },
+            {
+              "id": 267,
+              "dname": "Spirit Vessel",
+              "cn": "魂灵之瓮",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png",
+              "times": 2
+            },
+            {
+              "id": 1854,
+              "dname": "Consecrated Wraps",
+              "cn": "圣裹布",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/consecrated_wraps.png",
+              "times": 2
+            },
+            {
+              "id": 112,
+              "dname": "Assault Cuirass",
+              "cn": "强袭",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/assault.png",
+              "times": 1
+            },
+            {
+              "id": 210,
+              "dname": "Heaven's Halberd",
+              "cn": "天堂",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heavens_halberd.png",
+              "times": 1
+            },
+            {
+              "id": 220,
+              "dname": "Boots of Travel 2",
+              "cn": "飞鞋II",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots_2.png",
+              "times": 1
+            },
+            {
+              "id": 223,
+              "dname": "Meteor Hammer",
+              "cn": "彗星之锤",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png",
+              "times": 1
+            },
+            {
+              "id": 235,
+              "dname": "Octarine Core",
+              "cn": "玲珑心",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png",
+              "times": 1
+            },
+            {
+              "id": 254,
+              "dname": "Glimmer Cape",
+              "cn": "微光",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png",
+              "times": 1
+            },
+            {
+              "id": 1808,
+              "dname": "Khanda",
+              "cn": "坎达",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/angels_demise.png",
+              "times": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": 17,
@@ -1925,42 +2635,18 @@
         "Initiator",
         "Disabler"
       ],
-      "pub_pick": 260270,
-      "pub_win": 120739,
-      "pub_winrate": 46.39,
+      "pub_pick": 259285,
+      "pub_win": 120429,
+      "pub_winrate": 46.45,
       "pub_ban": 0,
-      "pick_share_pct": 0.652,
-      "pro_pick": 5,
+      "pick_share_pct": 0.646,
+      "pro_pick": 4,
       "pro_win": 2,
-      "pro_winrate": 40.0,
-      "pro_ban": 8,
-      "winrate_rank": 114,
-      "pick_rank": 59,
-      "pro_rank": 51,
-      "is_gap": false
-    },
-    {
-      "id": 90,
-      "name": "光之守卫",
-      "name_en": "Keeper of the Light",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
-      "roles": [
-        "Support",
-        "Nuker",
-        "Disabler"
-      ],
-      "pub_pick": 246586,
-      "pub_win": 123354,
-      "pub_winrate": 50.02,
-      "pub_ban": 0,
-      "pick_share_pct": 0.618,
-      "pro_pick": 14,
-      "pro_win": 7,
       "pro_winrate": 50.0,
-      "pro_ban": 54,
-      "winrate_rank": 58,
+      "pro_ban": 6,
+      "winrate_rank": 114,
       "pick_rank": 60,
-      "pro_rank": 23,
+      "pro_rank": 51,
       "is_gap": false
     },
     {
@@ -1973,43 +2659,66 @@
         "Escape",
         "Pusher"
       ],
-      "pub_pick": 243761,
-      "pub_win": 120271,
-      "pub_winrate": 49.34,
+      "pub_pick": 246383,
+      "pub_win": 121649,
+      "pub_winrate": 49.37,
       "pub_ban": 0,
-      "pick_share_pct": 0.611,
-      "pro_pick": 6,
-      "pro_win": 5,
-      "pro_winrate": 83.33,
+      "pick_share_pct": 0.614,
+      "pro_pick": 4,
+      "pro_win": 4,
+      "pro_winrate": 100.0,
       "pro_ban": 5,
-      "winrate_rank": 75,
+      "winrate_rank": 74,
       "pick_rank": 61,
-      "pro_rank": 49,
+      "pro_rank": 52,
       "is_gap": false
     },
     {
-      "id": 15,
-      "name": "雷泽",
-      "name_en": "Razor",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png",
+      "id": 90,
+      "name": "光之守卫",
+      "name_en": "Keeper of the Light",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
       "roles": [
-        "Carry",
-        "Durable",
+        "Support",
         "Nuker",
-        "Pusher"
+        "Disabler"
       ],
-      "pub_pick": 243361,
-      "pub_win": 122864,
-      "pub_winrate": 50.49,
+      "pub_pick": 244871,
+      "pub_win": 122430,
+      "pub_winrate": 50.0,
       "pub_ban": 0,
       "pick_share_pct": 0.61,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
-      "pro_ban": 2,
-      "winrate_rank": 48,
+      "pro_pick": 9,
+      "pro_win": 7,
+      "pro_winrate": 77.78,
+      "pro_ban": 45,
+      "winrate_rank": 60,
       "pick_rank": 62,
-      "pro_rank": null,
+      "pro_rank": 27,
+      "is_gap": false
+    },
+    {
+      "id": 112,
+      "name": "寒冬飞龙",
+      "name_en": "Winter Wyvern",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+      "roles": [
+        "Support",
+        "Disabler",
+        "Nuker"
+      ],
+      "pub_pick": 243110,
+      "pub_win": 120815,
+      "pub_winrate": 49.7,
+      "pub_ban": 0,
+      "pick_share_pct": 0.605,
+      "pro_pick": 23,
+      "pro_win": 12,
+      "pro_winrate": 52.17,
+      "pro_ban": 23,
+      "winrate_rank": 68,
+      "pick_rank": 63,
+      "pro_rank": 5,
       "is_gap": false
     },
     {
@@ -2023,17 +2732,17 @@
         "Initiator",
         "Escape"
       ],
-      "pub_pick": 242253,
-      "pub_win": 126220,
-      "pub_winrate": 52.1,
+      "pub_pick": 241252,
+      "pub_win": 125773,
+      "pub_winrate": 52.13,
       "pub_ban": 0,
-      "pick_share_pct": 0.607,
+      "pick_share_pct": 0.601,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 1,
-      "winrate_rank": 15,
-      "pick_rank": 63,
+      "winrate_rank": 13,
+      "pick_rank": 64,
       "pro_rank": null,
       "is_gap": true,
       "build_guide": {
@@ -2620,6 +3329,58 @@
       }
     },
     {
+      "id": 15,
+      "name": "雷泽",
+      "name_en": "Razor",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png",
+      "roles": [
+        "Carry",
+        "Durable",
+        "Nuker",
+        "Pusher"
+      ],
+      "pub_pick": 240730,
+      "pub_win": 121325,
+      "pub_winrate": 50.4,
+      "pub_ban": 0,
+      "pick_share_pct": 0.599,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 1,
+      "winrate_rank": 52,
+      "pick_rank": 65,
+      "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 49,
+      "name": "龙骑士",
+      "name_en": "Dragon Knight",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
+      "roles": [
+        "Carry",
+        "Pusher",
+        "Durable",
+        "Disabler",
+        "Initiator",
+        "Nuker"
+      ],
+      "pub_pick": 240473,
+      "pub_win": 123725,
+      "pub_winrate": 51.45,
+      "pub_ban": 0,
+      "pick_share_pct": 0.599,
+      "pro_pick": 8,
+      "pro_win": 4,
+      "pro_winrate": 50.0,
+      "pro_ban": 3,
+      "winrate_rank": 31,
+      "pick_rank": 66,
+      "pro_rank": 30,
+      "is_gap": false
+    },
+    {
       "id": 76,
       "name": "殁境神蚀者",
       "name_en": "Outworld Devourer",
@@ -2629,17 +3390,17 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 239875,
-      "pub_win": 126311,
-      "pub_winrate": 52.66,
+      "pub_pick": 239248,
+      "pub_win": 126063,
+      "pub_winrate": 52.69,
       "pub_ban": 0,
-      "pick_share_pct": 0.601,
+      "pick_share_pct": 0.596,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 8,
-      "pick_rank": 64,
+      "winrate_rank": 7,
+      "pick_rank": 67,
       "pro_rank": null,
       "is_gap": true,
       "build_guide": {
@@ -3207,17 +3968,41 @@
         "Initiator",
         "Disabler"
       ],
-      "pub_pick": 238485,
-      "pub_win": 118840,
-      "pub_winrate": 49.83,
+      "pub_pick": 237684,
+      "pub_win": 118372,
+      "pub_winrate": 49.8,
       "pub_ban": 0,
-      "pick_share_pct": 0.597,
+      "pick_share_pct": 0.592,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 65,
-      "pick_rank": 65,
+      "winrate_rank": 66,
+      "pick_rank": 68,
+      "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 70,
+      "name": "熊战士",
+      "name_en": "Ursa",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ursa.png",
+      "roles": [
+        "Carry",
+        "Durable",
+        "Disabler"
+      ],
+      "pub_pick": 233170,
+      "pub_win": 110637,
+      "pub_winrate": 47.45,
+      "pub_ban": 0,
+      "pick_share_pct": 0.581,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 1,
+      "winrate_rank": 101,
+      "pick_rank": 69,
       "pro_rank": null,
       "is_gap": false
     },
@@ -3232,796 +4017,18 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 234470,
-      "pub_win": 121090,
-      "pub_winrate": 51.64,
+      "pub_pick": 232726,
+      "pub_win": 120135,
+      "pub_winrate": 51.62,
       "pub_ban": 0,
-      "pick_share_pct": 0.587,
+      "pick_share_pct": 0.58,
       "pro_pick": 1,
       "pro_win": 0,
       "pro_winrate": 0.0,
       "pro_ban": 0,
       "winrate_rank": 29,
-      "pick_rank": 66,
-      "pro_rank": 92,
-      "is_gap": false
-    },
-    {
-      "id": 62,
-      "name": "赏金猎人",
-      "name_en": "Bounty Hunter",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png",
-      "roles": [
-        "Escape",
-        "Nuker"
-      ],
-      "pub_pick": 233985,
-      "pub_win": 122646,
-      "pub_winrate": 52.42,
-      "pub_ban": 0,
-      "pick_share_pct": 0.586,
-      "pro_pick": 3,
-      "pro_win": 3,
-      "pro_winrate": 100.0,
-      "pro_ban": 1,
-      "winrate_rank": 9,
-      "pick_rank": 67,
-      "pro_rank": 62,
-      "is_gap": true,
-      "build_guide": {
-        "start_game_items": {
-          "label": "出门装",
-          "items": [
-            {
-              "id": 218,
-              "dname": "Observer and Sentry Wards",
-              "cn": "真眼组合",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png",
-              "times": 74
-            },
-            {
-              "id": 16,
-              "dname": "Iron Branch",
-              "cn": "树枝",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/branches.png",
-              "times": 70
-            },
-            {
-              "id": 1123,
-              "dname": "Blood Grenade",
-              "cn": "血雾手雷",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blood_grenade.png",
-              "times": 56
-            },
-            {
-              "id": 44,
-              "dname": "Tango",
-              "cn": "吃树",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png",
-              "times": 55
-            },
-            {
-              "id": 43,
-              "dname": "Sentry Ward",
-              "cn": "岗哨守卫",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png",
-              "times": 36
-            },
-            {
-              "id": 42,
-              "dname": "Observer Ward",
-              "cn": "守卫(眼)",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png",
-              "times": 23
-            },
-            {
-              "id": 237,
-              "dname": "Faerie Fire",
-              "cn": "仙灵之火",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/faerie_fire.png",
-              "times": 23
-            },
-            {
-              "id": 188,
-              "dname": "Smoke of Deceit",
-              "cn": "诡计之雾",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png",
-              "times": 5
-            },
-            {
-              "id": 36,
-              "dname": "Magic Wand",
-              "cn": "魔棒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png",
-              "times": 2
-            },
-            {
-              "id": 38,
-              "dname": "Clarity",
-              "cn": "小蓝",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/clarity.png",
-              "times": 2
-            },
-            {
-              "id": 94,
-              "dname": "Headdress",
-              "cn": "回复头巾",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/headdress.png",
-              "times": 2
-            },
-            {
-              "id": 216,
-              "dname": "Enchanted Mango",
-              "cn": "芒果",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/enchanted_mango.png",
-              "times": 2
-            },
-            {
-              "id": 88,
-              "dname": "Ring of Basilius",
-              "cn": "王者之戒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ring_of_basilius.png",
-              "times": 1
-            },
-            {
-              "id": 1575,
-              "dname": "Orb of Frost",
-              "cn": "冰霜宝珠",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_frost.png",
-              "times": 1
-            }
-          ]
-        },
-        "early_game_items": {
-          "label": "前期",
-          "items": [
-            {
-              "id": 214,
-              "dname": "Tranquil Boots",
-              "cn": "草鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png",
-              "times": 62
-            },
-            {
-              "id": 92,
-              "dname": "Urn of Shadows",
-              "cn": "骨灰盒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png",
-              "times": 14
-            },
-            {
-              "id": 50,
-              "dname": "Phase Boots",
-              "cn": "相位",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
-              "times": 3
-            },
-            {
-              "id": 180,
-              "dname": "Arcane Boots",
-              "cn": "秘法鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png",
-              "times": 3
-            },
-            {
-              "id": 75,
-              "dname": "Wraith Band",
-              "cn": "系带",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png",
-              "times": 2
-            },
-            {
-              "id": 185,
-              "dname": "Drum of Endurance",
-              "cn": "战鼓",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
-              "times": 2
-            },
-            {
-              "id": 41,
-              "dname": "Bottle",
-              "cn": "瓶子",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bottle.png",
-              "times": 1
-            },
-            {
-              "id": 61,
-              "dname": "Vitality Booster",
-              "cn": "活力之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vitality_booster.png",
-              "times": 1
-            },
-            {
-              "id": 63,
-              "dname": "Power Treads",
-              "cn": "假腿",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
-              "times": 1
-            },
-            {
-              "id": 77,
-              "dname": "Null Talisman",
-              "cn": "空灵挂件",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png",
-              "times": 1
-            },
-            {
-              "id": 569,
-              "dname": "Orb of Corrosion",
-              "cn": "腐蚀之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_corrosion.png",
-              "times": 1
-            },
-            {
-              "id": 596,
-              "dname": "Falcon Blade",
-              "cn": "猎鹰之刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/falcon_blade.png",
-              "times": 1
-            },
-            {
-              "id": 931,
-              "dname": "Boots of Bearing",
-              "cn": "大飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
-              "times": 1
-            },
-            {
-              "id": 1852,
-              "dname": "Essence Distiller",
-              "cn": "精华蒸馏器",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png",
-              "times": 1
-            }
-          ]
-        },
-        "mid_game_items": {
-          "label": "中期",
-          "items": [
-            {
-              "id": 185,
-              "dname": "Drum of Endurance",
-              "cn": "战鼓",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
-              "times": 41
-            },
-            {
-              "id": 267,
-              "dname": "Spirit Vessel",
-              "cn": "魂灵之瓮",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png",
-              "times": 19
-            },
-            {
-              "id": 931,
-              "dname": "Boots of Bearing",
-              "cn": "大飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
-              "times": 17
-            },
-            {
-              "id": 100,
-              "dname": "Eul's Scepter of Divinity",
-              "cn": "风杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
-              "times": 15
-            },
-            {
-              "id": 1128,
-              "dname": "Pavise",
-              "cn": "大盾",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pavise.png",
-              "times": 12
-            },
-            {
-              "id": 9,
-              "dname": "Platemail",
-              "cn": "板甲",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/platemail.png",
-              "times": 10
-            },
-            {
-              "id": 69,
-              "dname": "Perseverance",
-              "cn": "坚韧球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pers.png",
-              "times": 9
-            },
-            {
-              "id": 102,
-              "dname": "Force Staff",
-              "cn": "推推",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png",
-              "times": 9
-            },
-            {
-              "id": 180,
-              "dname": "Arcane Boots",
-              "cn": "秘法鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png",
-              "times": 9
-            },
-            {
-              "id": 229,
-              "dname": "Solar Crest",
-              "cn": "凝霜",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/solar_crest.png",
-              "times": 9
-            },
-            {
-              "id": 67,
-              "dname": "Oblivion Staff",
-              "cn": "钝刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/oblivion_staff.png",
-              "times": 8
-            },
-            {
-              "id": 98,
-              "dname": "Orchid Malevolence",
-              "cn": "紫怨",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
-              "times": 8
-            },
-            {
-              "id": 79,
-              "dname": "Mekansm",
-              "cn": "梅肯",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mekansm.png",
-              "times": 6
-            },
-            {
-              "id": 60,
-              "dname": "Point Booster",
-              "cn": "精气之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png",
-              "times": 5
-            },
-            {
-              "id": 61,
-              "dname": "Vitality Booster",
-              "cn": "活力之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vitality_booster.png",
-              "times": 5
-            },
-            {
-              "id": 81,
-              "dname": "Vladmir's Offering",
-              "cn": "祭品",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vladmir.png",
-              "times": 5
-            },
-            {
-              "id": 609,
-              "dname": "Aghanim's Shard",
-              "cn": "魔晶",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aghanims_shard.png",
-              "times": 5
-            },
-            {
-              "id": 1852,
-              "dname": "Essence Distiller",
-              "cn": "精华蒸馏器",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png",
-              "times": 5
-            },
-            {
-              "id": 231,
-              "dname": "Guardian Greaves",
-              "cn": "卫士大鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png",
-              "times": 4
-            },
-            {
-              "id": 1854,
-              "dname": "Consecrated Wraps",
-              "cn": "圣裹布",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/consecrated_wraps.png",
-              "times": 4
-            },
-            {
-              "id": 90,
-              "dname": "Pipe of Insight",
-              "cn": "笛子",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png",
-              "times": 3
-            },
-            {
-              "id": 226,
-              "dname": "Lotus Orb",
-              "cn": "莲花",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png",
-              "times": 3
-            },
-            {
-              "id": 108,
-              "dname": "Aghanim's Scepter",
-              "cn": "神杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
-              "times": 2
-            },
-            {
-              "id": 168,
-              "dname": "Desolator",
-              "cn": "暗灭",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/desolator.png",
-              "times": 2
-            },
-            {
-              "id": 1107,
-              "dname": "Phylactery",
-              "cn": "护符",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png",
-              "times": 2
-            },
-            {
-              "id": 32,
-              "dname": "Talisman of Evasion",
-              "cn": "闪避护符",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/talisman_of_evasion.png",
-              "times": 1
-            },
-            {
-              "id": 50,
-              "dname": "Phase Boots",
-              "cn": "相位",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
-              "times": 1
-            },
-            {
-              "id": 55,
-              "dname": "Hyperstone",
-              "cn": "振魂石",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png",
-              "times": 1
-            },
-            {
-              "id": 162,
-              "dname": "Sange",
-              "cn": "散华",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
-              "times": 1
-            },
-            {
-              "id": 170,
-              "dname": "Yasha",
-              "cn": "夜叉",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
-              "times": 1
-            },
-            {
-              "id": 252,
-              "dname": "Echo Sabre",
-              "cn": "回音刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/echo_sabre.png",
-              "times": 1
-            },
-            {
-              "id": 254,
-              "dname": "Glimmer Cape",
-              "cn": "微光",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png",
-              "times": 1
-            },
-            {
-              "id": 259,
-              "dname": "Kaya",
-              "cn": "慧光",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png",
-              "times": 1
-            },
-            {
-              "id": 939,
-              "dname": "Harpoon",
-              "cn": "鱼叉",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/harpoon.png",
-              "times": 1
-            }
-          ]
-        },
-        "late_game_items": {
-          "label": "后期",
-          "items": [
-            {
-              "id": 58,
-              "dname": "Mystic Staff",
-              "cn": "神秘法杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mystic_staff.png",
-              "times": 20
-            },
-            {
-              "id": 90,
-              "dname": "Pipe of Insight",
-              "cn": "笛子",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png",
-              "times": 13
-            },
-            {
-              "id": 931,
-              "dname": "Boots of Bearing",
-              "cn": "大飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_bearing.png",
-              "times": 13
-            },
-            {
-              "id": 96,
-              "dname": "Scythe of Vyse",
-              "cn": "羊刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png",
-              "times": 12
-            },
-            {
-              "id": 102,
-              "dname": "Force Staff",
-              "cn": "推推",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png",
-              "times": 12
-            },
-            {
-              "id": 226,
-              "dname": "Lotus Orb",
-              "cn": "莲花",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png",
-              "times": 11
-            },
-            {
-              "id": 100,
-              "dname": "Eul's Scepter of Divinity",
-              "cn": "风杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
-              "times": 10
-            },
-            {
-              "id": 610,
-              "dname": "Wind Waker",
-              "cn": "大飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png",
-              "times": 8
-            },
-            {
-              "id": 229,
-              "dname": "Solar Crest",
-              "cn": "凝霜",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/solar_crest.png",
-              "times": 7
-            },
-            {
-              "id": 232,
-              "dname": "Aether Lens",
-              "cn": "虚灵法杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aether_lens.png",
-              "times": 5
-            },
-            {
-              "id": 242,
-              "dname": "Crimson Guard",
-              "cn": "赤红甲",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/crimson_guard.png",
-              "times": 5
-            },
-            {
-              "id": 116,
-              "dname": "Black King Bar",
-              "cn": "黑皇杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png",
-              "times": 4
-            },
-            {
-              "id": 54,
-              "dname": "Sacred Relic",
-              "cn": "圣者遗物",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
-              "times": 3
-            },
-            {
-              "id": 108,
-              "dname": "Aghanim's Scepter",
-              "cn": "神杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
-              "times": 3
-            },
-            {
-              "id": 225,
-              "dname": "Nullifier",
-              "cn": "否决",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/nullifier.png",
-              "times": 3
-            },
-            {
-              "id": 231,
-              "dname": "Guardian Greaves",
-              "cn": "卫士大鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png",
-              "times": 3
-            },
-            {
-              "id": 1107,
-              "dname": "Phylactery",
-              "cn": "护符",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png",
-              "times": 3
-            },
-            {
-              "id": 24,
-              "dname": "Ultimate Orb",
-              "cn": "极限法球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_orb.png",
-              "times": 2
-            },
-            {
-              "id": 48,
-              "dname": "Boots of Travel",
-              "cn": "飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png",
-              "times": 2
-            },
-            {
-              "id": 98,
-              "dname": "Orchid Malevolence",
-              "cn": "紫怨",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
-              "times": 2
-            },
-            {
-              "id": 123,
-              "dname": "Linken's Sphere",
-              "cn": "林肯",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sphere.png",
-              "times": 2
-            },
-            {
-              "id": 129,
-              "dname": "Soul Booster",
-              "cn": "灵魂之靴",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/soul_booster.png",
-              "times": 2
-            },
-            {
-              "id": 267,
-              "dname": "Spirit Vessel",
-              "cn": "魂灵之瓮",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png",
-              "times": 2
-            },
-            {
-              "id": 81,
-              "dname": "Vladmir's Offering",
-              "cn": "祭品",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vladmir.png",
-              "times": 1
-            },
-            {
-              "id": 112,
-              "dname": "Assault Cuirass",
-              "cn": "强袭",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/assault.png",
-              "times": 1
-            },
-            {
-              "id": 210,
-              "dname": "Heaven's Halberd",
-              "cn": "天堂",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heavens_halberd.png",
-              "times": 1
-            },
-            {
-              "id": 220,
-              "dname": "Boots of Travel 2",
-              "cn": "飞鞋II",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots_2.png",
-              "times": 1
-            },
-            {
-              "id": 223,
-              "dname": "Meteor Hammer",
-              "cn": "彗星之锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png",
-              "times": 1
-            },
-            {
-              "id": 235,
-              "dname": "Octarine Core",
-              "cn": "玲珑心",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png",
-              "times": 1
-            },
-            {
-              "id": 254,
-              "dname": "Glimmer Cape",
-              "cn": "微光",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png",
-              "times": 1
-            },
-            {
-              "id": 1808,
-              "dname": "Khanda",
-              "cn": "坎达",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/angels_demise.png",
-              "times": 1
-            },
-            {
-              "id": 1854,
-              "dname": "Consecrated Wraps",
-              "cn": "圣裹布",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/consecrated_wraps.png",
-              "times": 1
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": 70,
-      "name": "熊战士",
-      "name_en": "Ursa",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ursa.png",
-      "roles": [
-        "Carry",
-        "Durable",
-        "Disabler"
-      ],
-      "pub_pick": 232805,
-      "pub_win": 110453,
-      "pub_winrate": 47.44,
-      "pub_ban": 0,
-      "pick_share_pct": 0.583,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
-      "pro_ban": 2,
-      "winrate_rank": 103,
-      "pick_rank": 68,
-      "pro_rank": null,
-      "is_gap": false
-    },
-    {
-      "id": 112,
-      "name": "寒冬飞龙",
-      "name_en": "Winter Wyvern",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
-      "roles": [
-        "Support",
-        "Disabler",
-        "Nuker"
-      ],
-      "pub_pick": 231097,
-      "pub_win": 114944,
-      "pub_winrate": 49.74,
-      "pub_ban": 0,
-      "pick_share_pct": 0.579,
-      "pro_pick": 24,
-      "pro_win": 13,
-      "pro_winrate": 54.17,
-      "pro_ban": 30,
-      "winrate_rank": 66,
-      "pick_rank": 69,
-      "pro_rank": 7,
-      "is_gap": false
-    },
-    {
-      "id": 49,
-      "name": "龙骑士",
-      "name_en": "Dragon Knight",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
-      "roles": [
-        "Carry",
-        "Pusher",
-        "Durable",
-        "Disabler",
-        "Initiator",
-        "Nuker"
-      ],
-      "pub_pick": 230069,
-      "pub_win": 118153,
-      "pub_winrate": 51.36,
-      "pub_ban": 0,
-      "pick_share_pct": 0.576,
-      "pro_pick": 7,
-      "pro_win": 5,
-      "pro_winrate": 71.43,
-      "pro_ban": 2,
-      "winrate_rank": 32,
       "pick_rank": 70,
-      "pro_rank": 42,
+      "pro_rank": 87,
       "is_gap": false
     },
     {
@@ -4035,18 +4042,18 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 228158,
-      "pub_win": 109466,
-      "pub_winrate": 47.98,
+      "pub_pick": 229914,
+      "pub_win": 110241,
+      "pub_winrate": 47.95,
       "pub_ban": 0,
-      "pick_share_pct": 0.571,
-      "pro_pick": 13,
-      "pro_win": 5,
-      "pro_winrate": 38.46,
+      "pick_share_pct": 0.573,
+      "pro_pick": 9,
+      "pro_win": 3,
+      "pro_winrate": 33.33,
       "pro_ban": 1,
       "winrate_rank": 95,
       "pick_rank": 71,
-      "pro_rank": 25,
+      "pro_rank": 28,
       "is_gap": false
     },
     {
@@ -4059,18 +4066,18 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 225187,
-      "pub_win": 117433,
-      "pub_winrate": 52.15,
+      "pub_pick": 224140,
+      "pub_win": 116764,
+      "pub_winrate": 52.09,
       "pub_ban": 0,
-      "pick_share_pct": 0.564,
-      "pro_pick": 1,
+      "pick_share_pct": 0.558,
+      "pro_pick": 0,
       "pro_win": 0,
-      "pro_winrate": 0.0,
+      "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 12,
+      "winrate_rank": 16,
       "pick_rank": 72,
-      "pro_rank": 79,
+      "pro_rank": null,
       "is_gap": true,
       "build_guide": {
         "start_game_items": {
@@ -4691,6 +4698,30 @@
       }
     },
     {
+      "id": 145,
+      "name": "凯",
+      "name_en": "Kez",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kez.png",
+      "roles": [
+        "Carry",
+        "Escape",
+        "Disabler"
+      ],
+      "pub_pick": 222674,
+      "pub_win": 98963,
+      "pub_winrate": 44.44,
+      "pub_ban": 0,
+      "pick_share_pct": 0.554,
+      "pro_pick": 15,
+      "pro_win": 9,
+      "pro_winrate": 60.0,
+      "pro_ban": 17,
+      "winrate_rank": 125,
+      "pick_rank": 73,
+      "pro_rank": 12,
+      "is_gap": false
+    },
+    {
       "id": 100,
       "name": "巨牙海民",
       "name_en": "Tusk",
@@ -4700,18 +4731,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 219880,
-      "pub_win": 105605,
-      "pub_winrate": 48.03,
+      "pub_pick": 221437,
+      "pub_win": 106312,
+      "pub_winrate": 48.01,
       "pub_ban": 0,
       "pick_share_pct": 0.551,
-      "pro_pick": 18,
-      "pro_win": 7,
-      "pro_winrate": 38.89,
-      "pro_ban": 11,
-      "winrate_rank": 94,
-      "pick_rank": 73,
-      "pro_rank": 15,
+      "pro_pick": 7,
+      "pro_win": 2,
+      "pro_winrate": 28.57,
+      "pro_ban": 6,
+      "winrate_rank": 93,
+      "pick_rank": 74,
+      "pro_rank": 39,
       "is_gap": false
     },
     {
@@ -4723,42 +4754,18 @@
         "Carry",
         "Escape"
       ],
-      "pub_pick": 218431,
-      "pub_win": 104045,
-      "pub_winrate": 47.63,
+      "pub_pick": 218813,
+      "pub_win": 104376,
+      "pub_winrate": 47.7,
       "pub_ban": 0,
-      "pick_share_pct": 0.547,
+      "pick_share_pct": 0.545,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 1,
       "winrate_rank": 98,
-      "pick_rank": 74,
-      "pro_rank": null,
-      "is_gap": false
-    },
-    {
-      "id": 145,
-      "name": "凯",
-      "name_en": "Kez",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kez.png",
-      "roles": [
-        "Carry",
-        "Escape",
-        "Disabler"
-      ],
-      "pub_pick": 215923,
-      "pub_win": 96100,
-      "pub_winrate": 44.51,
-      "pub_ban": 0,
-      "pick_share_pct": 0.541,
-      "pro_pick": 19,
-      "pro_win": 11,
-      "pro_winrate": 57.89,
-      "pro_ban": 16,
-      "winrate_rank": 125,
       "pick_rank": 75,
-      "pro_rank": 12,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -4773,18 +4780,18 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 212593,
-      "pub_win": 100348,
-      "pub_winrate": 47.2,
+      "pub_pick": 217790,
+      "pub_win": 102400,
+      "pub_winrate": 47.02,
       "pub_ban": 0,
-      "pick_share_pct": 0.532,
-      "pro_pick": 16,
-      "pro_win": 8,
-      "pro_winrate": 50.0,
-      "pro_ban": 24,
+      "pick_share_pct": 0.542,
+      "pro_pick": 15,
+      "pro_win": 6,
+      "pro_winrate": 40.0,
+      "pro_ban": 15,
       "winrate_rank": 110,
       "pick_rank": 76,
-      "pro_rank": 17,
+      "pro_rank": 11,
       "is_gap": false
     },
     {
@@ -4800,15 +4807,15 @@
         "Durable",
         "Disabler"
       ],
-      "pub_pick": 211671,
-      "pub_win": 94336,
-      "pub_winrate": 44.57,
+      "pub_pick": 213785,
+      "pub_win": 95025,
+      "pub_winrate": 44.45,
       "pub_ban": 0,
-      "pick_share_pct": 0.53,
-      "pro_pick": 16,
-      "pro_win": 6,
-      "pro_winrate": 37.5,
-      "pro_ban": 20,
+      "pick_share_pct": 0.532,
+      "pro_pick": 12,
+      "pro_win": 2,
+      "pro_winrate": 16.67,
+      "pro_ban": 16,
       "winrate_rank": 124,
       "pick_rank": 77,
       "pro_rank": 16,
@@ -4826,18 +4833,18 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 206037,
-      "pub_win": 105457,
-      "pub_winrate": 51.18,
+      "pub_pick": 206653,
+      "pub_win": 105891,
+      "pub_winrate": 51.24,
       "pub_ban": 0,
-      "pick_share_pct": 0.516,
-      "pro_pick": 3,
+      "pick_share_pct": 0.515,
+      "pro_pick": 1,
       "pro_win": 1,
-      "pro_winrate": 33.33,
-      "pro_ban": 4,
-      "winrate_rank": 35,
+      "pro_winrate": 100.0,
+      "pro_ban": 2,
+      "winrate_rank": 34,
       "pick_rank": 78,
-      "pro_rank": 65,
+      "pro_rank": 85,
       "is_gap": false
     },
     {
@@ -4850,18 +4857,42 @@
         "Nuker",
         "Pusher"
       ],
-      "pub_pick": 201178,
-      "pub_win": 94449,
-      "pub_winrate": 46.95,
+      "pub_pick": 201223,
+      "pub_win": 94552,
+      "pub_winrate": 46.99,
       "pub_ban": 0,
-      "pick_share_pct": 0.504,
+      "pick_share_pct": 0.501,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
-      "pro_ban": 3,
+      "pro_ban": 2,
       "winrate_rank": 111,
       "pick_rank": 79,
       "pro_rank": null,
+      "is_gap": false
+    },
+    {
+      "id": 98,
+      "name": "伐木机",
+      "name_en": "Timbersaw",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+      "roles": [
+        "Nuker",
+        "Durable",
+        "Escape"
+      ],
+      "pub_pick": 199872,
+      "pub_win": 89522,
+      "pub_winrate": 44.79,
+      "pub_ban": 0,
+      "pick_share_pct": 0.498,
+      "pro_pick": 7,
+      "pro_win": 4,
+      "pro_winrate": 57.14,
+      "pro_ban": 20,
+      "winrate_rank": 122,
+      "pick_rank": 80,
+      "pro_rank": 38,
       "is_gap": false
     },
     {
@@ -4875,42 +4906,18 @@
         "Disabler",
         "Initiator"
       ],
-      "pub_pick": 199803,
-      "pub_win": 91434,
-      "pub_winrate": 45.76,
-      "pub_ban": 0,
-      "pick_share_pct": 0.5,
-      "pro_pick": 6,
-      "pro_win": 3,
-      "pro_winrate": 50.0,
-      "pro_ban": 6,
-      "winrate_rank": 117,
-      "pick_rank": 80,
-      "pro_rank": 50,
-      "is_gap": false
-    },
-    {
-      "id": 98,
-      "name": "伐木机",
-      "name_en": "Timbersaw",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
-      "roles": [
-        "Nuker",
-        "Durable",
-        "Escape"
-      ],
-      "pub_pick": 198029,
-      "pub_win": 88807,
-      "pub_winrate": 44.85,
+      "pub_pick": 199133,
+      "pub_win": 91267,
+      "pub_winrate": 45.83,
       "pub_ban": 0,
       "pick_share_pct": 0.496,
-      "pro_pick": 10,
-      "pro_win": 6,
-      "pro_winrate": 60.0,
-      "pro_ban": 21,
-      "winrate_rank": 122,
+      "pro_pick": 2,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 4,
+      "winrate_rank": 117,
       "pick_rank": 81,
-      "pro_rank": 30,
+      "pro_rank": 70,
       "is_gap": false
     },
     {
@@ -4925,18 +4932,18 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 189486,
-      "pub_win": 93991,
-      "pub_winrate": 49.6,
+      "pub_pick": 190978,
+      "pub_win": 94881,
+      "pub_winrate": 49.68,
       "pub_ban": 0,
-      "pick_share_pct": 0.475,
-      "pro_pick": 7,
-      "pro_win": 7,
+      "pick_share_pct": 0.476,
+      "pro_pick": 5,
+      "pro_win": 5,
       "pro_winrate": 100.0,
-      "pro_ban": 75,
-      "winrate_rank": 71,
+      "pro_ban": 58,
+      "winrate_rank": 70,
       "pick_rank": 82,
-      "pro_rank": 43,
+      "pro_rank": 48,
       "is_gap": false
     },
     {
@@ -4949,18 +4956,41 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 188658,
-      "pub_win": 95890,
-      "pub_winrate": 50.83,
+      "pub_pick": 189550,
+      "pub_win": 96405,
+      "pub_winrate": 50.86,
       "pub_ban": 0,
-      "pick_share_pct": 0.473,
-      "pro_pick": 2,
-      "pro_win": 2,
+      "pick_share_pct": 0.472,
+      "pro_pick": 1,
+      "pro_win": 1,
       "pro_winrate": 100.0,
-      "pro_ban": 0,
+      "pro_ban": 2,
       "winrate_rank": 40,
       "pick_rank": 83,
-      "pro_rank": 72,
+      "pro_rank": 77,
+      "is_gap": false
+    },
+    {
+      "id": 46,
+      "name": "圣堂刺客",
+      "name_en": "Templar Assassin",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+      "roles": [
+        "Carry",
+        "Escape"
+      ],
+      "pub_pick": 181424,
+      "pub_win": 84391,
+      "pub_winrate": 46.52,
+      "pub_ban": 0,
+      "pick_share_pct": 0.452,
+      "pro_pick": 2,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 6,
+      "winrate_rank": 113,
+      "pick_rank": 84,
+      "pro_rank": 62,
       "is_gap": false
     },
     {
@@ -4975,41 +5005,42 @@
         "Nuker",
         "Escape"
       ],
-      "pub_pick": 182001,
-      "pub_win": 88994,
-      "pub_winrate": 48.9,
+      "pub_pick": 180985,
+      "pub_win": 88618,
+      "pub_winrate": 48.96,
       "pub_ban": 0,
-      "pick_share_pct": 0.456,
-      "pro_pick": 4,
-      "pro_win": 3,
-      "pro_winrate": 75.0,
-      "pro_ban": 6,
-      "winrate_rank": 81,
-      "pick_rank": 84,
-      "pro_rank": 56,
+      "pick_share_pct": 0.451,
+      "pro_pick": 3,
+      "pro_win": 2,
+      "pro_winrate": 66.67,
+      "pro_ban": 5,
+      "winrate_rank": 80,
+      "pick_rank": 85,
+      "pro_rank": 54,
       "is_gap": false
     },
     {
-      "id": 46,
-      "name": "圣堂刺客",
-      "name_en": "Templar Assassin",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+      "id": 80,
+      "name": "德鲁伊",
+      "name_en": "Lone Druid",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lone_druid.png",
       "roles": [
         "Carry",
-        "Escape"
+        "Pusher",
+        "Durable"
       ],
-      "pub_pick": 181236,
-      "pub_win": 84177,
-      "pub_winrate": 46.45,
+      "pub_pick": 179641,
+      "pub_win": 85022,
+      "pub_winrate": 47.33,
       "pub_ban": 0,
-      "pick_share_pct": 0.454,
-      "pro_pick": 2,
-      "pro_win": 1,
-      "pro_winrate": 50.0,
-      "pro_ban": 6,
-      "winrate_rank": 113,
-      "pick_rank": 85,
-      "pro_rank": 71,
+      "pick_share_pct": 0.447,
+      "pro_pick": 8,
+      "pro_win": 2,
+      "pro_winrate": 25.0,
+      "pro_ban": 27,
+      "winrate_rank": 107,
+      "pick_rank": 86,
+      "pro_rank": 32,
       "is_gap": false
     },
     {
@@ -5025,43 +5056,18 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 179170,
-      "pub_win": 89054,
-      "pub_winrate": 49.7,
+      "pub_pick": 178749,
+      "pub_win": 88764,
+      "pub_winrate": 49.66,
       "pub_ban": 0,
-      "pick_share_pct": 0.449,
+      "pick_share_pct": 0.445,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
-      "pro_ban": 2,
-      "winrate_rank": 69,
-      "pick_rank": 86,
-      "pro_rank": null,
-      "is_gap": false
-    },
-    {
-      "id": 129,
-      "name": "玛尔斯",
-      "name_en": "Mars",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
-      "roles": [
-        "Carry",
-        "Initiator",
-        "Disabler",
-        "Durable"
-      ],
-      "pub_pick": 178181,
-      "pub_win": 84394,
-      "pub_winrate": 47.36,
-      "pub_ban": 0,
-      "pick_share_pct": 0.446,
-      "pro_pick": 2,
-      "pro_win": 1,
-      "pro_winrate": 50.0,
       "pro_ban": 1,
-      "winrate_rank": 106,
+      "winrate_rank": 71,
       "pick_rank": 87,
-      "pro_rank": 76,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -5076,18 +5082,18 @@
         "Pusher",
         "Initiator"
       ],
-      "pub_pick": 177195,
-      "pub_win": 92133,
-      "pub_winrate": 52.0,
+      "pub_pick": 178140,
+      "pub_win": 92672,
+      "pub_winrate": 52.02,
       "pub_ban": 0,
       "pick_share_pct": 0.444,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
+      "pro_pick": 1,
+      "pro_win": 1,
+      "pro_winrate": 100.0,
       "pro_ban": 0,
-      "winrate_rank": 20,
+      "winrate_rank": 18,
       "pick_rank": 88,
-      "pro_rank": null,
+      "pro_rank": 83,
       "is_gap": true,
       "build_guide": {
         "start_game_items": {
@@ -5105,14 +5111,14 @@
               "dname": "Tango",
               "cn": "吃树",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png",
-              "times": 93
+              "times": 92
             },
             {
               "id": 237,
               "dname": "Faerie Fire",
               "cn": "仙灵之火",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/faerie_fire.png",
-              "times": 6
+              "times": 7
             },
             {
               "id": 1123,
@@ -5145,7 +5151,7 @@
               "dname": "Power Treads",
               "cn": "假腿",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
-              "times": 92
+              "times": 93
             },
             {
               "id": 73,
@@ -5159,7 +5165,7 @@
               "dname": "Armlet of Mordiggian",
               "cn": "臂章",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/armlet.png",
-              "times": 14
+              "times": 13
             },
             {
               "id": 178,
@@ -5178,7 +5184,7 @@
               "dname": "Armlet of Mordiggian",
               "cn": "臂章",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/armlet.png",
-              "times": 79
+              "times": 80
             },
             {
               "id": 67,
@@ -5206,21 +5212,21 @@
               "dname": "Yasha",
               "cn": "夜叉",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
-              "times": 29
+              "times": 30
             },
             {
               "id": 609,
               "dname": "Aghanim's Shard",
               "cn": "魔晶",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aghanims_shard.png",
-              "times": 26
+              "times": 25
             },
             {
               "id": 162,
               "dname": "Sange",
               "cn": "散华",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
-              "times": 12
+              "times": 11
             },
             {
               "id": 250,
@@ -5228,6 +5234,13 @@
               "cn": "大紫怨",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png",
               "times": 11
+            },
+            {
+              "id": 147,
+              "dname": "Manta Style",
+              "cn": "分身斧",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/manta.png",
+              "times": 9
             },
             {
               "id": 154,
@@ -5244,18 +5257,11 @@
               "times": 8
             },
             {
-              "id": 147,
-              "dname": "Manta Style",
-              "cn": "分身斧",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/manta.png",
-              "times": 8
-            },
-            {
               "id": 63,
               "dname": "Power Treads",
               "cn": "假腿",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
-              "times": 7
+              "times": 6
             },
             {
               "id": 60,
@@ -5330,7 +5336,14 @@
               "dname": "Reaver",
               "cn": "掠夺者",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/reaver.png",
-              "times": 20
+              "times": 22
+            },
+            {
+              "id": 114,
+              "dname": "Heart of Tarrasque",
+              "cn": "龙心",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heart.png",
+              "times": 15
             },
             {
               "id": 250,
@@ -5338,13 +5351,6 @@
               "cn": "大紫怨",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png",
               "times": 15
-            },
-            {
-              "id": 114,
-              "dname": "Heart of Tarrasque",
-              "cn": "龙心",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heart.png",
-              "times": 14
             },
             {
               "id": 147,
@@ -5372,7 +5378,7 @@
               "dname": "Yasha",
               "cn": "夜叉",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
-              "times": 8
+              "times": 7
             },
             {
               "id": 939,
@@ -5380,13 +5386,6 @@
               "cn": "鱼叉",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/harpoon.png",
               "times": 7
-            },
-            {
-              "id": 154,
-              "dname": "Sange and Yasha",
-              "cn": "双刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange_and_yasha.png",
-              "times": 5
             },
             {
               "id": 162,
@@ -5414,6 +5413,13 @@
               "dname": "Orchid Malevolence",
               "cn": "紫怨",
               "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
+              "times": 4
+            },
+            {
+              "id": 154,
+              "dname": "Sange and Yasha",
+              "cn": "双刀",
+              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange_and_yasha.png",
               "times": 4
             },
             {
@@ -5491,6 +5497,55 @@
       }
     },
     {
+      "id": 129,
+      "name": "玛尔斯",
+      "name_en": "Mars",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+      "roles": [
+        "Carry",
+        "Initiator",
+        "Disabler",
+        "Durable"
+      ],
+      "pub_pick": 177612,
+      "pub_win": 84153,
+      "pub_winrate": 47.38,
+      "pub_ban": 0,
+      "pick_share_pct": 0.442,
+      "pro_pick": 1,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 1,
+      "winrate_rank": 104,
+      "pick_rank": 89,
+      "pro_rank": 88,
+      "is_gap": false
+    },
+    {
+      "id": 59,
+      "name": "哈斯卡",
+      "name_en": "Huskar",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
+      "roles": [
+        "Carry",
+        "Durable",
+        "Initiator"
+      ],
+      "pub_pick": 172107,
+      "pub_win": 78517,
+      "pub_winrate": 45.62,
+      "pub_ban": 0,
+      "pick_share_pct": 0.429,
+      "pro_pick": 2,
+      "pro_win": 1,
+      "pro_winrate": 50.0,
+      "pro_ban": 13,
+      "winrate_rank": 119,
+      "pick_rank": 90,
+      "pro_rank": 63,
+      "is_gap": false
+    },
+    {
       "id": 126,
       "name": "虚无之灵",
       "name_en": "Void Spirit",
@@ -5501,18 +5556,18 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 171511,
-      "pub_win": 84695,
-      "pub_winrate": 49.38,
+      "pub_pick": 171588,
+      "pub_win": 84713,
+      "pub_winrate": 49.37,
       "pub_ban": 0,
-      "pick_share_pct": 0.43,
+      "pick_share_pct": 0.427,
       "pro_pick": 3,
       "pro_win": 1,
       "pro_winrate": 33.33,
       "pro_ban": 0,
-      "winrate_rank": 73,
-      "pick_rank": 89,
-      "pro_rank": 66,
+      "winrate_rank": 76,
+      "pick_rank": 91,
+      "pro_rank": 58,
       "is_gap": false
     },
     {
@@ -5526,659 +5581,42 @@
         "Nuker",
         "Initiator"
       ],
-      "pub_pick": 171271,
-      "pub_win": 88666,
-      "pub_winrate": 51.77,
+      "pub_pick": 171118,
+      "pub_win": 88565,
+      "pub_winrate": 51.76,
       "pub_ban": 0,
-      "pick_share_pct": 0.429,
+      "pick_share_pct": 0.426,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 24,
-      "pick_rank": 90,
+      "winrate_rank": 26,
+      "pick_rank": 92,
       "pro_rank": null,
-      "is_gap": true,
-      "build_guide": {
-        "start_game_items": {
-          "label": "出门装",
-          "items": [
-            {
-              "id": 16,
-              "dname": "Iron Branch",
-              "cn": "树枝",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/branches.png",
-              "times": 166
-            },
-            {
-              "id": 44,
-              "dname": "Tango",
-              "cn": "吃树",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png",
-              "times": 62
-            },
-            {
-              "id": 237,
-              "dname": "Faerie Fire",
-              "cn": "仙灵之火",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/faerie_fire.png",
-              "times": 36
-            },
-            {
-              "id": 36,
-              "dname": "Magic Wand",
-              "cn": "魔棒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png",
-              "times": 23
-            },
-            {
-              "id": 42,
-              "dname": "Observer Ward",
-              "cn": "守卫(眼)",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png",
-              "times": 3
-            },
-            {
-              "id": 39,
-              "dname": "Healing Salve",
-              "cn": "治疗药膏",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/flask.png",
-              "times": 1
-            }
-          ]
-        },
-        "early_game_items": {
-          "label": "前期",
-          "items": [
-            {
-              "id": 50,
-              "dname": "Phase Boots",
-              "cn": "相位",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
-              "times": 57
-            },
-            {
-              "id": 63,
-              "dname": "Power Treads",
-              "cn": "假腿",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
-              "times": 37
-            },
-            {
-              "id": 75,
-              "dname": "Wraith Band",
-              "cn": "系带",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png",
-              "times": 20
-            },
-            {
-              "id": 77,
-              "dname": "Null Talisman",
-              "cn": "空灵挂件",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png",
-              "times": 20
-            },
-            {
-              "id": 73,
-              "dname": "Bracer",
-              "cn": "护腕",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png",
-              "times": 5
-            },
-            {
-              "id": 1125,
-              "dname": "Cornucopia",
-              "cn": "丰饶角",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cornucopia.png",
-              "times": 5
-            },
-            {
-              "id": 178,
-              "dname": "Soul Ring",
-              "cn": "魂戒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/soul_ring.png",
-              "times": 3
-            },
-            {
-              "id": 32,
-              "dname": "Talisman of Evasion",
-              "cn": "闪避护符",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/talisman_of_evasion.png",
-              "times": 1
-            },
-            {
-              "id": 65,
-              "dname": "Hand of Midas",
-              "cn": "点金",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png",
-              "times": 1
-            },
-            {
-              "id": 69,
-              "dname": "Perseverance",
-              "cn": "坚韧球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pers.png",
-              "times": 1
-            },
-            {
-              "id": 92,
-              "dname": "Urn of Shadows",
-              "cn": "骨灰盒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png",
-              "times": 1
-            },
-            {
-              "id": 166,
-              "dname": "Maelstrom",
-              "cn": "雷锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png",
-              "times": 1
-            },
-            {
-              "id": 174,
-              "dname": "Diffusal Blade",
-              "cn": "散失",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/diffusal_blade.png",
-              "times": 1
-            },
-            {
-              "id": 569,
-              "dname": "Orb of Corrosion",
-              "cn": "腐蚀之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_corrosion.png",
-              "times": 1
-            }
-          ]
-        },
-        "mid_game_items": {
-          "label": "中期",
-          "items": [
-            {
-              "id": 166,
-              "dname": "Maelstrom",
-              "cn": "雷锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png",
-              "times": 78
-            },
-            {
-              "id": 55,
-              "dname": "Hyperstone",
-              "cn": "振魂石",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png",
-              "times": 63
-            },
-            {
-              "id": 158,
-              "dname": "Mjollnir",
-              "cn": "大雷锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mjollnir.png",
-              "times": 61
-            },
-            {
-              "id": 116,
-              "dname": "Black King Bar",
-              "cn": "黑皇杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png",
-              "times": 45
-            },
-            {
-              "id": 170,
-              "dname": "Yasha",
-              "cn": "夜叉",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
-              "times": 30
-            },
-            {
-              "id": 609,
-              "dname": "Aghanim's Shard",
-              "cn": "魔晶",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aghanims_shard.png",
-              "times": 18
-            },
-            {
-              "id": 147,
-              "dname": "Manta Style",
-              "cn": "分身斧",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/manta.png",
-              "times": 11
-            },
-            {
-              "id": 154,
-              "dname": "Sange and Yasha",
-              "cn": "双刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange_and_yasha.png",
-              "times": 11
-            },
-            {
-              "id": 162,
-              "dname": "Sange",
-              "cn": "散华",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
-              "times": 11
-            },
-            {
-              "id": 32,
-              "dname": "Talisman of Evasion",
-              "cn": "闪避护符",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/talisman_of_evasion.png",
-              "times": 9
-            },
-            {
-              "id": 145,
-              "dname": "Battle Fury",
-              "cn": "狂战斧",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bfury.png",
-              "times": 8
-            },
-            {
-              "id": 54,
-              "dname": "Sacred Relic",
-              "cn": "圣者遗物",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
-              "times": 7
-            },
-            {
-              "id": 60,
-              "dname": "Point Booster",
-              "cn": "精气之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png",
-              "times": 7
-            },
-            {
-              "id": 137,
-              "dname": "Radiance",
-              "cn": "辉耀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/radiance.png",
-              "times": 7
-            },
-            {
-              "id": 52,
-              "dname": "Eaglesong",
-              "cn": "鹰歌弓",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/eagle.png",
-              "times": 4
-            },
-            {
-              "id": 127,
-              "dname": "Blade Mail",
-              "cn": "刃甲",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blade_mail.png",
-              "times": 4
-            },
-            {
-              "id": 143,
-              "dname": "Skull Basher",
-              "cn": "晕锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/basher.png",
-              "times": 4
-            },
-            {
-              "id": 50,
-              "dname": "Phase Boots",
-              "cn": "相位",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png",
-              "times": 3
-            },
-            {
-              "id": 63,
-              "dname": "Power Treads",
-              "cn": "假腿",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png",
-              "times": 3
-            },
-            {
-              "id": 69,
-              "dname": "Perseverance",
-              "cn": "坚韧球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pers.png",
-              "times": 2
-            },
-            {
-              "id": 100,
-              "dname": "Eul's Scepter of Divinity",
-              "cn": "风杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
-              "times": 2
-            },
-            {
-              "id": 108,
-              "dname": "Aghanim's Scepter",
-              "cn": "神杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
-              "times": 2
-            },
-            {
-              "id": 252,
-              "dname": "Echo Sabre",
-              "cn": "回音刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/echo_sabre.png",
-              "times": 2
-            },
-            {
-              "id": 61,
-              "dname": "Vitality Booster",
-              "cn": "活力之球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vitality_booster.png",
-              "times": 1
-            },
-            {
-              "id": 125,
-              "dname": "Vanguard",
-              "cn": "先锋盾",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/vanguard.png",
-              "times": 1
-            },
-            {
-              "id": 139,
-              "dname": "Butterfly",
-              "cn": "蝴蝶",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/butterfly.png",
-              "times": 1
-            },
-            {
-              "id": 210,
-              "dname": "Heaven's Halberd",
-              "cn": "天堂",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heavens_halberd.png",
-              "times": 1
-            },
-            {
-              "id": 267,
-              "dname": "Spirit Vessel",
-              "cn": "魂灵之瓮",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png",
-              "times": 1
-            }
-          ]
-        },
-        "late_game_items": {
-          "label": "后期",
-          "items": [
-            {
-              "id": 52,
-              "dname": "Eaglesong",
-              "cn": "鹰歌弓",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/eagle.png",
-              "times": 27
-            },
-            {
-              "id": 143,
-              "dname": "Skull Basher",
-              "cn": "晕锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/basher.png",
-              "times": 23
-            },
-            {
-              "id": 162,
-              "dname": "Sange",
-              "cn": "散华",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
-              "times": 21
-            },
-            {
-              "id": 116,
-              "dname": "Black King Bar",
-              "cn": "黑皇杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png",
-              "times": 16
-            },
-            {
-              "id": 108,
-              "dname": "Aghanim's Scepter",
-              "cn": "神杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png",
-              "times": 15
-            },
-            {
-              "id": 139,
-              "dname": "Butterfly",
-              "cn": "蝴蝶",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/butterfly.png",
-              "times": 15
-            },
-            {
-              "id": 208,
-              "dname": "Abyssal Blade",
-              "cn": "大晕锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/abyssal_blade.png",
-              "times": 13
-            },
-            {
-              "id": 24,
-              "dname": "Ultimate Orb",
-              "cn": "极限法球",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_orb.png",
-              "times": 12
-            },
-            {
-              "id": 55,
-              "dname": "Hyperstone",
-              "cn": "振魂石",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png",
-              "times": 11
-            },
-            {
-              "id": 158,
-              "dname": "Mjollnir",
-              "cn": "大雷锤",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mjollnir.png",
-              "times": 9
-            },
-            {
-              "id": 51,
-              "dname": "Demon Edge",
-              "cn": "恶魔刀锋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/demon_edge.png",
-              "times": 8
-            },
-            {
-              "id": 154,
-              "dname": "Sange and Yasha",
-              "cn": "双刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange_and_yasha.png",
-              "times": 8
-            },
-            {
-              "id": 170,
-              "dname": "Yasha",
-              "cn": "夜叉",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha.png",
-              "times": 8
-            },
-            {
-              "id": 53,
-              "dname": "Reaver",
-              "cn": "掠夺者",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/reaver.png",
-              "times": 7
-            },
-            {
-              "id": 54,
-              "dname": "Sacred Relic",
-              "cn": "圣者遗物",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
-              "times": 6
-            },
-            {
-              "id": 135,
-              "dname": "Monkey King Bar",
-              "cn": "金箍棒",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/monkey_king_bar.png",
-              "times": 6
-            },
-            {
-              "id": 174,
-              "dname": "Diffusal Blade",
-              "cn": "散失",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/diffusal_blade.png",
-              "times": 6
-            },
-            {
-              "id": 160,
-              "dname": "Eye of Skadi",
-              "cn": "斯嘉蒂之眼",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/skadi.png",
-              "times": 5
-            },
-            {
-              "id": 156,
-              "dname": "Satanic",
-              "cn": "撒旦",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/satanic.png",
-              "times": 4
-            },
-            {
-              "id": 1097,
-              "dname": "Disperser",
-              "cn": "驱散",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/disperser.png",
-              "times": 4
-            },
-            {
-              "id": 137,
-              "dname": "Radiance",
-              "cn": "辉耀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/radiance.png",
-              "times": 3
-            },
-            {
-              "id": 147,
-              "dname": "Manta Style",
-              "cn": "分身斧",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/manta.png",
-              "times": 3
-            },
-            {
-              "id": 225,
-              "dname": "Nullifier",
-              "cn": "否决",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/nullifier.png",
-              "times": 3
-            },
-            {
-              "id": 271,
-              "dname": "Aghanim's Blessing",
-              "cn": "神杖祝福",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter_2.png",
-              "times": 3
-            },
-            {
-              "id": 58,
-              "dname": "Mystic Staff",
-              "cn": "神秘法杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mystic_staff.png",
-              "times": 2
-            },
-            {
-              "id": 247,
-              "dname": "Moon Shard",
-              "cn": "银月",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/moon_shard.png",
-              "times": 2
-            },
-            {
-              "id": 48,
-              "dname": "Boots of Travel",
-              "cn": "飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png",
-              "times": 1
-            },
-            {
-              "id": 98,
-              "dname": "Orchid Malevolence",
-              "cn": "紫怨",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png",
-              "times": 1
-            },
-            {
-              "id": 100,
-              "dname": "Eul's Scepter of Divinity",
-              "cn": "风杖",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png",
-              "times": 1
-            },
-            {
-              "id": 123,
-              "dname": "Linken's Sphere",
-              "cn": "林肯",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sphere.png",
-              "times": 1
-            },
-            {
-              "id": 127,
-              "dname": "Blade Mail",
-              "cn": "刃甲",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blade_mail.png",
-              "times": 1
-            },
-            {
-              "id": 152,
-              "dname": "Shadow Blade",
-              "cn": "隐刀",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/invis_sword.png",
-              "times": 1
-            },
-            {
-              "id": 206,
-              "dname": "Rod of Atos",
-              "cn": "阿托斯",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/rod_of_atos.png",
-              "times": 1
-            },
-            {
-              "id": 220,
-              "dname": "Boots of Travel 2",
-              "cn": "飞鞋II",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots_2.png",
-              "times": 1
-            },
-            {
-              "id": 610,
-              "dname": "Wind Waker",
-              "cn": "大飞鞋",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png",
-              "times": 1
-            },
-            {
-              "id": 1466,
-              "dname": "Gleipnir",
-              "cn": "电锤网",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/gungir.png",
-              "times": 1
-            },
-            {
-              "id": 1854,
-              "dname": "Consecrated Wraps",
-              "cn": "圣裹布",
-              "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/consecrated_wraps.png",
-              "times": 1
-            }
-          ]
-        }
-      }
+      "is_gap": false
     },
     {
-      "id": 59,
-      "name": "哈斯卡",
-      "name_en": "Huskar",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
+      "id": 33,
+      "name": "谜团",
+      "name_en": "Enigma",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
       "roles": [
-        "Carry",
-        "Durable",
-        "Initiator"
+        "Disabler",
+        "Initiator",
+        "Pusher"
       ],
-      "pub_pick": 170941,
-      "pub_win": 78011,
-      "pub_winrate": 45.64,
+      "pub_pick": 164649,
+      "pub_win": 83422,
+      "pub_winrate": 50.67,
       "pub_ban": 0,
-      "pick_share_pct": 0.428,
-      "pro_pick": 2,
-      "pro_win": 0,
-      "pro_winrate": 0.0,
-      "pro_ban": 15,
-      "winrate_rank": 119,
-      "pick_rank": 91,
-      "pro_rank": 73,
+      "pick_share_pct": 0.41,
+      "pro_pick": 3,
+      "pro_win": 2,
+      "pro_winrate": 66.67,
+      "pro_ban": 17,
+      "winrate_rank": 42,
+      "pick_rank": 93,
+      "pro_rank": 55,
       "is_gap": false
     },
     {
@@ -6193,17 +5631,17 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 164273,
-      "pub_win": 81656,
-      "pub_winrate": 49.71,
+      "pub_pick": 164269,
+      "pub_win": 81898,
+      "pub_winrate": 49.86,
       "pub_ban": 0,
-      "pick_share_pct": 0.411,
+      "pick_share_pct": 0.409,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 67,
-      "pick_rank": 92,
+      "winrate_rank": 65,
+      "pick_rank": 94,
       "pro_rank": null,
       "is_gap": false
     },
@@ -6216,91 +5654,18 @@
         "Nuker",
         "Pusher"
       ],
-      "pub_pick": 163470,
-      "pub_win": 81734,
-      "pub_winrate": 50.0,
+      "pub_pick": 163291,
+      "pub_win": 81607,
+      "pub_winrate": 49.98,
       "pub_ban": 0,
-      "pick_share_pct": 0.409,
+      "pick_share_pct": 0.407,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
       "winrate_rank": 61,
-      "pick_rank": 93,
-      "pro_rank": null,
-      "is_gap": false
-    },
-    {
-      "id": 33,
-      "name": "谜团",
-      "name_en": "Enigma",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
-      "roles": [
-        "Disabler",
-        "Initiator",
-        "Pusher"
-      ],
-      "pub_pick": 163301,
-      "pub_win": 82747,
-      "pub_winrate": 50.67,
-      "pub_ban": 0,
-      "pick_share_pct": 0.409,
-      "pro_pick": 6,
-      "pro_win": 3,
-      "pro_winrate": 50.0,
-      "pro_ban": 20,
-      "winrate_rank": 41,
-      "pick_rank": 94,
-      "pro_rank": 48,
-      "is_gap": false
-    },
-    {
-      "id": 80,
-      "name": "德鲁伊",
-      "name_en": "Lone Druid",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lone_druid.png",
-      "roles": [
-        "Carry",
-        "Pusher",
-        "Durable"
-      ],
-      "pub_pick": 159457,
-      "pub_win": 75885,
-      "pub_winrate": 47.59,
-      "pub_ban": 0,
-      "pick_share_pct": 0.399,
-      "pro_pick": 9,
-      "pro_win": 2,
-      "pro_winrate": 22.22,
-      "pro_ban": 41,
-      "winrate_rank": 99,
       "pick_rank": 95,
-      "pro_rank": 35,
-      "is_gap": false
-    },
-    {
-      "id": 43,
-      "name": "死亡先知",
-      "name_en": "Death Prophet",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/death_prophet.png",
-      "roles": [
-        "Carry",
-        "Pusher",
-        "Nuker",
-        "Disabler"
-      ],
-      "pub_pick": 157958,
-      "pub_win": 76107,
-      "pub_winrate": 48.18,
-      "pub_ban": 0,
-      "pick_share_pct": 0.396,
-      "pro_pick": 1,
-      "pro_win": 1,
-      "pro_winrate": 100.0,
-      "pro_ban": 1,
-      "winrate_rank": 91,
-      "pick_rank": 96,
-      "pro_rank": 82,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -6313,18 +5678,18 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 155897,
-      "pub_win": 81176,
-      "pub_winrate": 52.07,
+      "pub_pick": 157695,
+      "pub_win": 82006,
+      "pub_winrate": 52.0,
       "pub_ban": 0,
-      "pick_share_pct": 0.39,
-      "pro_pick": 1,
+      "pick_share_pct": 0.393,
+      "pro_pick": 0,
       "pro_win": 0,
-      "pro_winrate": 0.0,
+      "pro_winrate": null,
       "pro_ban": 1,
-      "winrate_rank": 18,
-      "pick_rank": 97,
-      "pro_rank": 91,
+      "winrate_rank": 19,
+      "pick_rank": 96,
+      "pro_rank": null,
       "is_gap": true,
       "build_guide": {
         "start_game_items": {
@@ -7087,18 +6452,43 @@
         "Escape",
         "Disabler"
       ],
-      "pub_pick": 153236,
-      "pub_win": 74920,
+      "pub_pick": 157203,
+      "pub_win": 76854,
       "pub_winrate": 48.89,
       "pub_ban": 0,
-      "pick_share_pct": 0.384,
-      "pro_pick": 15,
-      "pro_win": 9,
-      "pro_winrate": 60.0,
-      "pro_ban": 27,
+      "pick_share_pct": 0.391,
+      "pro_pick": 13,
+      "pro_win": 8,
+      "pro_winrate": 61.54,
+      "pro_ban": 19,
       "winrate_rank": 82,
+      "pick_rank": 97,
+      "pro_rank": 15,
+      "is_gap": false
+    },
+    {
+      "id": 43,
+      "name": "死亡先知",
+      "name_en": "Death Prophet",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/death_prophet.png",
+      "roles": [
+        "Carry",
+        "Pusher",
+        "Nuker",
+        "Disabler"
+      ],
+      "pub_pick": 157174,
+      "pub_win": 75677,
+      "pub_winrate": 48.15,
+      "pub_ban": 0,
+      "pick_share_pct": 0.391,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 1,
+      "winrate_rank": 92,
       "pick_rank": 98,
-      "pro_rank": 19,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -7112,18 +6502,43 @@
         "Nuker",
         "Durable"
       ],
-      "pub_pick": 149398,
-      "pub_win": 74258,
-      "pub_winrate": 49.7,
+      "pub_pick": 147960,
+      "pub_win": 73663,
+      "pub_winrate": 49.79,
       "pub_ban": 0,
-      "pick_share_pct": 0.374,
-      "pro_pick": 8,
-      "pro_win": 4,
-      "pro_winrate": 50.0,
-      "pro_ban": 29,
-      "winrate_rank": 68,
+      "pick_share_pct": 0.368,
+      "pro_pick": 5,
+      "pro_win": 2,
+      "pro_winrate": 40.0,
+      "pro_ban": 21,
+      "winrate_rank": 67,
       "pick_rank": 99,
-      "pro_rank": 37,
+      "pro_rank": 43,
+      "is_gap": false
+    },
+    {
+      "id": 51,
+      "name": "发条技师",
+      "name_en": "Clockwerk",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+      "roles": [
+        "Initiator",
+        "Disabler",
+        "Durable",
+        "Nuker"
+      ],
+      "pub_pick": 147248,
+      "pub_win": 71112,
+      "pub_winrate": 48.29,
+      "pub_ban": 0,
+      "pick_share_pct": 0.367,
+      "pro_pick": 12,
+      "pro_win": 6,
+      "pro_winrate": 50.0,
+      "pro_ban": 10,
+      "winrate_rank": 90,
+      "pick_rank": 100,
+      "pro_rank": 17,
       "is_gap": false
     },
     {
@@ -7139,18 +6554,18 @@
         "Initiator",
         "Nuker"
       ],
-      "pub_pick": 147538,
-      "pub_win": 69803,
-      "pub_winrate": 47.31,
+      "pub_pick": 147143,
+      "pub_win": 69733,
+      "pub_winrate": 47.39,
       "pub_ban": 0,
-      "pick_share_pct": 0.37,
-      "pro_pick": 2,
-      "pro_win": 1,
-      "pro_winrate": 50.0,
-      "pro_ban": 3,
-      "winrate_rank": 109,
-      "pick_rank": 100,
-      "pro_rank": 75,
+      "pick_share_pct": 0.366,
+      "pro_pick": 1,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 2,
+      "winrate_rank": 103,
+      "pick_rank": 101,
+      "pro_rank": 81,
       "is_gap": false
     },
     {
@@ -7164,42 +6579,18 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 146632,
-      "pub_win": 67717,
-      "pub_winrate": 46.18,
+      "pub_pick": 144626,
+      "pub_win": 66738,
+      "pub_winrate": 46.15,
       "pub_ban": 0,
-      "pick_share_pct": 0.367,
-      "pro_pick": 9,
+      "pick_share_pct": 0.36,
+      "pro_pick": 7,
       "pro_win": 3,
-      "pro_winrate": 33.33,
-      "pro_ban": 40,
+      "pro_winrate": 42.86,
+      "pro_ban": 30,
       "winrate_rank": 116,
-      "pick_rank": 101,
-      "pro_rank": 32,
-      "is_gap": false
-    },
-    {
-      "id": 102,
-      "name": "亚巴顿",
-      "name_en": "Abaddon",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
-      "roles": [
-        "Support",
-        "Carry",
-        "Durable"
-      ],
-      "pub_pick": 145129,
-      "pub_win": 74354,
-      "pub_winrate": 51.23,
-      "pub_ban": 0,
-      "pick_share_pct": 0.364,
-      "pro_pick": 0,
-      "pro_win": 0,
-      "pro_winrate": null,
-      "pro_ban": 0,
-      "winrate_rank": 34,
       "pick_rank": 102,
-      "pro_rank": null,
+      "pro_rank": 36,
       "is_gap": false
     },
     {
@@ -7214,43 +6605,18 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 144731,
-      "pub_win": 68709,
-      "pub_winrate": 47.47,
+      "pub_pick": 144264,
+      "pub_win": 68683,
+      "pub_winrate": 47.61,
       "pub_ban": 0,
-      "pick_share_pct": 0.363,
+      "pick_share_pct": 0.359,
       "pro_pick": 1,
       "pro_win": 1,
       "pro_winrate": 100.0,
       "pro_ban": 3,
-      "winrate_rank": 102,
+      "winrate_rank": 100,
       "pick_rank": 103,
-      "pro_rank": 78,
-      "is_gap": false
-    },
-    {
-      "id": 51,
-      "name": "发条技师",
-      "name_en": "Clockwerk",
-      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
-      "roles": [
-        "Initiator",
-        "Disabler",
-        "Durable",
-        "Nuker"
-      ],
-      "pub_pick": 144457,
-      "pub_win": 69600,
-      "pub_winrate": 48.18,
-      "pub_ban": 0,
-      "pick_share_pct": 0.362,
-      "pro_pick": 14,
-      "pro_win": 8,
-      "pro_winrate": 57.14,
-      "pro_ban": 14,
-      "winrate_rank": 92,
-      "pick_rank": 104,
-      "pro_rank": 21,
+      "pro_rank": 72,
       "is_gap": false
     },
     {
@@ -7264,18 +6630,42 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 143497,
-      "pub_win": 72069,
-      "pub_winrate": 50.22,
+      "pub_pick": 144150,
+      "pub_win": 72320,
+      "pub_winrate": 50.17,
       "pub_ban": 0,
       "pick_share_pct": 0.359,
       "pro_pick": 1,
       "pro_win": 1,
       "pro_winrate": 100.0,
-      "pro_ban": 1,
-      "winrate_rank": 55,
+      "pro_ban": 0,
+      "winrate_rank": 56,
+      "pick_rank": 104,
+      "pro_rank": 86,
+      "is_gap": false
+    },
+    {
+      "id": 102,
+      "name": "亚巴顿",
+      "name_en": "Abaddon",
+      "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
+      "roles": [
+        "Support",
+        "Carry",
+        "Durable"
+      ],
+      "pub_pick": 143794,
+      "pub_win": 73553,
+      "pub_winrate": 51.15,
+      "pub_ban": 0,
+      "pick_share_pct": 0.358,
+      "pro_pick": 0,
+      "pro_win": 0,
+      "pro_winrate": null,
+      "pro_ban": 0,
+      "winrate_rank": 35,
       "pick_rank": 105,
-      "pro_rank": 90,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -7288,18 +6678,18 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 137292,
-      "pub_win": 65572,
-      "pub_winrate": 47.76,
+      "pub_pick": 138290,
+      "pub_win": 66115,
+      "pub_winrate": 47.81,
       "pub_ban": 0,
       "pick_share_pct": 0.344,
       "pro_pick": 1,
       "pro_win": 1,
       "pro_winrate": 100.0,
       "pro_ban": 1,
-      "winrate_rank": 97,
+      "winrate_rank": 96,
       "pick_rank": 106,
-      "pro_rank": 93,
+      "pro_rank": 90,
       "is_gap": false
     },
     {
@@ -7315,18 +6705,18 @@
         "Escape",
         "Initiator"
       ],
-      "pub_pick": 136008,
-      "pub_win": 62869,
-      "pub_winrate": 46.22,
+      "pub_pick": 136984,
+      "pub_win": 63354,
+      "pub_winrate": 46.25,
       "pub_ban": 0,
       "pick_share_pct": 0.341,
-      "pro_pick": 19,
-      "pro_win": 11,
-      "pro_winrate": 57.89,
-      "pro_ban": 5,
+      "pro_pick": 10,
+      "pro_win": 6,
+      "pro_winrate": 60.0,
+      "pro_ban": 6,
       "winrate_rank": 115,
       "pick_rank": 107,
-      "pro_rank": 11,
+      "pro_rank": 21,
       "is_gap": false
     },
     {
@@ -7339,18 +6729,18 @@
         "Pusher",
         "Nuker"
       ],
-      "pub_pick": 134598,
-      "pub_win": 63743,
-      "pub_winrate": 47.36,
+      "pub_pick": 136475,
+      "pub_win": 64720,
+      "pub_winrate": 47.42,
       "pub_ban": 0,
-      "pick_share_pct": 0.337,
-      "pro_pick": 5,
+      "pick_share_pct": 0.34,
+      "pro_pick": 3,
       "pro_win": 3,
-      "pro_winrate": 60.0,
-      "pro_ban": 6,
-      "winrate_rank": 105,
+      "pro_winrate": 100.0,
+      "pro_ban": 3,
+      "winrate_rank": 102,
       "pick_rank": 108,
-      "pro_rank": 53,
+      "pro_rank": 57,
       "is_gap": false
     },
     {
@@ -7363,16 +6753,16 @@
         "Disabler",
         "Durable"
       ],
-      "pub_pick": 125303,
-      "pub_win": 62676,
-      "pub_winrate": 50.02,
+      "pub_pick": 124619,
+      "pub_win": 62420,
+      "pub_winrate": 50.09,
       "pub_ban": 0,
-      "pick_share_pct": 0.314,
+      "pick_share_pct": 0.31,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 1,
-      "winrate_rank": 59,
+      "winrate_rank": 58,
       "pick_rank": 109,
       "pro_rank": null,
       "is_gap": false
@@ -7388,18 +6778,18 @@
         "Disabler",
         "Durable"
       ],
-      "pub_pick": 121405,
-      "pub_win": 63172,
-      "pub_winrate": 52.03,
+      "pub_pick": 122873,
+      "pub_win": 63829,
+      "pub_winrate": 51.95,
       "pub_ban": 0,
-      "pick_share_pct": 0.304,
+      "pick_share_pct": 0.306,
       "pro_pick": 1,
       "pro_win": 1,
       "pro_winrate": 100.0,
       "pro_ban": 0,
-      "winrate_rank": 19,
+      "winrate_rank": 20,
       "pick_rank": 110,
-      "pro_rank": 88,
+      "pro_rank": 84,
       "is_gap": true,
       "build_guide": {
         "start_game_items": {
@@ -7960,18 +7350,18 @@
         "Durable",
         "Disabler"
       ],
-      "pub_pick": 119820,
-      "pub_win": 57570,
-      "pub_winrate": 48.05,
+      "pub_pick": 121346,
+      "pub_win": 58219,
+      "pub_winrate": 47.98,
       "pub_ban": 0,
-      "pick_share_pct": 0.3,
-      "pro_pick": 8,
-      "pro_win": 4,
-      "pro_winrate": 50.0,
-      "pro_ban": 4,
-      "winrate_rank": 93,
+      "pick_share_pct": 0.302,
+      "pro_pick": 5,
+      "pro_win": 3,
+      "pro_winrate": 60.0,
+      "pro_ban": 6,
+      "winrate_rank": 94,
       "pick_rank": 111,
-      "pro_rank": 38,
+      "pro_rank": 46,
       "is_gap": false
     },
     {
@@ -7984,15 +7374,15 @@
         "Nuker",
         "Disabler"
       ],
-      "pub_pick": 116405,
-      "pub_win": 53137,
-      "pub_winrate": 45.65,
+      "pub_pick": 115316,
+      "pub_win": 52673,
+      "pub_winrate": 45.68,
       "pub_ban": 0,
-      "pick_share_pct": 0.292,
+      "pick_share_pct": 0.287,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
-      "pro_ban": 1,
+      "pro_ban": 0,
       "winrate_rank": 118,
       "pick_rank": 112,
       "pro_rank": null,
@@ -8008,18 +7398,18 @@
         "Durable",
         "Disabler"
       ],
-      "pub_pick": 115555,
-      "pub_win": 56405,
-      "pub_winrate": 48.81,
+      "pub_pick": 114740,
+      "pub_win": 55935,
+      "pub_winrate": 48.75,
       "pub_ban": 0,
-      "pick_share_pct": 0.289,
-      "pro_pick": 2,
+      "pick_share_pct": 0.286,
+      "pro_pick": 1,
       "pro_win": 0,
       "pro_winrate": 0.0,
       "pro_ban": 1,
       "winrate_rank": 83,
       "pick_rank": 113,
-      "pro_rank": 77,
+      "pro_rank": 89,
       "is_gap": false
     },
     {
@@ -8033,18 +7423,18 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 110907,
-      "pub_win": 49667,
-      "pub_winrate": 44.78,
+      "pub_pick": 111156,
+      "pub_win": 49764,
+      "pub_winrate": 44.77,
       "pub_ban": 0,
-      "pick_share_pct": 0.278,
-      "pro_pick": 7,
-      "pro_win": 2,
-      "pro_winrate": 28.57,
-      "pro_ban": 11,
+      "pick_share_pct": 0.277,
+      "pro_pick": 5,
+      "pro_win": 1,
+      "pro_winrate": 20.0,
+      "pro_ban": 5,
       "winrate_rank": 123,
       "pick_rank": 114,
-      "pro_rank": 41,
+      "pro_rank": 45,
       "is_gap": false
     },
     {
@@ -8058,18 +7448,18 @@
         "Initiator",
         "Nuker"
       ],
-      "pub_pick": 108440,
-      "pub_win": 48899,
-      "pub_winrate": 45.09,
+      "pub_pick": 107309,
+      "pub_win": 48344,
+      "pub_winrate": 45.05,
       "pub_ban": 0,
-      "pick_share_pct": 0.272,
-      "pro_pick": 9,
-      "pro_win": 4,
-      "pro_winrate": 44.44,
+      "pick_share_pct": 0.267,
+      "pro_pick": 5,
+      "pro_win": 3,
+      "pro_winrate": 60.0,
       "pro_ban": 4,
-      "winrate_rank": 121,
+      "winrate_rank": 120,
       "pick_rank": 115,
-      "pro_rank": 34,
+      "pro_rank": 47,
       "is_gap": false
     },
     {
@@ -8082,11 +7472,11 @@
         "Durable",
         "Nuker"
       ],
-      "pub_pick": 96108,
-      "pub_win": 48631,
-      "pub_winrate": 50.6,
+      "pub_pick": 96010,
+      "pub_win": 48635,
+      "pub_winrate": 50.66,
       "pub_ban": 0,
-      "pick_share_pct": 0.241,
+      "pick_share_pct": 0.239,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
@@ -8106,18 +7496,18 @@
         "Disabler",
         "Support"
       ],
-      "pub_pick": 89313,
-      "pub_win": 42302,
-      "pub_winrate": 47.36,
+      "pub_pick": 91867,
+      "pub_win": 43370,
+      "pub_winrate": 47.21,
       "pub_ban": 0,
-      "pick_share_pct": 0.224,
-      "pro_pick": 7,
-      "pro_win": 3,
-      "pro_winrate": 42.86,
-      "pro_ban": 53,
-      "winrate_rank": 107,
+      "pick_share_pct": 0.229,
+      "pro_pick": 8,
+      "pro_win": 4,
+      "pro_winrate": 50.0,
+      "pro_ban": 36,
+      "winrate_rank": 109,
       "pick_rank": 117,
-      "pro_rank": 46,
+      "pro_rank": 35,
       "is_gap": false
     },
     {
@@ -8132,15 +7522,15 @@
         "Pusher",
         "Disabler"
       ],
-      "pub_pick": 86057,
-      "pub_win": 43900,
-      "pub_winrate": 51.01,
+      "pub_pick": 85635,
+      "pub_win": 43650,
+      "pub_winrate": 50.97,
       "pub_ban": 0,
-      "pick_share_pct": 0.216,
+      "pick_share_pct": 0.213,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
-      "pro_ban": 1,
+      "pro_ban": 0,
       "winrate_rank": 39,
       "pick_rank": 118,
       "pro_rank": null,
@@ -8157,16 +7547,16 @@
         "Escape",
         "Nuker"
       ],
-      "pub_pick": 82516,
-      "pub_win": 41460,
+      "pub_pick": 83573,
+      "pub_win": 41984,
       "pub_winrate": 50.24,
       "pub_ban": 0,
-      "pick_share_pct": 0.207,
+      "pick_share_pct": 0.208,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 54,
+      "winrate_rank": 55,
       "pick_rank": 119,
       "pro_rank": null,
       "is_gap": false
@@ -8184,18 +7574,18 @@
         "Initiator",
         "Escape"
       ],
-      "pub_pick": 72145,
-      "pub_win": 35613,
-      "pub_winrate": 49.36,
+      "pub_pick": 71932,
+      "pub_win": 35516,
+      "pub_winrate": 49.37,
       "pub_ban": 0,
-      "pick_share_pct": 0.181,
-      "pro_pick": 1,
+      "pick_share_pct": 0.179,
+      "pro_pick": 0,
       "pro_win": 0,
-      "pro_winrate": 0.0,
+      "pro_winrate": null,
       "pro_ban": 3,
-      "winrate_rank": 74,
+      "winrate_rank": 75,
       "pick_rank": 120,
-      "pro_rank": 86,
+      "pro_rank": null,
       "is_gap": false
     },
     {
@@ -8211,11 +7601,11 @@
         "Initiator",
         "Pusher"
       ],
-      "pub_pick": 69908,
-      "pub_win": 36245,
-      "pub_winrate": 51.85,
+      "pub_pick": 69964,
+      "pub_win": 36303,
+      "pub_winrate": 51.89,
       "pub_ban": 0,
-      "pick_share_pct": 0.175,
+      "pick_share_pct": 0.174,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
@@ -8769,18 +8159,18 @@
         "Durable",
         "Escape"
       ],
-      "pub_pick": 64584,
-      "pub_win": 31252,
-      "pub_winrate": 48.39,
+      "pub_pick": 63214,
+      "pub_win": 30492,
+      "pub_winrate": 48.24,
       "pub_ban": 0,
-      "pick_share_pct": 0.162,
-      "pro_pick": 4,
-      "pro_win": 2,
-      "pro_winrate": 50.0,
-      "pro_ban": 8,
-      "winrate_rank": 89,
+      "pick_share_pct": 0.157,
+      "pro_pick": 2,
+      "pro_win": 0,
+      "pro_winrate": 0.0,
+      "pro_ban": 5,
+      "winrate_rank": 91,
       "pick_rank": 122,
-      "pro_rank": 57,
+      "pro_rank": 66,
       "is_gap": false
     },
     {
@@ -8795,18 +8185,18 @@
         "Disabler",
         "Nuker"
       ],
-      "pub_pick": 61790,
-      "pub_win": 31088,
-      "pub_winrate": 50.31,
+      "pub_pick": 61219,
+      "pub_win": 30903,
+      "pub_winrate": 50.48,
       "pub_ban": 0,
-      "pick_share_pct": 0.155,
+      "pick_share_pct": 0.152,
       "pro_pick": 1,
       "pro_win": 0,
       "pro_winrate": 0.0,
-      "pro_ban": 2,
-      "winrate_rank": 52,
+      "pro_ban": 1,
+      "winrate_rank": 48,
       "pick_rank": 123,
-      "pro_rank": 85,
+      "pro_rank": 82,
       "is_gap": false
     },
     {
@@ -8821,16 +8211,16 @@
         "Disabler",
         "Pusher"
       ],
-      "pub_pick": 56470,
-      "pub_win": 29418,
-      "pub_winrate": 52.09,
+      "pub_pick": 56782,
+      "pub_win": 29710,
+      "pub_winrate": 52.32,
       "pub_ban": 0,
       "pick_share_pct": 0.141,
       "pro_pick": 0,
       "pro_win": 0,
       "pro_winrate": null,
       "pro_ban": 0,
-      "winrate_rank": 16,
+      "winrate_rank": 10,
       "pick_rank": 124,
       "pro_rank": null,
       "is_gap": true,
@@ -9442,18 +8832,18 @@
         "Nuker",
         "Durable"
       ],
-      "pub_pick": 48791,
+      "pub_pick": 48734,
       "pub_win": 24909,
-      "pub_winrate": 51.05,
+      "pub_winrate": 51.11,
       "pub_ban": 0,
-      "pick_share_pct": 0.122,
+      "pick_share_pct": 0.121,
       "pro_pick": 5,
-      "pro_win": 2,
-      "pro_winrate": 40.0,
-      "pro_ban": 0,
-      "winrate_rank": 37,
+      "pro_win": 1,
+      "pro_winrate": 20.0,
+      "pro_ban": 1,
+      "winrate_rank": 36,
       "pick_rank": 125,
-      "pro_rank": 52,
+      "pro_rank": 49,
       "is_gap": false
     },
     {
@@ -9466,18 +8856,18 @@
         "Disabler",
         "Escape"
       ],
-      "pub_pick": 48126,
-      "pub_win": 21239,
-      "pub_winrate": 44.13,
+      "pub_pick": 48183,
+      "pub_win": 21331,
+      "pub_winrate": 44.27,
       "pub_ban": 0,
-      "pick_share_pct": 0.121,
+      "pick_share_pct": 0.12,
       "pro_pick": 1,
       "pro_win": 1,
       "pro_winrate": 100.0,
       "pro_ban": 3,
       "winrate_rank": 126,
       "pick_rank": 126,
-      "pro_rank": 83,
+      "pro_rank": 78,
       "is_gap": false
     },
     {
@@ -9489,55 +8879,54 @@
         "Support",
         "Pusher"
       ],
-      "pub_pick": 19552,
-      "pub_win": 8848,
-      "pub_winrate": 45.25,
+      "pub_pick": 19447,
+      "pub_win": 8752,
+      "pub_winrate": 45.0,
       "pub_ban": 0,
-      "pick_share_pct": 0.049,
+      "pick_share_pct": 0.048,
       "pro_pick": 1,
       "pro_win": 0,
       "pro_winrate": 0.0,
       "pro_ban": 0,
-      "winrate_rank": 120,
+      "winrate_rank": 121,
       "pick_rank": 127,
-      "pro_rank": 84,
+      "pro_rank": 79,
       "is_gap": false
     }
   ],
   "gap_ids": [
     76,
     62,
-    32,
-    88,
     92,
+    88,
+    32,
+    81,
     113,
     95,
-    81,
     68,
-    82,
-    4
+    82
   ],
   "summary": {
     "total_heroes": 127,
-    "gap_count": 11,
-    "pro_sample_heroes": 93
+    "gap_count": 10,
+    "pro_sample_heroes": 90
   },
   "highlights": {
     "version_label": "7.41e",
     "top_winrate_hero": {
       "name": "骷髅王",
-      "winrate": 54.82,
-      "pick_rank": 29
+      "winrate": 54.86,
+      "pick_rank": 31
     },
     "top_pick_hero": {
       "name": "屠夫",
-      "pick": 1094059,
-      "winrate": 51.68
+      "pick": 1100292,
+      "winrate": 51.66
     },
     "top_gap_hero": {
       "name": "殁境神蚀者",
-      "winrate": 52.66,
-      "pick_rank": 64
+      "winrate": 52.69,
+      "pick_rank": 67
     },
     "hot_ban_hero": null
   }
