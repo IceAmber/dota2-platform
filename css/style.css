@@ -125,11 +125,9 @@ main { min-height: 60vh; }
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), #d43d2f);
-  display: grid;
-  place-items: center;
-  font-size: 15px;
-  color: #fff;
+  object-fit: contain;
+  flex: 0 0 auto;
+  background: transparent;
 }
 .brand small {
   display: block;
