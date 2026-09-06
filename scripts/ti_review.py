@@ -356,7 +356,26 @@ def main():
     args = ap.parse_args()
 
     print(f"[info] 拉取 {TI_LEAGUE} 比赛列表...")
+    # 方案：先尝试从 OpenDota proMatches 拉真实赛程；若失败（限流/已过站内存量），
+    # 回退到本地 ti_index.json 已缓存赛程（含最近并入的 league 直查场次），保证能生成。
     matches = list_ti_matches()
+    if not matches:
+        try:
+            idx0 = load_ti_index()
+            # 用缓存条目给 m 注入队名/tag，使 is_china_match / match_team_kw / match_team_tags 可用
+            matches = []
+            for mid, v in idx0.items():
+                m = {"match_id": int(mid)}
+                m["radiant_name"] = v.get("radiant") or ""
+                m["dire_name"] = v.get("dire") or ""
+                m["radiant_team_id"] = v.get("_radiant_team_id")
+                m["dire_team_id"] = v.get("_dire_team_id")
+                m["radiant_tag"] = v.get("radiant_tag")
+                m["dire_tag"] = v.get("dire_tag")
+                matches.append(m)
+            print(f"[warn] proMatches 拉取为空，改用本地缓存赛程 {len(matches)} 场")
+        except Exception as e:
+            print(f"[warn] 本地缓存回退失败: {e}")
     if not matches:
         print("[error] 未拉到 TI 比赛（OpenDota 可能限流）")
         sys.exit(1)

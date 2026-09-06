@@ -6,6 +6,7 @@
   <title>赛事复盘 — DOTA2 国服社区</title>
   <meta name="description" content="DOTA2 赛事赛后复盘：AI 生成的专业赛事分析，亮点数据、MVP 提名与版本观察。">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/dota2-favicon.ico" sizes="any">
   <style>
     /* 复盘卡片/列表样式已在 css/style.css 全局定义；此处只保留详情页特有样式 */
     /* 详情 */
@@ -32,7 +33,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <span class="brand-logo">刀</span>
+        <img class="brand-logo" src="img/dota2-icon.png" alt="DOTA2" width="30" height="30">
         <span>DOTA2 国服社区<small>COMMUNITY SITE</small></span>
       </a>
       <nav class="main-nav" aria-label="主导航">
@@ -164,61 +165,27 @@
 
     function renderList() {
       if (!items.length) { root.innerHTML = '<div class="data-state">暂无复盘，敬请期待。</div>'; return; }
-      var chinaDone = items.filter(function (x) { return x.is_china && x.done; });
-      var chinaPending = items.filter(function (x) { return x.is_china && !x.done; });
-      var others = items.filter(function (x) { return !x.is_china; });
-      var chinaDoneCount = chinaDone.length;
-
+      // 全部已完成复盘按比赛时间降序（最新在前）
+      var doneList = items.filter(function (x) { return x.done; });
+      var pendingCount = items.length - doneList.length;
       var html = '';
-      // —— 中国队（默认展示已复盘）——
-      html += '<div class="review-group"><h3 class="group-title">中国队复盘</h3>';
-      if (chinaDone.length) {
-        html += '<div class="review-list">' + chinaDone.map(function (it) {
-          return cardHtml(it, true);
-        }).join('') + '</div>';
-        if (chinaPending.length) {
-          html += '<p class="pending-note">另有 ' + chinaPending.length + ' 场中国队比赛复盘生成中，稍后上线。</p>';
-        }
+      html += '<div class="review-group all-group"><h3 class="group-title">📋 全部复盘（' + doneList.length + ' 篇，按比赛时间）</h3>';
+      if (doneList.length) {
+        html += '<div class="review-list">' + doneList.map(function (it) { return cardHtml(it, true); }).join('') + '</div>';
       } else {
-        html += '<div class="data-state">中国队复盘生成中，稍后上线，可先用「查看全部」浏览其他场次。</div>';
+        html += '<div class="data-state">暂无复盘。</div>';
+      }
+      if (pendingCount > 0) {
+        html += '<p class="pending-note">另有 ' + pendingCount + ' 场比赛暂未生成复盘。</p>';
       }
       html += '</div>';
-
-      // —— 全部 TI 比赛（More 展开）——
-      var restCount = others.length + chinaPending.length;
-      html += '<div class="review-group all-group"><h3 class="group-title">🌍 全部 TI15 比赛（' + items.length + ' 场）</h3>';
-      if (!ALL_EXPANDED) {
-        html += '<button class="btn btn-ghost" id="more-btn">更多比赛（' + restCount + ' 场未展开）▾</button>' +
-          '<div class="review-list" id="more-list" style="display:none"></div>';
-      } else {
-        // 全部展开：已复盘在前
-        var allList = items.slice().sort(function (a, b) { return (b.done ? 1 : 0) - (a.done ? 1 : 0); });
-        html += '<div class="review-list">' + allList.map(function (it) { return cardHtml(it, true); }).join('') + '</div>';
-      }
-      html += '</div>';
-
       root.innerHTML = html;
 
-      // 全国队复盘默认展示（含中国队里未复盘的，也显示出来更直观）
-      // 事件委托：已复盘卡片点开详情
+      // 已复盘卡片：点击打开详情
       root.querySelectorAll('.review-card[data-file]').forEach(function (el) {
         el.addEventListener('click', function () { openDetail(el.getAttribute('data-file')); });
         el.addEventListener('keydown', function (e) { if (e.key === 'Enter') openDetail(el.getAttribute('data-file')); });
       });
-      // 未复盘卡片：点击提示
-      root.querySelectorAll('.review-card.pending[data-key]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          alert('该场复盘正在生成中，稍后再来看吧。');
-        });
-      });
-      // More 按钮：展开全部
-      var moreBtn = document.getElementById('more-btn');
-      if (moreBtn) {
-        moreBtn.addEventListener('click', function () {
-          ALL_EXPANDED = true;
-          renderList();
-        });
-      }
     }
 
     // 队标缩略图：有 logo 显示 <img>，无 logo / 加载失败（onerror 移除 img）时回退显示 tag 文本
@@ -238,13 +205,11 @@
 
     function cardHtml(it, clickable) {
       var durationStr = it.duration ? ' · ⏱ ' + it.duration : '';
-      var isCN = isChina(it.radiant) || isChina(it.dire);
       if (it.done) {
         return '<div class="review-card" data-file="' + esc(it.file) + '" role="button" tabindex="0" aria-label="查看复盘：' + esc(it.title) + '">' +
           '<h3 class="review-card-title">' + matchupHtml(it) + '<span class="title-suffix"> 复盘</span></h3>' +
           '<div class="meta"><span>🕐 比赛 ' + showTime({ match_time: it.match_time }) + '</span>' +
-          (durationStr ? '<span>' + durationStr + '</span>' : '') +
-          (isCN ? '<span class="matchup-meta">' + matchupHtml(it) + '</span>' : '') + '</div>' +
+          (durationStr ? '<span>' + durationStr + '</span>' : '') + '</div>' +
           '<div class="src">' + (it.winner ? '🏆 ' + esc(it.winner) + ' 胜' : '') + ' · 点击查看复盘 →</div>' +
           '</div>';
       }
