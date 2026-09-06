@@ -8,6 +8,11 @@ bo: TI15 总决赛 · 第四小局 · TEAM VISION 胜
 source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 ---
 
+<figure class="bpfig">
+<img src="data/reviews/8960882635-bp.png" alt="本局 BP 选人及禁用面板" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">本局实际 BP 面板：左=该局天辉 选人/禁用，右=该局夜魇 选人/禁用。来源 OpenDota。</figcaption>
+</figure>
+
 ## 一、BP拆解与为何如此
 
 先把两队的思路摆到桌面上看。
@@ -31,6 +36,14 @@ source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 **方案三：白牛换发条，节奏换轴。** #14不发条，拿巴拉森。光法+月女这对软辅(合计8死)就是天辉的发动机，白牛的全球冲脸从第一分钟起就能按着光法打，查克拉引擎熄火，沙王中路就没那么舒服。配半人马双开团，圣堂前15分钟的经济会滚得比实际更肥。风险：白牛+半人马的阵容容错极低，15分钟没滚起来就是双倍速崩盘——高收益高风险，但至少是主动求变，而不是本局这种温水煮死。
 
 ## 三、胜负归因
+
+
+<figure class="bpfig">
+<img src="data/reviews/8960882635-econ.png" alt="本局天辉经济/经验优势随时间曲线（绿=天辉领先，红=夜魇领先）" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">经济支配曲线：绿=天辉领先、红=夜魇领先、虚线=经验差。来源 OpenDota 逐分钟数据。</figcaption>
+</figure>
+
+
 
 这局44分18秒，胜负其实在前17分钟就写完了草稿。
 

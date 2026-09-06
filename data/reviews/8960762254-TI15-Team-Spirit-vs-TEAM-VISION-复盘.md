@@ -8,6 +8,11 @@ bo: TI15 总决赛 · 第三小局 · Team Spirit 胜
 source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 ---
 
+<figure class="bpfig">
+<img src="data/reviews/8960762254-bp.png" alt="本局 BP 选人及禁用面板" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">本局实际 BP 面板：左=该局天辉 选人/禁用，右=该局夜魇 选人/禁用。来源 OpenDota。</figcaption>
+</figure>
+
 ## 一、BP 拆解与为何如此
 
 先把双方阵容摊开：天辉是恐怖利刃、先知、斧王、邪影芳灵、巨牙海民；夜魇是影魔、石鳞剑士、斯拉达、魅惑魔女、玛西。
@@ -31,6 +36,14 @@ source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 一句话总结BP：夜魇赢下了前21手的每一层博弈，输在了最后一个ban和一个pick上。
 
 ## 三、胜负归因
+
+
+<figure class="bpfig">
+<img src="data/reviews/8960762254-econ.png" alt="本局天辉经济/经验优势随时间曲线（绿=天辉领先，红=夜魇领先）" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">经济支配曲线：绿=天辉领先、红=夜魇领先、虚线=经验差。来源 OpenDota 逐分钟数据。</figcaption>
+</figure>
+
+
 
 数据不会说谎，这局是**一场完美的“时间差放贷”**：夜魇借走了前35分钟，天辉连本带利收走了后11分钟。
 
