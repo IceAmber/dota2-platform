@@ -33,6 +33,11 @@ source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 
 ## 三、胜负归因
 
+<figure class="bpfig" style="margin:8px 0 20px">
+<img src="data/reviews/8960991322-econ.png" alt="天辉经济/经验优势随时间变化曲线（正=天辉领先，负=夜魇领先）" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">经济支配曲线·TI15 总决赛决胜局：绿/TEAM VISION（天辉）、红/Team Spirit（夜魇）、虚线/经验差。来源 OpenDota 逐分钟数据。</figcaption>
+</figure>
+
 **前 20 分钟 Radiant 是优势方。** 12:52 拔夜魇中一塔、15:54 下一塔、19:42 上一塔，三线外塔全收，比 Dire 的对应三座（16:11/16:46/19:27）都快半拍；斧王 11/5/10 也是队内状态最好的点。
 
 **但 19:42→35:35 是 16 分钟的建筑真空期。** 第一代肉山 29:55 才开且记在 Dire 名下（team=3），中期主动权就此易手。真正的分水岭在 40:52：Dire 拿下二代肉山，随即 41:34 破天辉上路二塔、43:33 首次站上天辉高地。盾的兑换效率就此拉开——Dire 的二代盾换来了高地立足，而 TEAM VISION 50:38 拿到的第三代肉山（team=2）只换来 53:26 一座 T2 便再无寸进（各代盾的归属素材未标注）。
