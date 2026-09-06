@@ -8,6 +8,11 @@ bo: TI15 总决赛 · 决胜小局 · Team Spirit 胜
 source: 赛后复盘·AI 依据 OpenDota 比赛数据生成
 ---
 
+<figure class="bpfig">
+<img src="data/reviews/8960991322-bp.png" alt="TI15 总决赛决胜局 BP 选人及禁用面板" style="max-width:100%;border-radius:10px;border:1px solid #2a3450">
+<figcaption style="font-size:13px;color:#8894ab;margin-top:6px">决赛第 5 局（决胜）实际 BP：左=TEAM VISION（天辉）选人/禁用，右=Team Spirit（夜魇）选人/禁用。数据源 OpenDota。</figcaption>
+</figure>
+
 ## 一、BP 拆解与为何如此
 
 **第一轮 ban 的暗语。** Team Spirit 前两手 ban（#0 赏金猎人、#1 先知）是给自己“吃地图”的发育蓝图清场：赏金的经济与全图视野会搅乱多核发育，先知的全球支援能把比赛切成碎片。TEAM VISION 的对应（#2 树精卫士、#3 影魔）一守一攻：树精的活体护甲是所有推进体系的天敌，时间线证明他们前 20 分钟确实要打推进（12:52 即破夜魇中路一塔）；影魔则是拔掉对面中路的刷钱爆发选项。#4 末日、#5 德鲁伊、#6 大地之灵，各自封掉版本万金油。
